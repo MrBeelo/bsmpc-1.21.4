@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby",
+    "F": "minecraft:smooth_quartz"
+  },
+  "pattern": [
+    "FEF",
+    "EFE",
+    "FEF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:smooth_quartz_ruby_downgrader"
+  }
+}

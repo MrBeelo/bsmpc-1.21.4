@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bsmpc:ruby",
+    "minecraft:coal",
+    "minecraft:copper_ingot",
+    "minecraft:lapis_lazuli",
+    "minecraft:iron_ingot",
+    "minecraft:redstone",
+    "minecraft:diamond",
+    "minecraft:gold_ingot",
+    "minecraft:emerald"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:deliberilium"
+  }
+}

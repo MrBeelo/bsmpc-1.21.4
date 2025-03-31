@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_ingot",
+    "F": "bsmpc:ruby",
+    "G": "bsmpc:mithrill",
+    "H": "minecraft:stick"
+  },
+  "pattern": [
+    " E ",
+    "FGF",
+    " H "
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:ender_sword"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_thalleous_longsword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bsmpc:thalleous_longsword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bsmpc:mithrilled_thalleous_longsword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_thalleous_longsword"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bsmpc:mithrilled_thalleous_longsword"
+    ]
+  }
+}

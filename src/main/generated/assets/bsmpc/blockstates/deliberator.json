@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "bsmpc:block/deliberator",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bsmpc:block/deliberator"
+    },
+    "facing=south": {
+      "model": "bsmpc:block/deliberator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bsmpc:block/deliberator",
+      "y": 270
+    }
+  }
+}

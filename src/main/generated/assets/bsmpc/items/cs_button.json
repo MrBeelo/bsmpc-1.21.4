@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "bsmpc:block/cs_button_inventory"
+  }
+}

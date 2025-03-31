@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "bsmpc:snek"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "bsmpc:snek"
+      }
+    ]
+  }
+}

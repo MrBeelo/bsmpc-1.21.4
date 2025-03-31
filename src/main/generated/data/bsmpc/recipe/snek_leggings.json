@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:snek_scale"
+  },
+  "pattern": [
+    "EEE",
+    "E E",
+    "E E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:snek_leggings"
+  }
+}

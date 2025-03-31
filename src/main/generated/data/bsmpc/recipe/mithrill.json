@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_ingot",
+    "F": "minecraft:diamond"
+  },
+  "pattern": [
+    "EEE",
+    "EFE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:mithrill"
+  }
+}

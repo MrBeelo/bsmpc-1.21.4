@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_block",
+    "F": "bsmpc:ruby"
+  },
+  "pattern": [
+    "FEF",
+    "FEF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:ruby_fence_gate"
+  }
+}

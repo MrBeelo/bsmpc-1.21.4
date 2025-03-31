@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_shard"
+  },
+  "pattern": [
+    " E ",
+    "EEE",
+    " E "
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:ruby"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "bsmpc:mithrill",
+    "F": "minecraft:stick"
+  },
+  "pattern": [
+    "E",
+    "E",
+    "F"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:mithrill_sword"
+  }
+}

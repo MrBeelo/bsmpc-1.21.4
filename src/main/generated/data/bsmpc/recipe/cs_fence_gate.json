@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:cs_planks",
+    "F": "minecraft:stick"
+  },
+  "pattern": [
+    "FEF",
+    "FEF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:cs_fence_gate"
+  }
+}

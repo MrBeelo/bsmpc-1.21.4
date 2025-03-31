@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_block"
+  },
+  "pattern": [
+    "EE"
+  ],
+  "result": {
+    "count": 6,
+    "id": "bsmpc:ruby_pressure_plate"
+  }
+}

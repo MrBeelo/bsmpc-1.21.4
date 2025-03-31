@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "bsmpc:block/meeper",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bsmpc:block/meeper"
+    },
+    "facing=south": {
+      "model": "bsmpc:block/meeper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bsmpc:block/meeper",
+      "y": 270
+    }
+  }
+}

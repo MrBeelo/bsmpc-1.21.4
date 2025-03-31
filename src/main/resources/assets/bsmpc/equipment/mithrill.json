@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "bsmpc:mithrill"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "bsmpc:mithrill"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "bsmpc:mithrill",
+    "F": "bsmpc:ruby_ingot",
+    "G": "bsmpc:thalleous_longsword"
+  },
+  "pattern": [
+    " E ",
+    "FGF",
+    " E "
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:mithrilled_thalleous_longsword"
+  }
+}

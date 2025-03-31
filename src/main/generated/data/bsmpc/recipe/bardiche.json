@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "bsmpc:metal_rod",
+    "F": "bsmpc:packed_iron_block",
+    "G": "bsmpc:energy_crystal"
+  },
+  "pattern": [
+    "FG",
+    "FE",
+    " E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:bardiche"
+  }
+}

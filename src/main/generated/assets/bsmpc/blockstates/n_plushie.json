@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "bsmpc:block/n_plushie",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "bsmpc:block/n_plushie"
+    },
+    "facing=south": {
+      "model": "bsmpc:block/n_plushie",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "bsmpc:block/n_plushie",
+      "y": 270
+    }
+  }
+}

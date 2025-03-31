@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:packed_iron_block",
+    "F": "minecraft:chest"
+  },
+  "pattern": [
+    "E",
+    "F",
+    "E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:safe"
+  }
+}

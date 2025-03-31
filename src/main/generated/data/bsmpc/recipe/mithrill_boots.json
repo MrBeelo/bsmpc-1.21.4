@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "bsmpc:mithrill"
+  },
+  "pattern": [
+    "E E",
+    "E E"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:mithrill_boots"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "minecraft:diamond",
+    "F": "minecraft:stick",
+    "G": "bsmpc:mithrill"
+  },
+  "pattern": [
+    " E ",
+    "EGE",
+    " F "
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:thalleous_longsword"
+  }
+}

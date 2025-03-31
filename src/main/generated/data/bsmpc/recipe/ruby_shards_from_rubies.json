@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bsmpc:ruby"
+  ],
+  "result": {
+    "count": 5,
+    "id": "bsmpc:ruby_shard"
+  }
+}

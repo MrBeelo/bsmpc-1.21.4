@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mithrill": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bsmpc:mithrill"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bsmpc:mithrill_helmet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mithrill"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bsmpc:mithrill_helmet"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:iron_block"
+  },
+  "pattern": [
+    "EE",
+    "EE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:packed_iron_block"
+  }
+}
