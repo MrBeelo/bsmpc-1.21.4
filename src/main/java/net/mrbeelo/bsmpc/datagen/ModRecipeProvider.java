@@ -519,11 +519,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 createShaped(RecipeCategory.COMBAT, ModItems.GRAF_EISER, 1)
                         .input('E', ModItems.METAL_ROD)
                         .input('F', ModBlocks.PACKED_IRON_BLOCK)
-                        .input('G', ModItems.ENERGY_CRYSTAL)
+                        .input('G', Blocks.GOLD_BLOCK)
                         .pattern("FGF")
                         .pattern(" E ")
                         .pattern(" E ")
-                        .criterion(hasItem(ModItems.ENERGY_CRYSTAL), conditionsFromItem(ModItems.ENERGY_CRYSTAL))
+                        .criterion(hasItem(Blocks.GOLD_BLOCK), conditionsFromItem(Blocks.GOLD_BLOCK))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "graf_eiser")));
 
                 createShaped(RecipeCategory.MISC, ModBlocks.SAFE, 1)

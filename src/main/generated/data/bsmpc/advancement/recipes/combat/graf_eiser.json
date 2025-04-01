@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_energy_crystal": {
+    "has_gold_block": {
       "conditions": {
         "items": [
           {
-            "items": "bsmpc:energy_crystal"
+            "items": "minecraft:gold_block"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_energy_crystal"
+      "has_gold_block"
     ]
   ],
   "rewards": {

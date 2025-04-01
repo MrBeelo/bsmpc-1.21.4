@@ -18,5 +18,7 @@
   "oof": {"subtitle": "sounds.bsmpc.oof", "sounds": ["bsmpc:oof"]},
   "fish": {"subtitle": "sounds.bsmpc.fish", "sounds": ["bsmpc:fish"]},
   "meep": {"subtitle": "sounds.bsmpc.meep", "sounds": ["bsmpc:meep"]},
+  "slap": {"subtitle": "sounds.bsmpc.slap", "sounds": ["bsmpc:slap"]},
+  "bzzz": {"subtitle": "sounds.bsmpc.bzzz", "sounds": ["bsmpc:bzzz"]},
   "xo": {"subtitle": "sounds.bsmpc.xo", "sounds": [{"name": "bsmpc:xo", "stream":  true}]}
 }

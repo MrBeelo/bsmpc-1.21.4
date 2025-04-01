@@ -49,7 +49,6 @@ public class ModItems {
     public static final ModArmorItem RUBY_CHESTPLATE = register("ruby_chestplate", new ModArmorItem(ModArmorMaterials.RUBY, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("ruby_chestplate")).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(45))));
     public static final ArmorItem RUBY_LEGGINGS = register("ruby_leggings", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.LEGGINGS, new Item.Settings().registryKey(regKeyItem("ruby_leggings")).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(45))));
     public static final ArmorItem RUBY_BOOTS = register("ruby_boots", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.BOOTS, new Item.Settings().registryKey(regKeyItem("ruby_boots")).maxDamage(EquipmentType.BOOTS.getMaxDamage(45))));
-    //public static final SwordItem RUBY_KNOCKER = register("ruby_knocker", new SwordItem(ModToolMaterials.RUBY, 0, -2.4F, new Item.Settings().registryKey(regKeyItem("ruby_knocker")).maxDamage(100).attributeModifiers(AttributeModifiersComponent.builder().add(EntityAttributes.ATTACK_KNOCKBACK, new EntityAttributeModifier(BsmpC.id("effect.knockback"), 30.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())));
     public static final HighKnockbackItem RUBY_KNOCKER = register("ruby_knocker", new HighKnockbackItem(new Item.Settings().registryKey(regKeyItem("ruby_knocker")).maxCount(1), 8f));
 
     public static final Item PISTOL = register("pistol", new PistolItem(new Item.Settings().registryKey(regKeyItem("pistol")).maxCount(1)));
@@ -95,7 +94,6 @@ public class ModItems {
     public static final EnderSwordItem ENDER_SWORD = register("ender_sword", new EnderSwordItem(ModToolMaterials.MITHRILL, 1, -2.6f, new Item.Settings().registryKey(regKeyItem("ender_sword"))));
     public static final SwordItem BEELO_SWORD = register("beelo_sword", new SwordItem(ModToolMaterials.RUBY, 10, -2.4f, new Item.Settings().registryKey(regKeyItem("beelo_sword"))));
 
-    //public static final SwordItem STICC = register("sticc", new SwordItem(ToolMaterial.DIAMOND, 0, -2.4f, new SwordItem.Settings().registryKey(regKeyItem("sticc")).maxCount(1).attributeModifiers(AttributeModifiersComponent.builder().add(EntityAttributes.ATTACK_KNOCKBACK, new EntityAttributeModifier(BsmpC.id("effect.knockback"), 450.0, EntityAttributeModifier.Operation.ADD_VALUE), AttributeModifierSlot.MAINHAND).build())));
     public static final HighKnockbackItem STICC = register("sticc", new HighKnockbackItem(new Item.Settings().registryKey(regKeyItem("sticc")).maxCount(1), 40f));
 
     public static final ScytheItem SCYTHE = register("scythe", new ScytheItem(ToolMaterial.DIAMOND, 7, -2.4f, new Item.Settings().registryKey(regKeyItem("scythe"))));
@@ -108,6 +106,8 @@ public class ModItems {
 
     public static final KeyItem KEY = register("key", new KeyItem(new Item.Settings().registryKey(regKeyItem("key")).maxCount(1).component(ModDataComponentTypes.KEY_ASSIGNED_POS, new BlockPos(0, 0, 0))));
     public static final GlobalKeyItem GLOBAL_KEY = register("global_key", new GlobalKeyItem(new Item.Settings().registryKey(regKeyItem("global_key")).maxCount(1)));
+
+    public static final RulerItem RULER = register("ruler", new RulerItem(new Item.Settings().registryKey(regKeyItem("ruler")).maxCount(1)));
 
 
     //METHODS

@@ -203,6 +203,7 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.GLOBAL_KEY, "Global Key");
         translationBuilder.add(ModBlocks.MEEPER, "Meeper");
         translationBuilder.add(ModBlocks.DELIBERATOR, "Deliberator");
+        translationBuilder.add(ModItems.RULER, "Baldi's Ruler");
         translationBuilder.addEnchantment(ModEnchantments.BANG_EFFECT_KEY, "Bang");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_BREAK, "Ruby Block Broken");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_FALL, "Ruby Block Fallen");

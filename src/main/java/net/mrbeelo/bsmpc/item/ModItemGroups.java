@@ -138,6 +138,8 @@ public class ModItemGroups {
                         entries.add(ModItems.DELIBERILIUM);
                         entries.add(ModBlocks.DELIBERATOR);
 
+                        entries.add(ModItems.RULER);
+
                     }).build());
 
     public static final ItemGroup CS_GROUP = Registry.register(Registries.ITEM_GROUP,

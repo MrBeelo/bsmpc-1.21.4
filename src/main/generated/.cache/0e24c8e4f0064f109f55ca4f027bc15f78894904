@@ -1,6 +1,6 @@
 // 1.21.4	-999999999-01-01T00:00:00	bsmpc/ModRecipeProvider
 3bb41d6c8cf0c4335190e4db195b276d528277a7 data/bsmpc/advancement/recipes/combat/bardiche.json
-1c3c69ecf50883c5288c2bf46b6848e26ee4e1a5 data/bsmpc/advancement/recipes/combat/graf_eiser.json
+d44025d4cdca792f6856ced8be6f490142f03dda data/bsmpc/advancement/recipes/combat/graf_eiser.json
 ca7344aed23f7102d823df005259ac44612a8faf data/bsmpc/advancement/recipes/combat/mithrill_boots.json
 1e72b6f2550639510d4eea49a8b29fec13be7280 data/bsmpc/advancement/recipes/combat/mithrill_chestplate.json
 5cc74f70188e3ec44db91ce6b47a712d941704ae data/bsmpc/advancement/recipes/combat/mithrill_helmet.json
@@ -81,7 +81,7 @@ d62944c3858c68fbecd044a42ae878c954341cb5 data/bsmpc/recipe/cs_stairs.json
 107c40422e84e712041d1c92db9159d5d70d5390 data/bsmpc/recipe/deliberilium.json
 b5340355bb8eff72218ee6b98832f54dea2c630b data/bsmpc/recipe/ender_sword.json
 585bd5c85fb10b2eb58db58979369816f203c691 data/bsmpc/recipe/energy_crystal.json
-c6a60626177eb76906807a5fb7a01664ea0ef19f data/bsmpc/recipe/graf_eiser.json
+0b0808b168c66f7ba21227fe967cb653ad26f3b1 data/bsmpc/recipe/graf_eiser.json
 c53dcb93187851cbcc3649245cad098a23b014e4 data/bsmpc/recipe/iron_block.json
 fdf9c4727fecbe601ab6b83f00115598176112d2 data/bsmpc/recipe/key.json
 2505242c4219bef3f28b0b8453b4f0fbaf73fe1e data/bsmpc/recipe/metal_rod.json

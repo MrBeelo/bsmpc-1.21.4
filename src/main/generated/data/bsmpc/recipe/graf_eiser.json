@@ -4,7 +4,7 @@
   "key": {
     "E": "bsmpc:metal_rod",
     "F": "bsmpc:packed_iron_block",
-    "G": "bsmpc:energy_crystal"
+    "G": "minecraft:gold_block"
   },
   "pattern": [
     "FGF",
