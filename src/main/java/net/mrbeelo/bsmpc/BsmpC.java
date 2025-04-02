@@ -75,6 +75,7 @@ public class BsmpC implements ModInitializer {
 		ModRecipes.registerModRecipes();
 		ModToolMaterials.registerModToolMaterials();
 		ModEquipmentAssets.registerModEquipmentAssets();
+		ModFuelItems.registerModFuelItems();
 
 		ServerTickEvents.END_WORLD_TICK.register(world -> {
 			if (world instanceof ServerWorld) {

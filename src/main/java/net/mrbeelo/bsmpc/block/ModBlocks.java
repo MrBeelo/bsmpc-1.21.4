@@ -83,6 +83,9 @@ public class ModBlocks {
 
     public static final DeliberatorBlock DELIBERATOR = registerWithItem("deliberator", new DeliberatorBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).registryKey(regKeyBlock("deliberator")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("deliberator")).useBlockPrefixedTranslationKey());
 
+    public static final Block COMPANION_CUBE = registerWithItem("companion_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("companion_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("companion_cube")).useBlockPrefixedTranslationKey().maxCount(1));
+    public static final Block GD_CUBE = registerWithItem("gd_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("gd_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("gd_cube")).useBlockPrefixedTranslationKey().maxCount(1));
+
     //METHODS
 
     public static <T extends Block> T register(String name, T block) {

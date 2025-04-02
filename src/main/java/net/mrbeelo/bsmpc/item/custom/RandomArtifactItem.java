@@ -35,7 +35,7 @@ public class RandomArtifactItem extends Item {
             Item[] cardItems = {
                     ModItems.DEATH_AXE,
                     ModItems.PISTOL,
-                    //ModItems.KOKAINA_SEED,
+                    ModItems.KOKAINA_SEED,
                     ModItems.MASTER_BEELO_STAFF,
                     ModBlocks.PEDESTAL.asItem(),
                     ModItems.XO_MUSIC_DISC,
@@ -45,7 +45,9 @@ public class RandomArtifactItem extends Item {
                     ModItems.FISH_MEME,
                     ModBlocks.N_PLUSHIE.asItem(),
                     ModItems.BEELO_SWORD,
-                    ModBlocks.MEEPER.asItem()
+                    ModBlocks.MEEPER.asItem(),
+                    ModBlocks.COMPANION_CUBE.asItem(),
+                    ModBlocks.GD_CUBE.asItem()
             };
 
             Item randomCardItem = cardItems[random.nextInt(cardItems.length)];

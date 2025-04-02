@@ -46,6 +46,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.RUBY_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.RUBY_TRAPDOOR);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPANION_CUBE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GD_CUBE);
+
 
         blockStateModelGenerator.registerLog(ModBlocks.CS_LOG).log(ModBlocks.CS_LOG).wood(ModBlocks.CS_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CS_LOG).log(ModBlocks.STRIPPED_CS_LOG).wood(ModBlocks.STRIPPED_CS_WOOD);
@@ -132,5 +135,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DELIBERILIUM, Models.GENERATED);
         itemModelGenerator.register(ModItems.KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.GLOBAL_KEY, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RAW_BEEF_WELLINGTON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OVERCOOKED_BEEF_WELLINGTON, Models.GENERATED);
     }
 }

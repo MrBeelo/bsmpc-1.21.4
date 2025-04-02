@@ -1,4 +1,5 @@
 // 1.21.4	-999999999-01-01T00:00:00	bsmpc/Block Loot Tables
+8936552808d1d1b57d5509afecd634f2054de9f6 data/bsmpc/loot_table/blocks/companion_cube.json
 f45a7e8d9d6c168b9b9fdb9819f392d6362b6623 data/bsmpc/loot_table/blocks/cs_button.json
 cbd56d7c65a52f12ffe629d70aa435e95a9a6b71 data/bsmpc/loot_table/blocks/cs_door.json
 84d122423ef4660a0d2a9617b454db1bab4b2c2c data/bsmpc/loot_table/blocks/cs_fence.json
@@ -14,6 +15,7 @@ d59bea6b1839914eb890b715f805dd06d45d93f6 data/bsmpc/loot_table/blocks/cs_pressur
 4d1b3709b213cbfea7454df6fd69f73a0f8569e4 data/bsmpc/loot_table/blocks/cs_wood.json
 fb30afd45927e16cb905c4e0f8211b960b790c1e data/bsmpc/loot_table/blocks/deepslate_ruby_ore.json
 c594762321fedb7310c82fd169320710c7196378 data/bsmpc/loot_table/blocks/deliberator.json
+1ff83af1a014b75f01fed9ac354f2e68a6a5e2be data/bsmpc/loot_table/blocks/gd_cube.json
 779c0dba12b3efc8ed8ed68f9d2482283f86dcad data/bsmpc/loot_table/blocks/kokaina_crop.json
 0f4b69a0f7c4de7700fa9b9474ce332e3a387e64 data/bsmpc/loot_table/blocks/meeper.json
 34969f824a53cb24b30c51b692b89b9ad41215fc data/bsmpc/loot_table/blocks/n_plushie.json

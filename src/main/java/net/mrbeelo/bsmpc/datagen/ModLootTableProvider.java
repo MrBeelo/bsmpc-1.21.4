@@ -72,6 +72,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.DELIBERATOR);
 
+        addDrop(ModBlocks.COMPANION_CUBE);
+        addDrop(ModBlocks.GD_CUBE);
+
 
         LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.KOKAINA_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(CropBlock.AGE, 3));

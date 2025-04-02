@@ -140,6 +140,12 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RULER);
 
+                        entries.add(ModBlocks.COMPANION_CUBE);
+                        entries.add(ModBlocks.GD_CUBE);
+
+                        entries.add(ModItems.RAW_BEEF_WELLINGTON);
+                        entries.add(ModItems.OVERCOOKED_BEEF_WELLINGTON);
+
                     }).build());
 
     public static final ItemGroup CS_GROUP = Registry.register(Registries.ITEM_GROUP,

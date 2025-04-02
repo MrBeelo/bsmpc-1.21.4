@@ -109,6 +109,9 @@ public class ModItems {
 
     public static final RulerItem RULER = register("ruler", new RulerItem(new Item.Settings().registryKey(regKeyItem("ruler")).maxCount(1)));
 
+    public static final BeefWellingtonItem RAW_BEEF_WELLINGTON = register("raw_beef_wellington", new BeefWellingtonItem(new Item.Settings().registryKey(regKeyItem("raw_beef_wellington")).food(ModFoodItems.RAW_BF_COMPONENT, ModFoodItems.RAW_BF_CONSUMABLE_COMPONENT), true));
+    public static final BeefWellingtonItem OVERCOOKED_BEEF_WELLINGTON = register("overcooked_beef_wellington", new BeefWellingtonItem(new Item.Settings().registryKey(regKeyItem("overcooked_beef_wellington")).food(ModFoodItems.OVERCOOKED_BF_COMPONENT, ModFoodItems.OVERCOOKED_BF_CONSUMABLE_COMPONENT), false));
+
 
     //METHODS
 

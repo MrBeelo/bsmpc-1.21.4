@@ -123,7 +123,9 @@ public class ModCustomTrades {
                         ModItems.FISH_MEME,
                         ModBlocks.N_PLUSHIE.asItem(),
                         ModItems.BEELO_SWORD,
-                        ModBlocks.MEEPER.asItem()
+                        ModBlocks.MEEPER.asItem(),
+                        ModBlocks.COMPANION_CUBE.asItem(),
+                        ModBlocks.GD_CUBE.asItem()
                 };
 
                 Item randomArtifactItem = artifactItems[random.nextInt(artifactItems.length)];
@@ -140,7 +142,7 @@ public class ModCustomTrades {
             factories.add((entity, random) -> new TradeOffer(
 
                     new TradedItem(ModItems.RUBY, 3),
-                    new ItemStack(ModItems.KOKAINA, 2), //KOKAINA
+                    new ItemStack(ModItems.KOKAINA, 2),
                     9999,
                     10,
                     0.05f
@@ -149,7 +151,7 @@ public class ModCustomTrades {
             factories.add((entity, random) -> new TradeOffer(
 
                     new TradedItem(ModItems.RUBY, 3),
-                    new ItemStack(ModItems.BULLET, 10), //KOKAINA
+                    new ItemStack(ModItems.BULLET, 10),
                     9999,
                     10,
                     0.05f

@@ -16,6 +16,7 @@ import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
 import net.mrbeelo.bsmpc.item.ModItems;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 
@@ -554,6 +555,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input(Items.EMERALD)
                         .criterion(hasItem(ModItems.RUBY), conditionsFromItem(ModItems.RUBY))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "deliberilium")));
+
+                offerSmelting(
+                        List.of(ModItems.RAW_BEEF_WELLINGTON), // Inputs
+                        RecipeCategory.FOOD, // Category
+                        ModItems.OVERCOOKED_BEEF_WELLINGTON, // Output
+                        0.1f, // Experience
+                        300, // Cooking time
+                        "raw_beef_wellington_to_overcooked_beef_wellington" // group
+                );
             }
         };
     }

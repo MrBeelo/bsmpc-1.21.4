@@ -204,6 +204,10 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.MEEPER, "Meeper");
         translationBuilder.add(ModBlocks.DELIBERATOR, "Deliberator");
         translationBuilder.add(ModItems.RULER, "Baldi's Ruler");
+        translationBuilder.add(ModBlocks.COMPANION_CUBE, "Companion Cube");
+        translationBuilder.add(ModBlocks.GD_CUBE, "Geometry Dash Cube");
+        translationBuilder.add(ModItems.RAW_BEEF_WELLINGTON, "Raw Beef Wellington");
+        translationBuilder.add(ModItems.OVERCOOKED_BEEF_WELLINGTON, "Overcooked Beef Wellington");
         translationBuilder.addEnchantment(ModEnchantments.BANG_EFFECT_KEY, "Bang");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_BREAK, "Ruby Block Broken");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_FALL, "Ruby Block Fallen");
