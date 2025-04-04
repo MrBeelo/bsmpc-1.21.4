@@ -10,6 +10,7 @@ edf9753ea5d8cd6a51d02a7ec6620050547f7af9 data/minecraft/tags/item/axes.json
 3d71ab3dd174053a69276aa777fd7b1a54f16a72 data/minecraft/tags/item/head_armor.json
 15965f471452d767b63e394bcaa650fef62cebf3 data/minecraft/tags/item/hoes.json
 2cc30bf5e0df60b4982a6954f5559513666f4b0e data/minecraft/tags/item/leg_armor.json
+816ba588526ec25ec1facd881898d9ec0f450104 data/minecraft/tags/item/logs.json
 1e194cb9bf0d20f8d092b4157949ffa55316ef21 data/minecraft/tags/item/logs_that_burn.json
 910a9b61ec79b20d9b24975cafdca08d63390e0b data/minecraft/tags/item/pickaxes.json
 25b2ec6fbd9fdddaff74be747f8ec50eeaf94351 data/minecraft/tags/item/planks.json

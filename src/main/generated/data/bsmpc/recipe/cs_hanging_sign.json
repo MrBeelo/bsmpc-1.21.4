@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:cs_planks",
+    "F": "minecraft:chain"
+  },
+  "pattern": [
+    "F F",
+    "EEE",
+    "EEE"
+  ],
+  "result": {
+    "count": 3,
+    "id": "bsmpc:cs_hanging_sign"
+  }
+}

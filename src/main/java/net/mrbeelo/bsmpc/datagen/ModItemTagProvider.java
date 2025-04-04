@@ -79,5 +79,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.WOODEN_SLABS)
                 .add(ModBlocks.CS_SLAB.asItem());
+
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModBlocks.CS_LOG.asItem())
+                .add(ModBlocks.STRIPPED_CS_LOG.asItem());
     }
 }

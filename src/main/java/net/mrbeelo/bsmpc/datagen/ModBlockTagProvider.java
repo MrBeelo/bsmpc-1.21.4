@@ -98,6 +98,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CS_TRAPDOOR)
                 .add(ModBlocks.RUBY_TRAPDOOR);
 
+        getOrCreateTagBuilder(BlockTags.STANDING_SIGNS).add(ModBlocks.STANDING_CS_SIGN);
+        getOrCreateTagBuilder(BlockTags.WALL_SIGNS).add(ModBlocks.WALL_CS_SIGN);
+        getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS).add(ModBlocks.HANGING_CS_SIGN);
+        getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS).add(ModBlocks.WALL_HANGING_CS_SIGN);
+
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.RUBY_BLOCK)
                 .add(ModBlocks.PACKED_IRON_BLOCK);

@@ -291,6 +291,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_trapdoor")));
 
+                createShaped(RecipeCategory.MISC, ModItems.CS_SIGN, 3)
+                        .input('E', ModBlocks.CS_PLANKS)
+                        .input('F', Items.STICK)
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .pattern(" F ")
+                        .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_sign")));
+
+                createShaped(RecipeCategory.MISC, ModItems.HANGING_CS_SIGN, 3)
+                        .input('E', ModBlocks.CS_PLANKS)
+                        .input('F', Items.CHAIN)
+                        .pattern("F F")
+                        .pattern("EEE")
+                        .pattern("EEE")
+                        .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_hanging_sign")));
+
                 createShaped(RecipeCategory.COMBAT, ModItems.WARDEN_SWORD, 1)
                         .input('E', ModItems.WARDEN_HORN)
                         .input('F', Items.STICK)
