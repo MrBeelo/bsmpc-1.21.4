@@ -1,5 +1,6 @@
 package net.mrbeelo.bsmpc.item;
 
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
@@ -112,8 +113,11 @@ public class ModItems {
     public static final BeefWellingtonItem RAW_BEEF_WELLINGTON = register("raw_beef_wellington", new BeefWellingtonItem(new Item.Settings().registryKey(regKeyItem("raw_beef_wellington")).food(ModFoodItems.RAW_BF_COMPONENT, ModFoodItems.RAW_BF_CONSUMABLE_COMPONENT), true));
     public static final BeefWellingtonItem OVERCOOKED_BEEF_WELLINGTON = register("overcooked_beef_wellington", new BeefWellingtonItem(new Item.Settings().registryKey(regKeyItem("overcooked_beef_wellington")).food(ModFoodItems.OVERCOOKED_BF_COMPONENT, ModFoodItems.OVERCOOKED_BF_CONSUMABLE_COMPONENT), false));
 
-    public static final Item CS_SIGN = register("cs_sign", new SignItem(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_sign")).maxCount(16)));
-    public static final Item HANGING_CS_SIGN = register("cs_hanging_sign", new HangingSignItem(ModBlocks.HANGING_CS_SIGN, ModBlocks.WALL_HANGING_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_hanging_sign")).maxCount(16)));
+    public static final SignItem CS_SIGN = register("cs_sign", new SignItem(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_sign")).maxCount(16)));
+    public static final HangingSignItem HANGING_CS_SIGN = register("cs_hanging_sign", new HangingSignItem(ModBlocks.HANGING_CS_SIGN, ModBlocks.WALL_HANGING_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_hanging_sign")).maxCount(16)));
+
+    public static final Item CS_BOAT = TerraformBoatItemHelper.registerBoatItem(BsmpC.id("cs"), new Item.Settings().registryKey(regKeyItem("cs_boat")), false, false);
+    public static final Item CS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(BsmpC.id("cs"), new Item.Settings().registryKey(regKeyItem("cs_chest_boat")), true, false);
 
     //METHODS
 

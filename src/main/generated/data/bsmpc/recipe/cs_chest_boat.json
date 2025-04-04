@@ -3,15 +3,14 @@
   "category": "misc",
   "key": {
     "E": "bsmpc:cs_planks",
-    "F": "minecraft:chain"
+    "F": "minecraft:chest"
   },
   "pattern": [
-    "F F",
-    "EEE",
+    "EFE",
     "EEE"
   ],
   "result": {
-    "count": 6,
-    "id": "bsmpc:cs_hanging_sign"
+    "count": 1,
+    "id": "bsmpc:cs_chest_boat"
   }
 }

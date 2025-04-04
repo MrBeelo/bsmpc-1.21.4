@@ -1,5 +1,6 @@
 package net.mrbeelo.bsmpc;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.api.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -77,9 +78,10 @@ public class BsmpCClient implements ClientModInitializer {
 
 		ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ?
 				BiomeColors.getFoliageColor(world, pos) : ModBlocks.CS_LEAVES.getDefaultMapColor().color, ModBlocks.CS_LEAVES);
-		//ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getDefaultColor(), ModBlocks.CS_LEAVES);
 
 		HandledScreens.register(ModScreenHandlers.SAFE_SCREEN_HANDLER, SafeScreen::new);
 		HandledScreens.register(ModScreenHandlers.DELIBERATOR_SCREEN_HANDLER, DeliberatorScreen::new);
+
+		TerraformBoatClientHelper.registerModelLayers(BsmpC.id("cs"));
 	}
 }

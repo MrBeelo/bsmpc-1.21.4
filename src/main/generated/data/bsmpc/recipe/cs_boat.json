@@ -2,16 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "E": "bsmpc:cs_planks",
-    "F": "minecraft:chain"
+    "E": "bsmpc:cs_planks"
   },
   "pattern": [
-    "F F",
-    "EEE",
+    "E E",
     "EEE"
   ],
   "result": {
-    "count": 6,
-    "id": "bsmpc:cs_hanging_sign"
+    "count": 1,
+    "id": "bsmpc:cs_boat"
   }
 }

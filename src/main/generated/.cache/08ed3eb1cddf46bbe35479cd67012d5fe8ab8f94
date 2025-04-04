@@ -49,7 +49,9 @@ b7aacc61d804b9c86656cec12b8c5f7b4daf54c7 assets/bsmpc/blockstates/stripped_cs_lo
 8b386b18789202d9786e9f301a233d90f8572c57 assets/bsmpc/items/blob_spawn_egg.json
 e703f7b9462c3ea8d4e2dc0001750085ee49fa93 assets/bsmpc/items/bullet.json
 f60af9f918217e9d1654c1afd7f1080f921679c1 assets/bsmpc/items/companion_cube.json
+1b90801e562cbee19350f4c5a217129aa6eef501 assets/bsmpc/items/cs_boat.json
 b6590435b2a2c16d6d332f9991d4688ac95c1c99 assets/bsmpc/items/cs_button.json
+ff299bca8f97496031bde93528d949039d8a303b assets/bsmpc/items/cs_chest_boat.json
 31d09a95a8c8ee11730e02611ed47378f537df9a assets/bsmpc/items/cs_door.json
 7938b2ca6a6dfa1c24fb0a35053b620cde9182ad assets/bsmpc/items/cs_fence.json
 1aff323548c8986aaad0801a00fc58a051c2df41 assets/bsmpc/items/cs_fence_gate.json
@@ -237,6 +239,8 @@ d56f747d8b474dc620d7c89e72cf1f9739090ff4 assets/bsmpc/models/block/stripped_cs_l
 e10dfd78b898f8662072c66ab2ed60b9f08c1496 assets/bsmpc/models/block/stripped_cs_wood.json
 9615e081bcc2155efce87f0ebe4b9c49ca371800 assets/bsmpc/models/item/beelo_sword.json
 6f67b038fd3503e7e409397fa2321ab200e5a776 assets/bsmpc/models/item/bullet.json
+aa7517d30e8a93a4e32321aa976062b264031d4d assets/bsmpc/models/item/cs_boat.json
+bf2fe24c54e29635384062eff3efed8fc08bca3c assets/bsmpc/models/item/cs_chest_boat.json
 b339571ed95d9c7a81f58a4337f4ff928a092c82 assets/bsmpc/models/item/cs_door.json
 0505e43f000f7d4a53b0192490ea10817a461d1a assets/bsmpc/models/item/cs_hanging_sign.json
 bc43f673a72e8333d9e3101ea596b17bc9c7cd25 assets/bsmpc/models/item/cs_sapling.json

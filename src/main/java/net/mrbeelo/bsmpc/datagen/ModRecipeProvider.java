@@ -300,7 +300,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_sign")));
 
-                createShaped(RecipeCategory.MISC, ModItems.HANGING_CS_SIGN, 3)
+                createShaped(RecipeCategory.MISC, ModItems.HANGING_CS_SIGN, 6)
                         .input('E', ModBlocks.CS_PLANKS)
                         .input('F', Items.CHAIN)
                         .pattern("F F")
@@ -308,6 +308,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("EEE")
                         .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_hanging_sign")));
+
+                createShaped(RecipeCategory.MISC, ModItems.CS_BOAT, 1)
+                        .input('E', ModBlocks.CS_PLANKS)
+                        .pattern("E E")
+                        .pattern("EEE")
+                        .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_boat")));
+
+                createShaped(RecipeCategory.MISC, ModItems.CS_CHEST_BOAT, 1)
+                        .input('E', ModBlocks.CS_PLANKS)
+                        .input('F', Blocks.CHEST)
+                        .pattern("EFE")
+                        .pattern("EEE")
+                        .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_chest_boat")));
 
                 createShaped(RecipeCategory.COMBAT, ModItems.WARDEN_SWORD, 1)
                         .input('E', ModItems.WARDEN_HORN)

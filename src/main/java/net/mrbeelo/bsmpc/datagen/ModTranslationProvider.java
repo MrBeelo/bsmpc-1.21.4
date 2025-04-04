@@ -97,6 +97,16 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         builder.add(guiKey, messageValue);
     }
 
+    private static void addBoat(@NotNull TranslationBuilder builder, @NotNull String messageId, @NotNull String messageValue) {
+        String guiKey = "entity.bsmpc." + messageId + "_boat";
+        builder.add(guiKey, messageValue);
+    }
+
+    private static void addChestBoat(@NotNull TranslationBuilder builder, @NotNull String messageId, @NotNull String messageValue) {
+        String guiKey = "entity.bsmpc." + messageId + "_chest_boat";
+        builder.add(guiKey, messageValue);
+    }
+
     @Override
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         translationBuilder.add(ModItems.RUBY, "Ruby");
@@ -167,6 +177,8 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.CS_TRAPDOOR, "Cupressus Sempervirens Trapostium");
         translationBuilder.add(ModItems.CS_SIGN, "Cupressus Sempervirens Signum");
         translationBuilder.add(ModItems.HANGING_CS_SIGN, "Cupressus Sempervirens Tentorium Signum");
+        translationBuilder.add(ModItems.CS_BOAT, "Cupressus Sempervirens Cymba");
+        translationBuilder.add(ModItems.CS_CHEST_BOAT, "Cupressus Sempervirens Cysta Navi");
         translationBuilder.add(ModItems.WARDEN_SWORD, "Warden Sword");
         translationBuilder.add(ModItems.SNEK_HELMET, "Snek Helmet");
         translationBuilder.add(ModItems.SNEK_CHESTPLATE, "Snek Chestplate");
@@ -229,5 +241,7 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         addDamageType(translationBuilder, "emotional_damage", "Emotional Damage.");
         addGui(translationBuilder, "safe", "Safe");
         addGui(translationBuilder, "deliberator", "Deliberator");
+        addBoat(translationBuilder, "cs", "Cupressus Sempervirens Cymba");
+        addChestBoat(translationBuilder, "cs", "Cupressus Sempervirens Cysta Navi");
     }
 }
