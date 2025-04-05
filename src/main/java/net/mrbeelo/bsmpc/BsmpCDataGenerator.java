@@ -7,6 +7,8 @@ import net.minecraft.registry.RegistryKeys;
 import net.mrbeelo.bsmpc.datagen.*;
 import net.mrbeelo.bsmpc.world.ModConfiguredFeatures;
 import net.mrbeelo.bsmpc.world.ModPlacedFeatures;
+import net.mrbeelo.bsmpc.world.biome.ModBiomes;
+import net.mrbeelo.bsmpc.world.dimension.ModDimensions;
 
 
 public class BsmpCDataGenerator implements DataGeneratorEntrypoint {
@@ -29,5 +31,7 @@ public class BsmpCDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }

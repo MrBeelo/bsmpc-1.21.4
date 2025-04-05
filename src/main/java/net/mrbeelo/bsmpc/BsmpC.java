@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -102,7 +103,16 @@ public class BsmpC implements ModInitializer {
 
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CS_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CS_LEAVES, 30, 60);
+
+		CustomPortalBuilder.beginPortal()
+				.frameBlock(ModBlocks.CS_LOG)
+				.destDimID(BsmpC.id("cs_dimension"))
+				.lightWithWater()
+				.tintColor(0x5dfc95)
+				.forcedSize(5, 5)
+				.registerPortal();
 	}
+
 	public static Identifier id(String path) {
 		return Identifier.of(MOD_ID, path);
 	}

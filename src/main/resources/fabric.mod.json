@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.mrbeelo.bsmpc.BsmpCClient"
+		],
+		"terrablender": [
+			"net.mrbeelo.bsmpc.world.biome.ModTerrablenderAPI"
 		]
 	},
 	"mixins": [

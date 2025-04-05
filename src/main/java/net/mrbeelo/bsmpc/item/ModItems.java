@@ -1,6 +1,7 @@
 package net.mrbeelo.bsmpc.item;
 
 //import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.component.type.AttributeModifiersComponent;
@@ -23,6 +24,7 @@ import net.mrbeelo.bsmpc.sound.ModSounds;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class ModItems {
 

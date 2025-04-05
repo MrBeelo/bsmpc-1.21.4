@@ -11,7 +11,7 @@ import net.mrbeelo.bsmpc.item.ModItems;
 
 public class KokainaCropBlock extends CropBlock {
     public static final int MAX_AGE = 3;
-    public static final IntProperty AGE = Properties.AGE_3;
+    public static final IntProperty AGE = IntProperty.of("age", 0, 3);
 
     public KokainaCropBlock(Settings settings) {
         super(settings);

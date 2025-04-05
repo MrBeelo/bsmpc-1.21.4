@@ -22,6 +22,7 @@ repositories {
 	//}
 
 	maven { url = 'https://maven.minecraftforge.net/' }
+	maven {url = "https://maven.kyrptonaught.dev"}
 }
 
 fabricApi {
@@ -42,7 +43,11 @@ dependencies {
 	//modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
 	//include "com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}"
 
-	modImplementation 'com.github.glitchfiend:TerraBlender-fabric:1.21.4-4.3.0.2'
+	modImplementation "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_api_version}"
+	include "com.github.glitchfiend:TerraBlender-fabric:${project.terrablender_api_version}"
+
+	modImplementation "net.kyrptonaught:customportalapi:${project.custom_portal_api_version}"
+	include "net.kyrptonaught:customportalapi:${project.custom_portal_api_version}"
 }
 
 processResources {
