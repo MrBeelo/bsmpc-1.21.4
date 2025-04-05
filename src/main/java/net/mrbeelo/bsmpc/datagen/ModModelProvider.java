@@ -55,9 +55,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool csPlankTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CS_PLANKS);
         blockStateModelGenerator.registerTintableCross(ModBlocks.CS_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
-        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CS_LOG, ModBlocks.HANGING_CS_SIGN, ModBlocks.WALL_HANGING_CS_SIGN);
+        //blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_CS_LOG, ModBlocks.HANGING_CS_SIGN, ModBlocks.WALL_HANGING_CS_SIGN);
 
-        csPlankTexturePool.family(ModBlocks.CS_FAMILY);
+        //csPlankTexturePool.family(ModBlocks.CS_FAMILY);
         csPlankTexturePool.stairs(ModBlocks.CS_STAIRS);
         csPlankTexturePool.slab(ModBlocks.CS_SLAB);
         csPlankTexturePool.button(ModBlocks.CS_BUTTON);
@@ -139,7 +139,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GLOBAL_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_BEEF_WELLINGTON, Models.GENERATED);
         itemModelGenerator.register(ModItems.OVERCOOKED_BEEF_WELLINGTON, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
     }
 }

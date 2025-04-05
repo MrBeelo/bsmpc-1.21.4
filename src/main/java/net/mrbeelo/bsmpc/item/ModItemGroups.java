@@ -167,10 +167,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CS_FENCE_GATE);
                         entries.add(ModBlocks.CS_DOOR);
                         entries.add(ModBlocks.CS_TRAPDOOR);
-                        entries.add(ModItems.CS_SIGN);
-                        entries.add(ModItems.HANGING_CS_SIGN);
-                        entries.add(ModItems.CS_BOAT);
-                        entries.add(ModItems.CS_CHEST_BOAT);
+                        //entries.add(ModItems.CS_SIGN);
+                        //entries.add(ModItems.HANGING_CS_SIGN);
+                        //entries.add(ModItems.CS_BOAT);
+                        //entries.add(ModItems.CS_CHEST_BOAT);
                     }).build());
 
 

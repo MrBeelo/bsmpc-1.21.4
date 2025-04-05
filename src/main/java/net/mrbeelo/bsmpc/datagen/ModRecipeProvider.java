@@ -291,7 +291,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_trapdoor")));
 
-                createShaped(RecipeCategory.MISC, ModItems.CS_SIGN, 3)
+                /*createShaped(RecipeCategory.MISC, ModItems.CS_SIGN, 3)
                         .input('E', ModBlocks.CS_PLANKS)
                         .input('F', Items.STICK)
                         .pattern("EEE")
@@ -322,7 +322,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("EFE")
                         .pattern("EEE")
                         .criterion(hasItem(ModBlocks.CS_PLANKS), conditionsFromItem(ModBlocks.CS_PLANKS))
-                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_chest_boat")));
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_chest_boat")));*/
 
                 createShaped(RecipeCategory.COMBAT, ModItems.WARDEN_SWORD, 1)
                         .input('E', ModItems.WARDEN_HORN)

@@ -1,9 +1,9 @@
 package net.mrbeelo.bsmpc.block;
 
-import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
-import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
+//import com.terraformersmc.terraform.sign.api.block.TerraformHangingSignBlock;
+//import com.terraformersmc.terraform.sign.api.block.TerraformSignBlock;
+//import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
+//import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
@@ -97,14 +97,14 @@ public class ModBlocks {
     public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
     public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");
 
-    public static final Block STANDING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("standing_cs_sign"), new TerraformSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
-    public static final Block WALL_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("wall_cs_sign"), new TerraformWallSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
-    public static final Block HANGING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("hanging_cs_sign"), new TerraformHangingSignBlock(CS_HANGING_SIGN_TEXTURE, CS_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
-    public static final Block WALL_HANGING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("wall_hanging_cs_sign"), new TerraformWallHangingSignBlock(CS_HANGING_SIGN_TEXTURE, CS_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
+    //public static final Block STANDING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("standing_cs_sign"), new TerraformSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
+    //public static final Block WALL_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("wall_cs_sign"), new TerraformWallSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
+    //public static final Block HANGING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("hanging_cs_sign"), new TerraformHangingSignBlock(CS_HANGING_SIGN_TEXTURE, CS_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
+    //public static final Block WALL_HANGING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("wall_hanging_cs_sign"), new TerraformWallHangingSignBlock(CS_HANGING_SIGN_TEXTURE, CS_HANGING_GUI_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
 
-    public static final BlockFamily CS_FAMILY = BlockFamilies.register(ModBlocks.CS_PLANKS)
-            .sign(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN)
-            .group("wooden").unlockCriterionName("has_planks").build();
+    //public static final BlockFamily CS_FAMILY = BlockFamilies.register(ModBlocks.CS_PLANKS)
+            //sign(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN)
+            //.group("wooden").unlockCriterionName("has_planks").build();
 
     //METHODS
 

@@ -175,10 +175,10 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.CS_FENCE_GATE, "Cupressus Sempervirens Saepes Porta");
         translationBuilder.add(ModBlocks.CS_DOOR, "Cupressus Sempervirens Ostium");
         translationBuilder.add(ModBlocks.CS_TRAPDOOR, "Cupressus Sempervirens Trapostium");
-        translationBuilder.add(ModItems.CS_SIGN, "Cupressus Sempervirens Signum");
-        translationBuilder.add(ModItems.HANGING_CS_SIGN, "Cupressus Sempervirens Tentorium Signum");
-        translationBuilder.add(ModItems.CS_BOAT, "Cupressus Sempervirens Cymba");
-        translationBuilder.add(ModItems.CS_CHEST_BOAT, "Cupressus Sempervirens Cysta Navi");
+        //translationBuilder.add(ModItems.CS_SIGN, "Cupressus Sempervirens Signum");
+        //translationBuilder.add(ModItems.HANGING_CS_SIGN, "Cupressus Sempervirens Tentorium Signum");
+        //translationBuilder.add(ModItems.CS_BOAT, "Cupressus Sempervirens Cymba");
+        //translationBuilder.add(ModItems.CS_CHEST_BOAT, "Cupressus Sempervirens Cysta Navi");
         translationBuilder.add(ModItems.WARDEN_SWORD, "Warden Sword");
         translationBuilder.add(ModItems.SNEK_HELMET, "Snek Helmet");
         translationBuilder.add(ModItems.SNEK_CHESTPLATE, "Snek Chestplate");

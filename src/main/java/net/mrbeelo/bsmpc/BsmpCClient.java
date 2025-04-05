@@ -1,7 +1,7 @@
 package net.mrbeelo.bsmpc;
 
-import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
-import com.terraformersmc.terraform.sign.api.SpriteIdentifierRegistry;
+//import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
+//import com.terraformersmc.terraform.sign.api.SpriteIdentifierRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
@@ -82,6 +82,6 @@ public class BsmpCClient implements ClientModInitializer {
 		HandledScreens.register(ModScreenHandlers.SAFE_SCREEN_HANDLER, SafeScreen::new);
 		HandledScreens.register(ModScreenHandlers.DELIBERATOR_SCREEN_HANDLER, DeliberatorScreen::new);
 
-		TerraformBoatClientHelper.registerModelLayers(BsmpC.id("cs"));
+		//TerraformBoatClientHelper.registerModelLayers(BsmpC.id("cs"));
 	}
 }

@@ -75,10 +75,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COMPANION_CUBE);
         addDrop(ModBlocks.GD_CUBE);
 
-        addDrop(ModBlocks.STANDING_CS_SIGN, ModItems.CS_SIGN);
-        addDrop(ModBlocks.WALL_CS_SIGN, ModItems.CS_SIGN);
-        addDrop(ModBlocks.HANGING_CS_SIGN, ModItems.HANGING_CS_SIGN);
-        addDrop(ModBlocks.WALL_HANGING_CS_SIGN, ModItems.HANGING_CS_SIGN);
+        //addDrop(ModBlocks.STANDING_CS_SIGN, ModItems.CS_SIGN);
+        //addDrop(ModBlocks.WALL_CS_SIGN, ModItems.CS_SIGN);
+        //addDrop(ModBlocks.HANGING_CS_SIGN, ModItems.HANGING_CS_SIGN);
+        //addDrop(ModBlocks.WALL_HANGING_CS_SIGN, ModItems.HANGING_CS_SIGN);
 
 
         LootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.KOKAINA_CROP)

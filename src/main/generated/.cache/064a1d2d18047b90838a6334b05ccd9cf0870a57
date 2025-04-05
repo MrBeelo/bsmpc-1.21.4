@@ -4,7 +4,6 @@ f2ab2ee827d305d94bfe91492a2da4216ff5d790 data/bsmpc/tags/block/cs_blocks.json
 eec415d85f87a7b180b63562c5d8e822d70e5e6d data/bsmpc/tags/block/ruby_ores.json
 05fdd688e2c3b54be6d0762b3e12123cc0981fa0 data/minecraft/tags/block/beacon_base_blocks.json
 19298619a6a2d58be60f1ad026236f3a68ed06a8 data/minecraft/tags/block/buttons.json
-99c5587b5212b4aeec94090b4c346668a2285b61 data/minecraft/tags/block/ceiling_hanging_signs.json
 dfe4cb085db43444b243a2d88ffb6785db5f2f8e data/minecraft/tags/block/doors.json
 432c6ed83c6eda46596821ef912add131b62c77b data/minecraft/tags/block/fence_gates.json
 1e15c06bbd2ea75bbe0803c71f51befa14e19c38 data/minecraft/tags/block/fences.json
@@ -16,9 +15,6 @@ e247daff649f634a66bff36f611183f2fa664527 data/minecraft/tags/block/mineable/pick
 85750833118334559ef7af23ca7ec488ca46fe8d data/minecraft/tags/block/pressure_plates.json
 dfdec050b81119aac7d4dd385cedc0941bbad89c data/minecraft/tags/block/saplings.json
 30978cbe4b3751150467d636ef37994883fc20f3 data/minecraft/tags/block/slabs.json
-6745e589270ad46aa45659fdd736c958718691dd data/minecraft/tags/block/standing_signs.json
 1270b0d7e0b0bb8153fc17f6225c44289a5e12c2 data/minecraft/tags/block/trapdoors.json
-a29ea5c2f93bd3e049652cd60318746bd1f4d03e data/minecraft/tags/block/wall_hanging_signs.json
-fa5b716b0def056787ffc9dedf841dfac19690a7 data/minecraft/tags/block/wall_signs.json
 eba13ec72b4a18bf24ec034e32e1b7bf71688233 data/minecraft/tags/block/walls.json
 546e7962a34c1a93bcc2be1355305241eec441c9 data/minecraft/tags/block/wooden_slabs.json
