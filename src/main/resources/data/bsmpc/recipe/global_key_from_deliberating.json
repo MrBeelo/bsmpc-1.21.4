@@ -1,9 +1,7 @@
 {
   "type": "bsmpc:deliberating",
   "category": "misc",
-  "ingredient": {
-    "item": "bsmpc:key"
-  },
+  "ingredient": "bsmpc:key",
   "result": {
     "id": "bsmpc:key",
     "count": 2
