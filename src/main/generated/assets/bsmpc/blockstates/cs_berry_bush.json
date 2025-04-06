@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "bsmpc:block/cs_berry_bush_stage0"
+    },
+    "age=1": {
+      "model": "bsmpc:block/cs_berry_bush_stage1"
+    },
+    "age=2": {
+      "model": "bsmpc:block/cs_berry_bush_stage2"
+    },
+    "age=3": {
+      "model": "bsmpc:block/cs_berry_bush_stage3"
+    }
+  }
+}

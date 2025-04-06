@@ -93,6 +93,8 @@ public class ModBlocks {
     public static final Block COMPANION_CUBE = registerWithItem("companion_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("companion_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("companion_cube")).useBlockPrefixedTranslationKey().maxCount(1));
     public static final Block GD_CUBE = registerWithItem("gd_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("gd_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("gd_cube")).useBlockPrefixedTranslationKey().maxCount(1));
 
+    public static final CSBerryBushBlock CS_BERRY_BUSH = register("cs_berry_bush", new CSBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).registryKey(regKeyBlock("cs_berry_bush"))));
+
     public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
     public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
     public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");

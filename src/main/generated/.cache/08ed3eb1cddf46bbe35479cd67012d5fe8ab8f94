@@ -1,5 +1,6 @@
 // 1.21.4	-999999999-01-01T00:00:00	bsmpc/Model Definitions
 23ec5529572c43ae0f345ac9aa052e1a8ed5e3d7 assets/bsmpc/blockstates/companion_cube.json
+3f85109b097ea5cd4a50d4f65f90d5b64000d7f6 assets/bsmpc/blockstates/cs_berry_bush.json
 a0347f4cf15590743dba2f7d85ca5e4956866f74 assets/bsmpc/blockstates/cs_button.json
 0b0ef51e0f02b3435d35a27abeadf5fcf908fcc4 assets/bsmpc/blockstates/cs_door.json
 d598361685a42c0474d880fbd414f0cf12352b85 assets/bsmpc/blockstates/cs_fence.json
@@ -45,6 +46,7 @@ b7aacc61d804b9c86656cec12b8c5f7b4daf54c7 assets/bsmpc/blockstates/stripped_cs_lo
 8b386b18789202d9786e9f301a233d90f8572c57 assets/bsmpc/items/blob_spawn_egg.json
 e703f7b9462c3ea8d4e2dc0001750085ee49fa93 assets/bsmpc/items/bullet.json
 f60af9f918217e9d1654c1afd7f1080f921679c1 assets/bsmpc/items/companion_cube.json
+1a5779b85a8c6edf041382f2b98f016057207b32 assets/bsmpc/items/cs_berries.json
 b6590435b2a2c16d6d332f9991d4688ac95c1c99 assets/bsmpc/items/cs_button.json
 31d09a95a8c8ee11730e02611ed47378f537df9a assets/bsmpc/items/cs_door.json
 7938b2ca6a6dfa1c24fb0a35053b620cde9182ad assets/bsmpc/items/cs_fence.json
@@ -141,6 +143,10 @@ bef760c59c28be7430d5a027a969a17dd984ab94 assets/bsmpc/items/warden_horn.json
 9378d63a1e91becf4d6890d5421c54236f9cbfcc assets/bsmpc/items/warden_sword.json
 5101c0d828bcb9b83ddb9cba588cebab477410bc assets/bsmpc/items/xo_music_disc.json
 0d668ff65e1b62b8b36ef8466f9f99c1891f0d3c assets/bsmpc/models/block/companion_cube.json
+ec223e84bbed2ef8ae7e41f0edf2f2f556577388 assets/bsmpc/models/block/cs_berry_bush_stage0.json
+597116eb5a7f93b06cc00cd4e0b73a6ff20eae31 assets/bsmpc/models/block/cs_berry_bush_stage1.json
+2b0ed641885876aafc19cb3313a2892bbe43ac71 assets/bsmpc/models/block/cs_berry_bush_stage2.json
+f24576d2f09cfcb34f988f7a9f6c8296f1674f75 assets/bsmpc/models/block/cs_berry_bush_stage3.json
 3827b71cacfd939093436a841bf083b89fc26478 assets/bsmpc/models/block/cs_button.json
 1fb71553d2a977103af9bcd83cb4c35cb1801c7a assets/bsmpc/models/block/cs_button_inventory.json
 801f96f003e888fb46e0432b4964b7e45720214f assets/bsmpc/models/block/cs_button_pressed.json
@@ -229,6 +235,7 @@ d56f747d8b474dc620d7c89e72cf1f9739090ff4 assets/bsmpc/models/block/stripped_cs_l
 e10dfd78b898f8662072c66ab2ed60b9f08c1496 assets/bsmpc/models/block/stripped_cs_wood.json
 9615e081bcc2155efce87f0ebe4b9c49ca371800 assets/bsmpc/models/item/beelo_sword.json
 6f67b038fd3503e7e409397fa2321ab200e5a776 assets/bsmpc/models/item/bullet.json
+1b6d3d07403c70d8ee8f7934a5175cda6c26cdb7 assets/bsmpc/models/item/cs_berries.json
 b339571ed95d9c7a81f58a4337f4ff928a092c82 assets/bsmpc/models/item/cs_door.json
 bc43f673a72e8333d9e3101ea596b17bc9c7cd25 assets/bsmpc/models/item/cs_sapling.json
 df0d8edaaa227f44a1e96dac162f7df62321844a assets/bsmpc/models/item/death_axe.json

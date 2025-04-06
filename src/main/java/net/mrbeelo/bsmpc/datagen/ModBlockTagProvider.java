@@ -55,7 +55,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CS_TRAPDOOR);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL).addTag(ModTags.Blocks.RUBY_BLOCKS);
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).addTag(ModTags.Blocks.RUBY_BLOCKS).add(ModBlocks.SAFE).add(ModBlocks.N_PLUSHIE);
+
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .addTag(ModTags.Blocks.RUBY_BLOCKS)
+                .add(ModBlocks.SAFE)
+                .add(ModBlocks.N_PLUSHIE)
+                .add(ModBlocks.COMPANION_CUBE)
+                .add(ModBlocks.GD_CUBE)
+                .add(ModBlocks.DELIBERATOR);
+
+
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).addTag(ModTags.Blocks.CS_BLOCKS);
 
         getOrCreateTagBuilder(BlockTags.LEAVES)

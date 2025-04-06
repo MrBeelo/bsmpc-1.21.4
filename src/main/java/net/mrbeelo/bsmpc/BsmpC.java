@@ -107,7 +107,7 @@ public class BsmpC implements ModInitializer {
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(ModBlocks.CS_LOG)
 				.destDimID(BsmpC.id("cs_dimension"))
-				.lightWithWater()
+				.lightWithFluid(ModFluids.STILL_FROOTOP)
 				.tintColor(0x5dfc95)
 				.forcedSize(5, 5)
 				.registerPortal();

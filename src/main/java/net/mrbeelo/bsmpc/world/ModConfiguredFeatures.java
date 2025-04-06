@@ -18,6 +18,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.GiantTrunkPlacer;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
+import net.mrbeelo.bsmpc.block.custom.CSBerryBushBlock;
 
 import java.util.List;
 
@@ -34,6 +35,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> CS_KEY = registerKey("cs");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> RUBY_GEODE_KEY = registerKey("ruby_geode");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CS_BERRY_BUSH_KEY = registerKey("cs_berry_bush");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneOreReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -78,6 +81,12 @@ public class ModConfiguredFeatures {
                 true, UniformIntProvider.create(3, 8),
                 UniformIntProvider.create(2, 6), UniformIntProvider.create(1, 2),
                 -8, 8, 0.075D, 1));
+
+        register(context, CS_BERRY_BUSH_KEY, Feature.RANDOM_PATCH,
+                ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
+                        new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CS_BERRY_BUSH
+                                .getDefaultState().with(CSBerryBushBlock.AGE, 3))),
+                        List.of(Blocks.GRASS_BLOCK)));
 
         //METHODS
 

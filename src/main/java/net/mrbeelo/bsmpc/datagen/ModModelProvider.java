@@ -2,15 +2,19 @@ package net.mrbeelo.bsmpc.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
 import net.minecraft.client.render.entity.equipment.EquipmentModel;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
+import net.mrbeelo.bsmpc.block.custom.CSBerryBushBlock;
 import net.mrbeelo.bsmpc.block.custom.KokainaCropBlock;
 import net.mrbeelo.bsmpc.block.custom.RGBBlock;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
@@ -78,6 +82,15 @@ public class ModModelProvider extends FabricModelProvider {
         Identifier rgbOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.RGB_BLOCK, "_on", Models.CUBE_ALL, TextureMap::all);
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RGB_BLOCK)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(RGBBlock.CLICKED, rgbOnIdentifier, rgbOffIdentifier)));
+
+        //blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.CS_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED, CSBerryBushBlock.AGE, 0, 1, 2, 3);
+        blockStateModelGenerator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(ModBlocks.CS_BERRY_BUSH).coordinate(
+                        BlockStateVariantMap.create(Properties.AGE_3)
+                                .register(stage -> BlockStateVariant.create()
+                                        .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.CS_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross)))
+                )
+        );
     }
 
     @Override
@@ -139,6 +152,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GLOBAL_KEY, Models.GENERATED);
         itemModelGenerator.register(ModItems.RAW_BEEF_WELLINGTON, Models.GENERATED);
         itemModelGenerator.register(ModItems.OVERCOOKED_BEEF_WELLINGTON, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CS_BERRIES, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
     }

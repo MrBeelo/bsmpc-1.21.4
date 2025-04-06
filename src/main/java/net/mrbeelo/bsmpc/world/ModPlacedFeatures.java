@@ -29,6 +29,8 @@ public class ModPlacedFeatures {
 
     public static final RegistryKey<net.minecraft.world.gen.feature.PlacedFeature> RUBY_GEODE_PLACED_KEY = registerKey("ruby_geode_placed");
 
+    public static final RegistryKey<net.minecraft.world.gen.feature.PlacedFeature> CS_BERRY_BUSH_PLACED_KEY = registerKey("cs_berry_bush_placed");
+
     public static void bootstrap(Registerable<net.minecraft.world.gen.feature.PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
@@ -53,6 +55,9 @@ public class ModPlacedFeatures {
                 HeightRangePlacementModifier.trapezoid(YOffset.fixed(-64), YOffset.fixed(16)),
                 BiomePlacementModifier.of(),
                 SquarePlacementModifier.of());
+
+        register(context, CS_BERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CS_BERRY_BUSH_KEY),
+                RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
     }
 
     //METHODS

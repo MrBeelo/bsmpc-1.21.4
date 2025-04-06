@@ -40,6 +40,20 @@ public class ModFoodItems {
     public static final ConsumableComponent OVERCOOKED_BF_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600, 0, false, true)))
             .build();
+
+    public static final FoodComponent CS_BERRY_COMPONENT = new FoodComponent.Builder()
+            .alwaysEdible()
+            .nutrition(6)
+            .saturationModifier(0.4F)
+            .build();
+
+    public static final ConsumableComponent CS_BERRY_CONSUMABLE_COMPONENT = ConsumableComponent.builder()
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.GLOWING, 200, 0, false, false)))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.INVISIBILITY, 200, 0, false, false)))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 1, false, false)))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 5, false, false)))
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0, false, false)))
+            .build();
 }
 
 

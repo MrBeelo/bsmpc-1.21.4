@@ -10,6 +10,7 @@ public class ModWorldGenerator {
         ModTreeGeneration.generateTrees();
         ModFlowerGeneration.generateFlowers();
         ModEntitySpawns.generateEntitySpawns();
+        ModBushGeneration.generateBushes();
 
         BsmpC.LOGGER.info("Generating World Generation for " + BsmpC.MOD_ID);
     }

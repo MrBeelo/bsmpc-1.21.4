@@ -2,6 +2,9 @@
   "values": [
     "#bsmpc:ruby_blocks",
     "bsmpc:safe",
-    "bsmpc:n_plushie"
+    "bsmpc:n_plushie",
+    "bsmpc:companion_cube",
+    "bsmpc:gd_cube",
+    "bsmpc:deliberator"
   ]
 }

@@ -51,6 +51,7 @@ public class BsmpCClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CS_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CS_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.N_PLUSHIE, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CS_BERRY_BUSH, RenderLayer.getCutout());
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.SPARKLE_PARTICLE, EndRodParticle.Factory::new);
 		ParticleFactoryRegistry.getInstance().register(ModParticles.MOBILIUM_PARTICLE, EndRodParticle.Factory::new);

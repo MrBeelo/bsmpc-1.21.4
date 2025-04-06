@@ -9,7 +9,7 @@ import net.mrbeelo.bsmpc.world.biome.ModBiomes;
 
 public class ModBushGeneration {
     public static void generateBushes() {
-        //BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CS_BIOME),
-                //GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CS_BERRY_BUSH_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CS_BIOME),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CS_BERRY_BUSH_PLACED_KEY);
     }
 }
