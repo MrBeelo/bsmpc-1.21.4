@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "bsmpc:cs_crib",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 1642156474,
+    "spacing": 40,
+    "separation": 15,
+    "type": "minecraft:random_spread"
+  }
+}
