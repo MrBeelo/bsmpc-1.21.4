@@ -9,7 +9,7 @@ import net.mrbeelo.bsmpc.world.biome.ModBiomes;
 
 public class ModTreeGeneration {
     public static void generateTrees() {
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CS_BIOME),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModBiomes.CS_BIOME, BiomeKeys.PLAINS),
                 GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.CS_PLACED_KEY);
     }
 }

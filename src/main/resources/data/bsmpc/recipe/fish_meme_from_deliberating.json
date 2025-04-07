@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:tropical_fish",
+  "result": {
+    "id": "bsmpc:fish_meme",
+    "count": 1
+  }
+}

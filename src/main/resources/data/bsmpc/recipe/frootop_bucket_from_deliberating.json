@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:water_bucket",
+  "result": {
+    "id": "bsmpc:frootop_bucket",
+    "count": 1
+  }
+}

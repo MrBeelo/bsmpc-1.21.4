@@ -62,7 +62,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.N_PLUSHIE)
                 .add(ModBlocks.COMPANION_CUBE)
                 .add(ModBlocks.GD_CUBE)
-                .add(ModBlocks.DELIBERATOR);
+                .add(ModBlocks.DELIBERATOR)
+                .add(ModBlocks.SMOOTH_QUARTZ_RUBY_DOWNGRADER)
+                .add(ModBlocks.SMOOTH_QUARTZ_RUBY_UPGRADER)
+                .add(ModBlocks.MEEPER)
+                .add(ModBlocks.PACKED_IRON_BLOCK)
+                .add(ModBlocks.PEDESTAL)
+                .add(ModBlocks.RGB_BLOCK);
 
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).addTag(ModTags.Blocks.CS_BLOCKS);

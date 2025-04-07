@@ -10,7 +10,7 @@ dfe4cb085db43444b243a2d88ffb6785db5f2f8e data/minecraft/tags/block/doors.json
 996db8ce4e7bfca08fc80afa03dc2c11f86dde74 data/minecraft/tags/block/leaves.json
 1e194cb9bf0d20f8d092b4157949ffa55316ef21 data/minecraft/tags/block/logs_that_burn.json
 8f392f0c6c0c796d9a0f05c78b9dcfda8609ee05 data/minecraft/tags/block/mineable/axe.json
-75e0663aab5c52d9211741260a2db160e63b44be data/minecraft/tags/block/mineable/pickaxe.json
+f0c937c22a5e72c06863cca2b270b21a6edc1e64 data/minecraft/tags/block/mineable/pickaxe.json
 14ea280dc5c5a0e291be14428ec851392ab89c96 data/minecraft/tags/block/needs_diamond_tool.json
 85750833118334559ef7af23ca7ec488ca46fe8d data/minecraft/tags/block/pressure_plates.json
 dfdec050b81119aac7d4dd385cedc0941bbad89c data/minecraft/tags/block/saplings.json

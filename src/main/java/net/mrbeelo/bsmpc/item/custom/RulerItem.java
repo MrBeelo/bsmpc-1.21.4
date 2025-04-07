@@ -34,7 +34,7 @@ public class RulerItem extends Item {
             for(Entity entity1 : nearbyEntities)
             {
                 entity1.kill(serverWorld);
-                world.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.BZZZ, player.getSoundCategory(), 4.0f, 1.0f);
+                world.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.BZZZ, player.getSoundCategory(), 1.0f, 1.0f);
             }
         }
     }

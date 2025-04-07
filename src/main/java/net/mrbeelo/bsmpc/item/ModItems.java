@@ -35,7 +35,8 @@ public class ModItems {
         return RegistryKey.of(RegistryKeys.ITEM, BsmpC.id(name));
     }
 
-    public static final Item RUBY = register("ruby", new Item(new Item.Settings().registryKey(regKeyItem("ruby")).maxCount(86)));
+    //public static final Item RUBY = register("ruby", new Item(new Item.Settings().registryKey(regKeyItem("ruby")).maxCount(86)));
+    public static final Item RUBY = register("ruby", Item::new, new Item.Settings());
     public static final Item RUBY_INGOT = register("ruby_ingot", new Item(new Item.Settings().registryKey(regKeyItem("ruby_ingot"))));
     public static final Item RUBY_CLUSTER = register("ruby_cluster", new Item(new Item.Settings().registryKey(regKeyItem("ruby_cluster"))));
     public static final Item RUBY_SHARD = register("ruby_shard", new Item(new Item.Settings().registryKey(regKeyItem("ruby_shard"))));
@@ -117,6 +118,10 @@ public class ModItems {
 
     public static final BlockItem CS_BERRIES = register("cs_berries", new BlockItem(ModBlocks.CS_BERRY_BUSH, new Item.Settings().food(ModFoodItems.CS_BERRY_COMPONENT, ModFoodItems.CS_BERRY_CONSUMABLE_COMPONENT).registryKey(regKeyItem("cs_berries"))));
 
+    public static final Item RUBBER_DUCKY = register("rubber_ducky", RubberDuckyItem::new, new Item.Settings());
+
+    //public static final
+
     //public static final SignItem CS_SIGN = register("cs_sign", new SignItem(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_sign")).maxCount(16)));
     //public static final HangingSignItem HANGING_CS_SIGN = register("cs_hanging_sign", new HangingSignItem(ModBlocks.HANGING_CS_SIGN, ModBlocks.WALL_HANGING_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_hanging_sign")).maxCount(16)));
 
@@ -127,6 +132,13 @@ public class ModItems {
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registries.ITEM, BsmpC.id(name), item);
+    }
+
+    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, BsmpC.id(name));
+        Item item = itemFactory.apply(settings.registryKey(itemKey));
+        Registry.register(Registries.ITEM, itemKey, item);
+        return item;
     }
 
     public static void registerModItems() {

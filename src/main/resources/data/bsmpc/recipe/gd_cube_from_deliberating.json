@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:pointed_dripstone",
+  "result": {
+    "id": "bsmpc:gd_cube",
+    "count": 1
+  }
+}

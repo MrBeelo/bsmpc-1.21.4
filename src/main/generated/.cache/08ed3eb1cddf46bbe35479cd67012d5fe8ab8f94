@@ -101,6 +101,7 @@ d14ae984e6d5c5cd12b9595feac94a802dadc871 assets/bsmpc/items/pistol.json
 1f5083208c42d3585d4fe67329f37a18e482508f assets/bsmpc/items/raw_beef_wellington.json
 7cd9620df743749d2269c585b503fed25926b2ac assets/bsmpc/items/rgb_block.json
 db2370966d7b92c8a70eeda85c60dd0016b3d6a0 assets/bsmpc/items/rose.json
+99a7a6a925b253b7dc9becbf5b6bd76ba795e128 assets/bsmpc/items/rubber_ducky.json
 292bf4a0ee2171bcd684f054eed649d11310761e assets/bsmpc/items/ruby.json
 00ede911e85839097815f5212b2301c04150757a assets/bsmpc/items/ruby_axe.json
 731a11b62834ad3ba00cca496a0f774755b6b290 assets/bsmpc/items/ruby_block.json
@@ -322,6 +323,7 @@ a6e1e48c32149b4df5e3582db0dae67724e98938 assets/bsmpc/models/item/pistol.json
 b713f3d0471c0bc4dd56dafdb32e3ed7f3cc1962 assets/bsmpc/models/item/poke_ball.json
 14830e2f7af75d101b21ac7ad0af0ad66f3e8b6d assets/bsmpc/models/item/random_artifact.json
 46462c18ada3fcd06f8e987fc379e52ffd7e2361 assets/bsmpc/models/item/raw_beef_wellington.json
+6ea0a30d6c2d8e161c0ef48b306c457c10cba62e assets/bsmpc/models/item/rubber_ducky.json
 792f2cc3dc39bb9511b80e992a72ea4d0e7f8a0d assets/bsmpc/models/item/ruby.json
 6057ed2115edb462ded1743e422587e62df54690 assets/bsmpc/models/item/ruby_axe.json
 273477644f48d0136c2771bded67dd44bc12b8ae assets/bsmpc/models/item/ruby_boots.json

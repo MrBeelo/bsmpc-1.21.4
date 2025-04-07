@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:beef",
+  "result": {
+    "id": "bsmpc:raw_beef_wellington",
+    "count": 1
+  }
+}

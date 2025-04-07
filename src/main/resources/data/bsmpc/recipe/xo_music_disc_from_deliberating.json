@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:music_disc_relic",
+  "result": {
+    "id": "bsmpc:xo_music_disc",
+    "count": 1
+  }
+}

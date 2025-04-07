@@ -1,9 +1,9 @@
 {
   "type": "bsmpc:deliberating",
   "category": "misc",
-  "ingredient": "bsmpc:key",
+  "ingredient": "minecraft:stick",
   "result": {
-    "id": "bsmpc:key",
-    "count": 2
+    "id": "bsmpc:sticc",
+    "count": 1
   }
 }

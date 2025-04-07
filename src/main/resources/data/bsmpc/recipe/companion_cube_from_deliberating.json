@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:obsidian",
+  "result": {
+    "id": "bsmpc:companion_cube",
+    "count": 1
+  }
+}

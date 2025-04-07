@@ -55,11 +55,11 @@ public class ModBlocks {
     public static final DoorBlock RUBY_DOOR = registerWithItem("ruby_door", new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().requiresTool().nonOpaque().registryKey(regKeyBlock("ruby_door"))), new Item.Settings().registryKey(ModItems.regKeyItem("ruby_door")).useBlockPrefixedTranslationKey());
     public static final TrapdoorBlock RUBY_TRAPDOOR = registerWithItem("ruby_trapdoor", new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().requiresTool().nonOpaque().registryKey(regKeyBlock("ruby_trapdoor"))), new Item.Settings().registryKey(ModItems.regKeyItem("ruby_trapdoor")).useBlockPrefixedTranslationKey());
 
-    public static final KokainaCropBlock KOKAINA_CROP = register("kokaina_crop", new KokainaCropBlock(AbstractBlock.Settings.create().nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).registryKey(regKeyBlock("kokaina_crop"))));
+    public static final KokainaCropBlock KOKAINA_CROP = registerWithoutItem("kokaina_crop", new KokainaCropBlock(AbstractBlock.Settings.create().nonOpaque().noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP).registryKey(regKeyBlock("kokaina_crop"))));
     public static final Block PACKED_IRON_BLOCK = registerWithItem("packed_iron_block", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("packed_iron_block"))), new Item.Settings().registryKey(ModItems.regKeyItem("packed_iron_block")).useBlockPrefixedTranslationKey());
     public static final RGBBlock RGB_BLOCK = registerWithItem("rgb_block", new RGBBlock(AbstractBlock.Settings.copy(Blocks.STONE).registryKey(regKeyBlock("rgb_block"))), new Item.Settings().registryKey(ModItems.regKeyItem("rgb_block")).useBlockPrefixedTranslationKey());
     public static final FlowerBlock ROSE = registerWithItem("rose", new FlowerBlock(ModEffects.HIGH, 20, AbstractBlock.Settings.copy(Blocks.POPPY).registryKey(regKeyBlock("rose")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("rose")).useBlockPrefixedTranslationKey());
-    public static final FlowerPotBlock POTTED_ROSE = register("potted_rose", new FlowerPotBlock(ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY).registryKey(regKeyBlock("potted_rose")).nonOpaque()));
+    public static final FlowerPotBlock POTTED_ROSE = registerWithoutItem("potted_rose", new FlowerPotBlock(ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY).registryKey(regKeyBlock("potted_rose")).nonOpaque()));
     public static final PedestalBlock PEDESTAL = registerWithItem("pedestal", new PedestalBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK).registryKey(regKeyBlock("pedestal"))), new Item.Settings().registryKey(ModItems.regKeyItem("pedestal")).useBlockPrefixedTranslationKey());
 
     public static final PillarBlock CS_LOG = registerWithItem("cs_log", new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG).registryKey(regKeyBlock("cs_log"))), new Item.Settings().registryKey(ModItems.regKeyItem("cs_log")).useBlockPrefixedTranslationKey());
@@ -93,11 +93,11 @@ public class ModBlocks {
     public static final Block COMPANION_CUBE = registerWithItem("companion_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("companion_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("companion_cube")).useBlockPrefixedTranslationKey().maxCount(1));
     public static final Block GD_CUBE = registerWithItem("gd_cube", new Block(AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).registryKey(regKeyBlock("gd_cube")).nonOpaque()), new Item.Settings().registryKey(ModItems.regKeyItem("gd_cube")).useBlockPrefixedTranslationKey().maxCount(1));
 
-    public static final CSBerryBushBlock CS_BERRY_BUSH = register("cs_berry_bush", new CSBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).registryKey(regKeyBlock("cs_berry_bush"))));
+    public static final CSBerryBushBlock CS_BERRY_BUSH = registerWithoutItem("cs_berry_bush", new CSBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).registryKey(regKeyBlock("cs_berry_bush"))));
 
-    public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
-    public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
-    public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");
+    //public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
+    //public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
+    //public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");
 
     //public static final Block STANDING_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("standing_cs_sign"), new TerraformSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
     //public static final Block WALL_CS_SIGN = Registry.register(Registries.BLOCK, BsmpC.id("wall_cs_sign"), new TerraformWallSignBlock(CS_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN).registryKey(regKeyBlock("standing_cs_sign"))));
@@ -110,12 +110,12 @@ public class ModBlocks {
 
     //METHODS
 
-    public static <T extends Block> T register(String name, T block) {
+    public static <T extends Block> T registerWithoutItem(String name, T block) {
         return Registry.register(Registries.BLOCK, BsmpC.id(name), block);
     }
 
     public static <T extends Block> T registerWithItem(String name, T block, Item.Settings settings) {
-        T registered = register(name, block);
+        T registered = registerWithoutItem(name, block);
         ModItems.register(name, new BlockItem(registered, settings));
         return registered;
     }

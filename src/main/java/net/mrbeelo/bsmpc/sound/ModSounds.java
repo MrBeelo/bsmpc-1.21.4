@@ -35,6 +35,7 @@ public class ModSounds {
     public static final SoundEvent MEEP = register("meep");
     public static final SoundEvent SLAP = register("slap");
     public static final SoundEvent BZZZ = register("bzzz");
+    public static final SoundEvent QUACK = register("quack");
     public static final SoundEvent XO = register("xo");
     public static final RegistryKey<JukeboxSong> XO_KEY = of("xo");
 

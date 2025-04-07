@@ -1,0 +1,9 @@
+{
+  "type": "bsmpc:deliberating",
+  "category": "misc",
+  "ingredient": "minecraft:elytra",
+  "result": {
+    "id": "bsmpc:jetpack",
+    "count": 1
+  }
+}

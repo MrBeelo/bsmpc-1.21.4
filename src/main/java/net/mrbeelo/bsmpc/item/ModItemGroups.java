@@ -52,6 +52,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBY_WALL);
                         entries.add(ModBlocks.RUBY_DOOR);
                         entries.add(ModBlocks.RUBY_TRAPDOOR);
+
+                        entries.add(ModItems.MITHRILL);
+                        entries.add(ModItems.MITHRILL_SWORD);
+                        entries.add(ModItems.MITHRILL_PICKAXE);
+                        entries.add(ModItems.MITHRILL_SHOVEL);
+                        entries.add(ModItems.MITHRILL_AXE);
+                        entries.add(ModItems.MITHRILL_HOE);
+                        entries.add(ModItems.MITHRILL_HELMET);
+                        entries.add(ModItems.MITHRILL_CHESTPLATE);
+                        entries.add(ModItems.MITHRILL_LEGGINGS);
+                        entries.add(ModItems.MITHRILL_BOOTS);
                     }).build());
 
     public static final ItemGroup BSMPS3_ARTIFACTS = Registry.register(Registries.ITEM_GROUP,
@@ -101,17 +112,6 @@ public class ModItemGroups {
 
                         entries.add(ModItems.JETPACK);
 
-                        entries.add(ModItems.MITHRILL_SWORD);
-                        entries.add(ModItems.MITHRILL_PICKAXE);
-                        entries.add(ModItems.MITHRILL_SHOVEL);
-                        entries.add(ModItems.MITHRILL_AXE);
-                        entries.add(ModItems.MITHRILL_HOE);
-                        entries.add(ModItems.MITHRILL);
-                        entries.add(ModItems.MITHRILL_HELMET);
-                        entries.add(ModItems.MITHRILL_CHESTPLATE);
-                        entries.add(ModItems.MITHRILL_LEGGINGS);
-                        entries.add(ModItems.MITHRILL_BOOTS);
-
                         entries.add(ModItems.THALLEOUS_LONGSWORD);
                         entries.add(ModItems.MITHRILLED_THALLEOUS_LONGSWORD);
 
@@ -145,6 +145,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RAW_BEEF_WELLINGTON);
                         entries.add(ModItems.OVERCOOKED_BEEF_WELLINGTON);
+
+                        entries.add(ModItems.RUBBER_DUCKY);
 
                     }).build());
 

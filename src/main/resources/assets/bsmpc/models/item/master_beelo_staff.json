@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"3": "bsmpc:item/master_beelo_staff"
+		"3": "bsmpc:item/master_beelo_staff",
+		"particle": "bsmpc:item/master_beelo_staff"
 	},
 	"elements": [
 		{
