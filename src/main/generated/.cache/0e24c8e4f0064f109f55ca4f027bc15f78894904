@@ -38,6 +38,7 @@ a12a87b0471a977b17f3bce5000940b02b9f9fb2 data/bsmpc/advancement/recipes/misc/red
 2bc966ec3911caab38c92ead7248d5383ed0c2a5 data/bsmpc/advancement/recipes/misc/ruby_axe.json
 4f19a29111253b82de524d5df1408e1f82e0f55d data/bsmpc/advancement/recipes/misc/ruby_block.json
 a2bfebf41387ee6e03997829c882a2ba1ede0033 data/bsmpc/advancement/recipes/misc/ruby_boots.json
+b8bb4cb7f1e089a1d9791da742380356ff1aeb4a data/bsmpc/advancement/recipes/misc/ruby_bow.json
 6dcbf589fde660b81ba15da66757b571b8daa86c data/bsmpc/advancement/recipes/misc/ruby_button.json
 6be95d0c3f76a2ba07cadc002e9ca3234d8130a6 data/bsmpc/advancement/recipes/misc/ruby_chestplate.json
 19d9ccf17262ddfb35a731a8477e98d4c1ad6212 data/bsmpc/advancement/recipes/misc/ruby_cluster_from_ruby_ingots.json
@@ -107,6 +108,7 @@ cdce59fdc9e32dad1dd12dd234a8c0ae19d6cdb7 data/bsmpc/recipe/red_dye.json
 3d3a5be557655f68d8012f94f9aa405de9cfddb8 data/bsmpc/recipe/ruby_axe.json
 fa70b3d14bac85019d3a6ea641f0d1ebd6b5f7d9 data/bsmpc/recipe/ruby_block.json
 2ccb7cec3e929ee44bcb02b693d560072a1ad053 data/bsmpc/recipe/ruby_boots.json
+092bc54e03c3132b113152d170129c6c9919af36 data/bsmpc/recipe/ruby_bow.json
 934b8566d47e7ffd0344b572badfee0c0cd93b23 data/bsmpc/recipe/ruby_button.json
 602282e35b02c866ee9bf87b1f1f815a7d64df83 data/bsmpc/recipe/ruby_chestplate.json
 bd54fc3fbd2d54dc71c1d379596aae86c95d23fe data/bsmpc/recipe/ruby_cluster_from_ruby_ingots.json

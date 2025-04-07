@@ -54,6 +54,7 @@ public class ModItems {
     public static final ArmorItem RUBY_LEGGINGS = register("ruby_leggings", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.LEGGINGS, new Item.Settings().registryKey(regKeyItem("ruby_leggings")).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(45))));
     public static final ArmorItem RUBY_BOOTS = register("ruby_boots", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.BOOTS, new Item.Settings().registryKey(regKeyItem("ruby_boots")).maxDamage(EquipmentType.BOOTS.getMaxDamage(45))));
     public static final HighKnockbackItem RUBY_KNOCKER = register("ruby_knocker", new HighKnockbackItem(new Item.Settings().registryKey(regKeyItem("ruby_knocker")).maxCount(1), 8f));
+    public static final Item RUBY_BOW = register("ruby_bow", BowItem::new, new Item.Settings().maxCount(1));
 
     public static final Item PISTOL = register("pistol", new PistolItem(new Item.Settings().registryKey(regKeyItem("pistol")).maxCount(1)));
     public static final Item BULLET = register("bullet", new Item(new Item.Settings().registryKey(regKeyItem("bullet"))));

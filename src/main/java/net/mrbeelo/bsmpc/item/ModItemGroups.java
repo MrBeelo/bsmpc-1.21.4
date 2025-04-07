@@ -30,6 +30,7 @@ public class ModItemGroups {
                         entries.add(ModItems.RUBY_AXE);
                         entries.add(ModItems.RUBY_HOE);
                         entries.add(ModItems.RUBY_KNOCKER);
+                        entries.add(ModItems.RUBY_BOW);
 
                         entries.add(ModItems.RUBY_HELMET);
                         entries.add(ModItems.RUBY_CHESTPLATE);

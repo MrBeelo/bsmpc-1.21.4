@@ -220,6 +220,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(ModItems.RUBY_INGOT), conditionsFromItem(ModItems.RUBY_INGOT))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "ruby_boots")));
 
+                createShaped(RecipeCategory.MISC, ModItems.RUBY_BOW, 1)
+                        .input('E', ModItems.RUBY_INGOT)
+                        .input('F', Items.STRING)
+                        .pattern(" EF")
+                        .pattern("E F")
+                        .pattern(" EF")
+                        .criterion(hasItem(ModItems.RUBY_INGOT), conditionsFromItem(ModItems.RUBY_INGOT))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "ruby_bow")));
+
                 createShapeless(RecipeCategory.MISC, ModItems.BULLET, 2)
                         .input(Items.IRON_NUGGET)
                         .input(Items.GUNPOWDER)

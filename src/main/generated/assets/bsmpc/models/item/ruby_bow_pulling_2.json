@@ -1,5 +1,5 @@
 {
-  "parent": "bsmpc:item/ruby_bow",
+  "parent": "minecraft:item/bow",
   "textures": {
     "layer0": "bsmpc:item/ruby_bow_pulling_2"
   }

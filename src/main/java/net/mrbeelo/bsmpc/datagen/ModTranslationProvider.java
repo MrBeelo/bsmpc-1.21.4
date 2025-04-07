@@ -125,6 +125,7 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.RUBY_CHESTPLATE, "Ruby Chestplate");
         translationBuilder.add(ModItems.RUBY_LEGGINGS, "Ruby Leggings");
         translationBuilder.add(ModItems.RUBY_BOOTS, "Ruby Boots");
+        translationBuilder.add(ModItems.RUBY_BOW, "Ruby Bow");
         translationBuilder.add(ModBlocks.RUBY_BLOCK, "Ruby Block");
         translationBuilder.add(ModBlocks.RUBY_ORE, "Ruby Ore");
         translationBuilder.add(ModBlocks.DEEPSLATE_RUBY_ORE, "Deepslate Ruby Ore");

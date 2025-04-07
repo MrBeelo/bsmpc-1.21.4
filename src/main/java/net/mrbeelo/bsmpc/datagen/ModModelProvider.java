@@ -113,6 +113,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(ModItems.RUBY_CHESTPLATE, ModEquipmentAssets.RUBY, "chestplate", false);
         itemModelGenerator.registerArmor(ModItems.RUBY_LEGGINGS, ModEquipmentAssets.RUBY, "leggings", false);
         itemModelGenerator.registerArmor(ModItems.RUBY_BOOTS, ModEquipmentAssets.RUBY, "boots", false);
+        itemModelGenerator.registerBow(ModItems.RUBY_BOW);
         itemModelGenerator.register(ModItems.PISTOL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BULLET, Models.GENERATED);
         itemModelGenerator.register(ModItems.DEATH_AXE, Models.HANDHELD);

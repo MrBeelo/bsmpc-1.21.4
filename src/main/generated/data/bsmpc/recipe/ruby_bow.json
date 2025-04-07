@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "bsmpc:ruby_ingot",
+    "F": "minecraft:string"
+  },
+  "pattern": [
+    " EF",
+    "E F",
+    " EF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:ruby_bow"
+  }
+}
