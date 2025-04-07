@@ -14,6 +14,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
+import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.item.ModItems;
 
 import java.util.List;
@@ -597,6 +598,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         300, // Cooking time
                         "raw_beef_wellington_to_overcooked_beef_wellington" // group
                 );
+
+                createShaped(RecipeCategory.MISC, ModFluids.FROOTOP_BUCKET, 1)
+                        .input('E', Items.WATER_BUCKET)
+                        .input('F', Items.RESIN_BRICK)
+                        .pattern("FFF")
+                        .pattern("FEF")
+                        .pattern("FFF")
+                        .criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "frootop_bucket")));
             }
         };
     }

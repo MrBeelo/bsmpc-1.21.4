@@ -26,6 +26,7 @@ be4030bcbd26fedbd22c50a246423dda5d42f5a0 data/bsmpc/advancement/recipes/misc/cs_
 960b4e316d546b2a57c05abd2fe3ded079f51b19 data/bsmpc/advancement/recipes/misc/deliberilium.json
 60deea9a85fbe3c92170416fad732a59b11a64fd data/bsmpc/advancement/recipes/misc/ender_sword.json
 c861a7cad6302f9418ff7937f4a6eaa253d6b4c2 data/bsmpc/advancement/recipes/misc/energy_crystal.json
+5a9d4a49110b8ef136ce06d788f7160eeb18c728 data/bsmpc/advancement/recipes/misc/frootop_bucket.json
 cfef4e9baec8d68cb44180598827836bb7e401b7 data/bsmpc/advancement/recipes/misc/iron_block.json
 bdad15a1da8b359b3705bbab0eb846c332ae1607 data/bsmpc/advancement/recipes/misc/key.json
 b3a487f7adf6d2bf84f79a2812d659a7f15eeb1e data/bsmpc/advancement/recipes/misc/metal_rod.json
@@ -82,6 +83,7 @@ d62944c3858c68fbecd044a42ae878c954341cb5 data/bsmpc/recipe/cs_stairs.json
 107c40422e84e712041d1c92db9159d5d70d5390 data/bsmpc/recipe/deliberilium.json
 b5340355bb8eff72218ee6b98832f54dea2c630b data/bsmpc/recipe/ender_sword.json
 585bd5c85fb10b2eb58db58979369816f203c691 data/bsmpc/recipe/energy_crystal.json
+dd685fa216b972cb27dc47aac60b877c4adaaf2b data/bsmpc/recipe/frootop_bucket.json
 0b0808b168c66f7ba21227fe967cb653ad26f3b1 data/bsmpc/recipe/graf_eiser.json
 c53dcb93187851cbcc3649245cad098a23b014e4 data/bsmpc/recipe/iron_block.json
 fdf9c4727fecbe601ab6b83f00115598176112d2 data/bsmpc/recipe/key.json

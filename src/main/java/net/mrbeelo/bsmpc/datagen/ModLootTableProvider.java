@@ -69,6 +69,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CS_FENCE_GATE);
         addDrop(ModBlocks.CS_DOOR, doorDrops(ModBlocks.CS_DOOR));
         addDrop(ModBlocks.CS_TRAPDOOR);
+        addDrop(ModBlocks.DELIBERILIUM_ORE, oreDrops(ModBlocks.DELIBERILIUM_ORE, ModItems.DELIBERILIUM));
+        addDrop(ModBlocks.DEEPSLATE_DELIBERILIUM_ORE, oreDrops(ModBlocks.DEEPSLATE_DELIBERILIUM_ORE, ModItems.DELIBERILIUM));
 
         addDrop(ModBlocks.SAFE);
         addDrop(ModBlocks.N_PLUSHIE);

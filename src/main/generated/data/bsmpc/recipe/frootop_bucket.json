@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:water_bucket",
+    "F": "minecraft:resin_brick"
+  },
+  "pattern": [
+    "FFF",
+    "FEF",
+    "FFF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:frootop_bucket"
+  }
+}

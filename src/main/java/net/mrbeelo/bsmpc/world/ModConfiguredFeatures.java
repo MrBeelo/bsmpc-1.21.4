@@ -38,6 +38,8 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> CS_BERRY_BUSH_KEY = registerKey("cs_berry_bush");
 
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CS_BIOME_DELIBERILIUM_ORE_KEY = registerKey("cs_biome_deliberilium_ore");
+
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneOreReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateOreReplaceables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -53,6 +55,10 @@ public class ModConfiguredFeatures {
 
         List<OreFeatureConfig.Target> endRubyTargets = List.of(
                 OreFeatureConfig.createTarget(endOreReplaceables, ModBlocks.END_RUBY_ORE.getDefaultState()));
+
+        List<OreFeatureConfig.Target> csBiomeDeliberiliumTargets = List.of(
+                OreFeatureConfig.createTarget(stoneOreReplaceables, ModBlocks.DELIBERILIUM_ORE.getDefaultState()),
+                OreFeatureConfig.createTarget(deepslateOreReplaceables, ModBlocks.DEEPSLATE_DELIBERILIUM_ORE.getDefaultState()));
 
         register(context, OVERWORLD_RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyTargets, 3, 0.2F));
         register(context, NETHER_RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherRubyTargets, 3, 0.2F));
@@ -87,6 +93,8 @@ public class ModConfiguredFeatures {
                         new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.CS_BERRY_BUSH
                                 .getDefaultState().with(CSBerryBushBlock.AGE, 3))),
                         List.of(Blocks.GRASS_BLOCK)));
+
+        register(context, CS_BIOME_DELIBERILIUM_ORE_KEY, Feature.ORE, new OreFeatureConfig(csBiomeDeliberiliumTargets, 3, 0.2F));
 
         //METHODS
 

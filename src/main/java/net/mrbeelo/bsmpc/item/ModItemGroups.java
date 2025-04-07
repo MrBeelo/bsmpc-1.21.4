@@ -135,9 +135,6 @@ public class ModItemGroups {
                         entries.add(ModItems.METAL_ROD);
                         entries.add(ModItems.ENERGY_CRYSTAL);
 
-                        entries.add(ModItems.DELIBERILIUM);
-                        entries.add(ModBlocks.DELIBERATOR);
-
                         entries.add(ModItems.RULER);
 
                         entries.add(ModBlocks.COMPANION_CUBE);
@@ -170,6 +167,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CS_DOOR);
                         entries.add(ModBlocks.CS_TRAPDOOR);
                         entries.add(ModItems.CS_BERRIES);
+                        entries.add(ModItems.DELIBERILIUM);
+                        entries.add(ModBlocks.DELIBERATOR);
+                        entries.add(ModBlocks.DELIBERILIUM_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_DELIBERILIUM_ORE);
                         //entries.add(ModItems.CS_SIGN);
                         //entries.add(ModItems.HANGING_CS_SIGN);
                         //entries.add(ModItems.CS_BOAT);

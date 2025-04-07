@@ -5,10 +5,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.FeatureConfig;
-import net.minecraft.world.gen.feature.PlacedFeatures;
-import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
+import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.*;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
@@ -30,6 +27,8 @@ public class ModPlacedFeatures {
     public static final RegistryKey<net.minecraft.world.gen.feature.PlacedFeature> RUBY_GEODE_PLACED_KEY = registerKey("ruby_geode_placed");
 
     public static final RegistryKey<net.minecraft.world.gen.feature.PlacedFeature> CS_BERRY_BUSH_PLACED_KEY = registerKey("cs_berry_bush_placed");
+
+    public static final RegistryKey<net.minecraft.world.gen.feature.PlacedFeature> CS_BIOME_DELIBERILIUM_ORE_PLACED_KEY = registerKey("cs_biome_deliberilium_ore_placed");
 
     public static void bootstrap(Registerable<net.minecraft.world.gen.feature.PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -58,6 +57,9 @@ public class ModPlacedFeatures {
 
         register(context, CS_BERRY_BUSH_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CS_BERRY_BUSH_KEY),
                 RarityFilterPlacementModifier.of(32), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+
+        register(context, CS_BIOME_DELIBERILIUM_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CS_BIOME_DELIBERILIUM_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(15, HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(64))));
     }
 
     //METHODS

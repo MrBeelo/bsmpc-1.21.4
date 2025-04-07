@@ -1,9 +1,14 @@
 package net.mrbeelo.bsmpc.world.gen;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.gen.GenerationStep;
+import net.mrbeelo.bsmpc.world.ModBiomeSelectors;
 import net.mrbeelo.bsmpc.world.ModPlacedFeatures;
+
+import java.util.function.Predicate;
 
 public class ModOreGeneration {
     public static void generateOres() {
@@ -23,6 +28,12 @@ public class ModOreGeneration {
                 BiomeSelectors.foundInTheEnd(),
                 GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.END_RUBY_ORE_PLACED_KEY
+        );
+
+        BiomeModifications.addFeature(
+                ModBiomeSelectors.foundInCSBiome(),
+                GenerationStep.Feature.UNDERGROUND_ORES,
+                ModPlacedFeatures.CS_BIOME_DELIBERILIUM_ORE_PLACED_KEY
         );
     }
 }

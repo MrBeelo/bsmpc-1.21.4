@@ -1,5 +1,6 @@
 // 1.21.4	-999999999-01-01T00:00:00	bsmpc/Tags for minecraft:block
 f2ab2ee827d305d94bfe91492a2da4216ff5d790 data/bsmpc/tags/block/cs_blocks.json
+28b34efb322651f8f141deeaa4cd8f9e15a57516 data/bsmpc/tags/block/deliberilium_ores.json
 534fc95a403ae4ec6a023a2ce294482d2ac81f5d data/bsmpc/tags/block/ruby_blocks.json
 eec415d85f87a7b180b63562c5d8e822d70e5e6d data/bsmpc/tags/block/ruby_ores.json
 05fdd688e2c3b54be6d0762b3e12123cc0981fa0 data/minecraft/tags/block/beacon_base_blocks.json
@@ -10,8 +11,8 @@ dfe4cb085db43444b243a2d88ffb6785db5f2f8e data/minecraft/tags/block/doors.json
 996db8ce4e7bfca08fc80afa03dc2c11f86dde74 data/minecraft/tags/block/leaves.json
 1e194cb9bf0d20f8d092b4157949ffa55316ef21 data/minecraft/tags/block/logs_that_burn.json
 8f392f0c6c0c796d9a0f05c78b9dcfda8609ee05 data/minecraft/tags/block/mineable/axe.json
-f0c937c22a5e72c06863cca2b270b21a6edc1e64 data/minecraft/tags/block/mineable/pickaxe.json
-14ea280dc5c5a0e291be14428ec851392ab89c96 data/minecraft/tags/block/needs_diamond_tool.json
+9a59d94405b6d05428ef75e8167bcae2d6718c9c data/minecraft/tags/block/mineable/pickaxe.json
+ffb69c6d5b4129b475eb0469bcc3111e89e8c62c data/minecraft/tags/block/needs_diamond_tool.json
 85750833118334559ef7af23ca7ec488ca46fe8d data/minecraft/tags/block/pressure_plates.json
 dfdec050b81119aac7d4dd385cedc0941bbad89c data/minecraft/tags/block/saplings.json
 30978cbe4b3751150467d636ef37994883fc20f3 data/minecraft/tags/block/slabs.json

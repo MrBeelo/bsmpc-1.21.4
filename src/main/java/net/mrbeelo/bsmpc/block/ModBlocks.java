@@ -23,6 +23,8 @@ import net.mrbeelo.bsmpc.item.ModItems;
 import net.mrbeelo.bsmpc.sound.ModSounds;
 import net.mrbeelo.bsmpc.world.tree.ModSaplingGenerators;
 
+import java.util.function.Function;
+
 public class ModBlocks {
 
     //REGISTERING
@@ -95,6 +97,9 @@ public class ModBlocks {
 
     public static final CSBerryBushBlock CS_BERRY_BUSH = registerWithoutItem("cs_berry_bush", new CSBerryBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH).registryKey(regKeyBlock("cs_berry_bush"))));
 
+    public static final Block DELIBERILIUM_ORE = register("deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.RUBY_ORE), true);
+    public static final Block DEEPSLATE_DELIBERILIUM_ORE = register("deepslate_deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.DEEPSLATE_RUBY_ORE), true);
+
     //public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
     //public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
     //public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");
@@ -109,6 +114,17 @@ public class ModBlocks {
             //.group("wooden").unlockCriterionName("has_planks").build();
 
     //METHODS
+
+    private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
+        RegistryKey<Block> blockKey = RegistryKey.of(RegistryKeys.BLOCK, BsmpC.id(name));
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
+        if (shouldRegisterItem) {
+            RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, BsmpC.id(name));;
+            BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey).useBlockPrefixedTranslationKey());
+            Registry.register(Registries.ITEM, itemKey, blockItem);
+        }
+        return Registry.register(Registries.BLOCK, blockKey, block);
+    }
 
     public static <T extends Block> T registerWithoutItem(String name, T block) {
         return Registry.register(Registries.BLOCK, BsmpC.id(name), block);

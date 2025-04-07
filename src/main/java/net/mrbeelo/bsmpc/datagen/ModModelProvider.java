@@ -71,6 +71,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoor(ModBlocks.CS_DOOR);
         blockStateModelGenerator.registerTrapdoor(ModBlocks.CS_TRAPDOOR);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DELIBERILIUM_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_DELIBERILIUM_ORE);
+
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.N_PLUSHIE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.SAFE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MEEPER);
