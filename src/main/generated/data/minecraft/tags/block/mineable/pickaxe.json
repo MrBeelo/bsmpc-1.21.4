@@ -12,6 +12,7 @@
     "bsmpc:meeper",
     "bsmpc:packed_iron_block",
     "bsmpc:pedestal",
-    "bsmpc:rgb_block"
+    "bsmpc:rgb_block",
+    "bsmpc:end_relay"
   ]
 }

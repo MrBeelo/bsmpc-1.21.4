@@ -146,6 +146,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RUBBER_DUCKY);
 
+                        entries.add(ModBlocks.END_RELAY);
+
                     }).build());
 
     public static final ItemGroup CS_GROUP = Registry.register(Registries.ITEM_GROUP,

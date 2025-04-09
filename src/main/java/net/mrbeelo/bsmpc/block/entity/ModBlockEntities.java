@@ -6,10 +6,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
-import net.mrbeelo.bsmpc.block.entity.custom.DeliberatorBlockEntity;
-import net.mrbeelo.bsmpc.block.entity.custom.MeeperBlockEntity;
-import net.mrbeelo.bsmpc.block.entity.custom.PedestalBlockEntity;
-import net.mrbeelo.bsmpc.block.entity.custom.SafeBlockEntity;
+import net.mrbeelo.bsmpc.block.entity.custom.*;
 
 public class ModBlockEntities {
     public static final BlockEntityType<PedestalBlockEntity> PEDESTAL_BE =
@@ -27,6 +24,10 @@ public class ModBlockEntities {
     public static final BlockEntityType<DeliberatorBlockEntity> DELIBERATOR_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, BsmpC.id("deliberator_be"),
                     FabricBlockEntityTypeBuilder.create(DeliberatorBlockEntity::new, ModBlocks.DELIBERATOR).build());
+
+    public static final BlockEntityType<EndRelayBlockEntity> END_RELAY_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, BsmpC.id("end_relay_be"),
+                    FabricBlockEntityTypeBuilder.create(EndRelayBlockEntity::new, ModBlocks.END_RELAY).build());
 
 
     public static void registerModBlockEntities() {

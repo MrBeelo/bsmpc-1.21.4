@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "minecraft:obsidian",
+    "F": "minecraft:popped_chorus_fruit",
+    "G": "minecraft:ender_eye"
+  },
+  "pattern": [
+    "EFE",
+    "FGF",
+    "EFE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bsmpc:end_relay"
+  }
+}

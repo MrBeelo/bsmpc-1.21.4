@@ -11,7 +11,7 @@ dfe4cb085db43444b243a2d88ffb6785db5f2f8e data/minecraft/tags/block/doors.json
 996db8ce4e7bfca08fc80afa03dc2c11f86dde74 data/minecraft/tags/block/leaves.json
 1e194cb9bf0d20f8d092b4157949ffa55316ef21 data/minecraft/tags/block/logs_that_burn.json
 8f392f0c6c0c796d9a0f05c78b9dcfda8609ee05 data/minecraft/tags/block/mineable/axe.json
-9a59d94405b6d05428ef75e8167bcae2d6718c9c data/minecraft/tags/block/mineable/pickaxe.json
+6f1b37cc91232a93577691af421807fc0f3ca0dd data/minecraft/tags/block/mineable/pickaxe.json
 ffb69c6d5b4129b475eb0469bcc3111e89e8c62c data/minecraft/tags/block/needs_diamond_tool.json
 85750833118334559ef7af23ca7ec488ca46fe8d data/minecraft/tags/block/pressure_plates.json
 dfdec050b81119aac7d4dd385cedc0941bbad89c data/minecraft/tags/block/saplings.json

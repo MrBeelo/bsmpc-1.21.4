@@ -81,6 +81,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.COMPANION_CUBE);
         addDrop(ModBlocks.GD_CUBE);
 
+        addDrop(ModBlocks.END_RELAY);
+
         //addDrop(ModBlocks.STANDING_CS_SIGN, ModItems.CS_SIGN);
         //addDrop(ModBlocks.WALL_CS_SIGN, ModItems.CS_SIGN);
         //addDrop(ModBlocks.HANGING_CS_SIGN, ModItems.HANGING_CS_SIGN);

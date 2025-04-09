@@ -34,6 +34,7 @@ import net.mrbeelo.bsmpc.potion.ModPotions;
 import net.mrbeelo.bsmpc.recipe.ModRecipes;
 import net.mrbeelo.bsmpc.screen.ModScreenHandlers;
 import net.mrbeelo.bsmpc.sound.ModSounds;
+import net.mrbeelo.bsmpc.util.ModProperties;
 import net.mrbeelo.bsmpc.villager.ModCustomTrades;
 import net.mrbeelo.bsmpc.villager.ModVillagers;
 import net.mrbeelo.bsmpc.world.ModWorldGenerator;
@@ -77,6 +78,7 @@ public class BsmpC implements ModInitializer {
 		ModToolMaterials.registerModToolMaterials();
 		ModEquipmentAssets.registerModEquipmentAssets();
 		ModFuelItems.registerModFuelItems();
+		ModProperties.registerModProperties();
 
 		ServerTickEvents.END_WORLD_TICK.register(world -> {
 			if (world instanceof ServerWorld) {

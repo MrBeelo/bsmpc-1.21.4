@@ -100,6 +100,8 @@ public class ModBlocks {
     public static final Block DELIBERILIUM_ORE = register("deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.RUBY_ORE), true);
     public static final Block DEEPSLATE_DELIBERILIUM_ORE = register("deepslate_deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.DEEPSLATE_RUBY_ORE), true);
 
+    public static final Block END_RELAY = register("end_relay", EndRelayBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK), true);
+
     //public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
     //public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
     //public static final Identifier CS_HANGING_GUI_SIGN_TEXTURE = BsmpC.id("textures/gui/hanging_signs/cs");

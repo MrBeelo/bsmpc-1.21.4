@@ -616,6 +616,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("FFF")
                         .criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "frootop_bucket")));
+
+                createShaped(RecipeCategory.MISC, ModBlocks.END_RELAY, 1)
+                        .input('E', Items.OBSIDIAN)
+                        .input('F', Items.POPPED_CHORUS_FRUIT)
+                        .input('G', Items.ENDER_EYE)
+                        .pattern("EFE")
+                        .pattern("FGF")
+                        .pattern("EFE")
+                        .criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET))
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "end_relay")));
             }
         };
     }

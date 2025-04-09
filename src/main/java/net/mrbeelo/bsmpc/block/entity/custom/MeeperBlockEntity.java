@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.block.entity.ModBlockEntities;
 import net.mrbeelo.bsmpc.sound.ModSounds;
 
-public class MeeperBlockEntity extends BlockEntity{
+public class MeeperBlockEntity extends BlockEntity {
     private int tickCounter = 0; // Counter to track time
 
     public MeeperBlockEntity(BlockPos pos, BlockState state) {

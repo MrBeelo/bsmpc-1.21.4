@@ -32,7 +32,7 @@ import net.mrbeelo.bsmpc.item.custom.GlobalKeyItem;
 import net.mrbeelo.bsmpc.item.custom.KeyItem;
 import org.jetbrains.annotations.Nullable;
 
-public class DeliberatorBlock extends BlockWithEntity{
+public class DeliberatorBlock extends BlockWithEntity {
     public static final MapCodec<DeliberatorBlock> CODEC = createCodec(DeliberatorBlock::new);
 
     public static final Property<Direction> FACING = Properties.HORIZONTAL_FACING;

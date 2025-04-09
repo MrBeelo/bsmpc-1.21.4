@@ -20,6 +20,7 @@ import net.mrbeelo.bsmpc.block.custom.RGBBlock;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.item.ModEquipmentAssets;
 import net.mrbeelo.bsmpc.item.ModItems;
+import net.mrbeelo.bsmpc.util.ModProperties;
 
 import java.util.Optional;
 
@@ -78,6 +79,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.SAFE);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.MEEPER);
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.DELIBERATOR);
+
+        registerEndRelay(blockStateModelGenerator);
 
         blockStateModelGenerator.registerTintedBlockAndItem(ModBlocks.CS_LEAVES, TexturedModel.LEAVES, -12012264);
 
@@ -160,5 +163,27 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RUBBER_DUCKY, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
+    }
+
+    private void registerEndRelay(BlockStateModelGenerator blockStateModelGenerator) {
+        Identifier identifier = TextureMap.getSubId(ModBlocks.END_RELAY, "_bottom");
+        Identifier[] identifiers = new Identifier[2];
+
+        for (int i = 0; i < 2; i++) {
+            TextureMap textureMap = new TextureMap()
+                    .put(TextureKey.BOTTOM, identifier)
+                    .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.END_RELAY, "_top_" + i))
+                    .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.END_RELAY, "_side_" + i));
+            identifiers[i] = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.END_RELAY, "_" + i, textureMap, blockStateModelGenerator.modelCollector);
+        }
+
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        VariantsBlockStateSupplier.create(ModBlocks.END_RELAY)
+                                .coordinate(
+                                        BlockStateVariantMap.create(ModProperties.RELAY_CHARGES).register(relay_charges -> BlockStateVariant.create().put(VariantSettings.MODEL, identifiers[relay_charges]))
+                                )
+                );
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.END_RELAY, identifiers[0]);
     }
 }

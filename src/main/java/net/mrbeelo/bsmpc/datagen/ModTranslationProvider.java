@@ -227,6 +227,7 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.RAW_BEEF_WELLINGTON, "Raw Beef Wellington");
         translationBuilder.add(ModItems.OVERCOOKED_BEEF_WELLINGTON, "Overcooked Beef Wellington");
         translationBuilder.add(ModItems.RUBBER_DUCKY, "Rubber Ducky");
+        translationBuilder.add(ModBlocks.END_RELAY, "End Relay");
         translationBuilder.addEnchantment(ModEnchantments.BANG_EFFECT_KEY, "Bang");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_BREAK, "Ruby Block Broken");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_FALL, "Ruby Block Fallen");
