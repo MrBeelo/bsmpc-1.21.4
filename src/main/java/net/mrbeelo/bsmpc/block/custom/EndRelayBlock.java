@@ -87,11 +87,15 @@ public class EndRelayBlock extends BlockWithEntity {
             if (blockEntity instanceof EndRelayBlockEntity endRelayBlockEntity) {
                 if (tracker != null && tracker.tracked() && tracker.target().isPresent()) {
                     BlockPos lodestonePos = tracker.target().get().pos();
-                    stack.decrementUnlessCreative(1, player);
+                    stack.decrement(1);
                     if(endRelayBlockEntity.getConnectedPos() != null)
                     {
                         ItemStack newCompass = new ItemStack(Items.COMPASS, 1);
-                        //TODO: MAKE COMPASS DROP WITH LODESTONE_TRACKER COMPONENT
+
+                        if(world.getBlockState(endRelayBlockEntity.getConnectedPos()).getBlock() == Blocks.LODESTONE) {
+                            newCompass.set(DataComponentTypes.LODESTONE_TRACKER, new LodestoneTrackerComponent(Optional.of(new GlobalPos(World.END, endRelayBlockEntity.getConnectedPos())), true));
+                        }
+
                         world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY() + 1, pos.getZ(), newCompass));
                     }
 
@@ -128,10 +132,14 @@ public class EndRelayBlock extends BlockWithEntity {
                 if (blockEntity instanceof EndRelayBlockEntity endRelayBlockEntity && endRelayBlockEntity.getConnectedPos() != null) {
                     BlockPos connectedPos = endRelayBlockEntity.getConnectedPos();
                     ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
-                    serverPlayerEntity.sendMessage(Text.of("TPed to lodestone at " + connectedPos.getX()  + ", " + connectedPos.getY() + ", " + connectedPos.getZ()), true);
-                    serverPlayerEntity.requestTeleport(connectedPos.getX(), connectedPos.getY() + 1, connectedPos.getZ());
-                    world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                    world.setBlockState(pos, state.with(RELAY_CHARGES, 0), Block.NOTIFY_ALL);
+                    if(world.getBlockState(connectedPos).getBlock() == Blocks.LODESTONE) {
+                        serverPlayerEntity.sendMessage(Text.of("TPed to lodestone at " + connectedPos.getX() + ", " + connectedPos.getY() + ", " + connectedPos.getZ()), true);
+                        serverPlayerEntity.requestTeleport(connectedPos.getX(), connectedPos.getY() + 1, connectedPos.getZ());
+                        world.playSound(null, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, SoundEvents.BLOCK_RESPAWN_ANCHOR_SET_SPAWN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        world.setBlockState(pos, state.with(RELAY_CHARGES, 0), Block.NOTIFY_ALL);
+                    } else {
+                        serverPlayerEntity.sendMessage(Text.of("Lodestone at " + connectedPos.getX() + ", " + connectedPos.getY() + ", " + connectedPos.getZ() + " is broken!"), true);
+                    }
                     return ActionResult.SUCCESS_SERVER;
                 }
             }
