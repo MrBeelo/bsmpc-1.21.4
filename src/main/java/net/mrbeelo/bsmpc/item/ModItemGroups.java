@@ -8,7 +8,6 @@ import net.minecraft.text.Text;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
-import java.util.Optional;
 
 
 public class ModItemGroups {
@@ -146,7 +145,9 @@ public class ModItemGroups {
 
                         entries.add(ModItems.RUBBER_DUCKY);
 
-                        entries.add(ModBlocks.END_RELAY);
+                        entries.add(ModBlocks.ENDER_RELAY);
+
+                        entries.add(ModItems.PROTECTOR_SPAWN_EGG);
 
                     }).build());
 

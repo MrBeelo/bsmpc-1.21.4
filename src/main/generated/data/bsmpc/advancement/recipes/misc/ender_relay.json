@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bsmpc:end_relay"
+        "recipe": "bsmpc:ender_relay"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "bsmpc:end_relay"
+      "bsmpc:ender_relay"
     ]
   }
 }

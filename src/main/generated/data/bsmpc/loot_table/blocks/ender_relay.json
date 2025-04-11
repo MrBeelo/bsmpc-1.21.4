@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bsmpc:end_relay"
+          "name": "bsmpc:ender_relay"
         }
       ],
       "rolls": 1.0

@@ -43,6 +43,10 @@ public class ModEntities {
             BsmpC.id("pyro"),
             EntityType.Builder.create(PyroEntity::new, SpawnGroup.CREATURE).dimensions(1.2f, 1.0f).build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(BsmpC.MOD_ID, "pyro"))));
 
+    public static final EntityType<ProtectorBossEntity> PROTECTOR = Registry.register(Registries.ENTITY_TYPE,
+            BsmpC.id("protector"),
+            EntityType.Builder.create(ProtectorBossEntity::new, SpawnGroup.CREATURE).dimensions(2.5f, 4.0f).build(RegistryKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(BsmpC.MOD_ID, "protector"))));
+
     public static void registerModEntities() {
         BsmpC.LOGGER.info("Registering Mod Entities for " + BsmpC.MOD_ID);
     }

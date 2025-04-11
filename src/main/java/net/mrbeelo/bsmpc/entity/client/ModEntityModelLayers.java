@@ -12,4 +12,7 @@ public class ModEntityModelLayers {
 
     public static final EntityModelLayer PYRO =
             new EntityModelLayer(BsmpC.id("pyro"), "main");
+
+    public static final EntityModelLayer PROTECTOR =
+            new EntityModelLayer(BsmpC.id("protector"), "main");
 }

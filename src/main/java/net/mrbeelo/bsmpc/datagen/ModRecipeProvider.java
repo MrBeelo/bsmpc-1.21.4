@@ -240,7 +240,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_planks_from_cs_log")));
 
-                createShapeless(RecipeCategory.MISC, ModBlocks.CS_PLANKS, 2)
+                createShapeless(RecipeCategory.MISC, ModBlocks.CS_PLANKS, 4)
                         .input(ModBlocks.STRIPPED_CS_LOG)
                         .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "cs_planks_from_stripped_cs_log")));
@@ -617,7 +617,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET))
                         .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "frootop_bucket")));
 
-                createShaped(RecipeCategory.MISC, ModBlocks.END_RELAY, 1)
+                createShaped(RecipeCategory.MISC, ModBlocks.ENDER_RELAY, 1)
                         .input('E', Items.OBSIDIAN)
                         .input('F', Items.POPPED_CHORUS_FRUIT)
                         .input('G', Items.ENDER_EYE)
@@ -625,7 +625,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("FGF")
                         .pattern("EFE")
                         .criterion(hasItem(Items.WATER_BUCKET), conditionsFromItem(Items.WATER_BUCKET))
-                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "end_relay")));
+                        .offerTo(exporter, RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(BsmpC.MOD_ID, "ender_relay")));
             }
         };
     }

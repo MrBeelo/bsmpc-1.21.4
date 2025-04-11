@@ -7,7 +7,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.mrbeelo.bsmpc.block.ModBlocks;
 import net.mrbeelo.bsmpc.util.ModTags;
 
-import javax.swing.text.html.BlockView;
 import java.util.concurrent.CompletableFuture;
 
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
@@ -74,7 +73,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PACKED_IRON_BLOCK)
                 .add(ModBlocks.PEDESTAL)
                 .add(ModBlocks.RGB_BLOCK)
-                .add(ModBlocks.END_RELAY);
+                .add(ModBlocks.ENDER_RELAY);
 
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).addTag(ModTags.Blocks.CS_BLOCKS);

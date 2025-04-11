@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "bsmpc:block/end_relay_0"
+    "model": "bsmpc:block/ender_relay_0"
   }
 }

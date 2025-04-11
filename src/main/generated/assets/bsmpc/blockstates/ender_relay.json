@@ -1,10 +1,10 @@
 {
   "variants": {
     "relay_charges=0": {
-      "model": "bsmpc:block/end_relay_0"
+      "model": "bsmpc:block/ender_relay_0"
     },
     "relay_charges=1": {
-      "model": "bsmpc:block/end_relay_1"
+      "model": "bsmpc:block/ender_relay_1"
     }
   }
 }

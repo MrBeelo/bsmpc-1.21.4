@@ -25,9 +25,9 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, BsmpC.id("deliberator_be"),
                     FabricBlockEntityTypeBuilder.create(DeliberatorBlockEntity::new, ModBlocks.DELIBERATOR).build());
 
-    public static final BlockEntityType<EndRelayBlockEntity> END_RELAY_BE =
-            Registry.register(Registries.BLOCK_ENTITY_TYPE, BsmpC.id("end_relay_be"),
-                    FabricBlockEntityTypeBuilder.create(EndRelayBlockEntity::new, ModBlocks.END_RELAY).build());
+    public static final BlockEntityType<EnderRelayBlockEntity> ENDER_RELAY_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, BsmpC.id("ender_relay_be"),
+                    FabricBlockEntityTypeBuilder.create(EnderRelayBlockEntity::new, ModBlocks.ENDER_RELAY).build());
 
 
     public static void registerModBlockEntities() {

@@ -2,7 +2,6 @@ package net.mrbeelo.bsmpc.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
-import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
@@ -15,7 +14,6 @@ import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
 import net.mrbeelo.bsmpc.effect.ModEffects;
 import net.mrbeelo.bsmpc.enchantment.ModEnchantments;
-import net.mrbeelo.bsmpc.entity.ModDamageTypes;
 import net.mrbeelo.bsmpc.entity.ModEntities;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.item.ModItemGroups;
@@ -227,7 +225,8 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.RAW_BEEF_WELLINGTON, "Raw Beef Wellington");
         translationBuilder.add(ModItems.OVERCOOKED_BEEF_WELLINGTON, "Overcooked Beef Wellington");
         translationBuilder.add(ModItems.RUBBER_DUCKY, "Rubber Ducky");
-        translationBuilder.add(ModBlocks.END_RELAY, "End Relay");
+        translationBuilder.add(ModBlocks.ENDER_RELAY, "End Relay");
+        translationBuilder.add(ModItems.PROTECTOR_SPAWN_EGG, "Protector Spawn Egg");
         translationBuilder.addEnchantment(ModEnchantments.BANG_EFFECT_KEY, "Bang");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_BREAK, "Ruby Block Broken");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_FALL, "Ruby Block Fallen");

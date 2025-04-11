@@ -77,6 +77,7 @@ public class ModItems {
     public static final Item SNEK_SPAWN_EGG = register("snek_spawn_egg", new SpawnEggItem(ModEntities.SNEK,  new Item.Settings().registryKey(regKeyItem("snek_spawn_egg"))));
     public static final Item BLOB_SPAWN_EGG = register("blob_spawn_egg", new SpawnEggItem(ModEntities.BLOB,  new Item.Settings().registryKey(regKeyItem("blob_spawn_egg"))));
     public static final Item PYRO_SPAWN_EGG = register("pyro_spawn_egg", new SpawnEggItem(ModEntities.PYRO,  new Item.Settings().registryKey(regKeyItem("pyro_spawn_egg"))));
+    public static final Item PROTECTOR_SPAWN_EGG = register("protector_spawn_egg", new SpawnEggItem(ModEntities.PROTECTOR,  new Item.Settings().registryKey(regKeyItem("protector_spawn_egg"))));
 
     public static final JetpackItem JETPACK = register("jetpack", new JetpackItem(ModArmorMaterials.JETPACK, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("jetpack")).maxDamage(20000)));
 

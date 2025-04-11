@@ -22,7 +22,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -32,19 +31,17 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.CollisionView;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.explosion.Explosion;
 import net.minecraft.world.explosion.ExplosionBehavior;
-import net.mrbeelo.bsmpc.block.entity.custom.EndRelayBlockEntity;
+import net.mrbeelo.bsmpc.block.entity.custom.EnderRelayBlockEntity;
 import net.mrbeelo.bsmpc.util.ModProperties;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class EndRelayBlock extends BlockWithEntity {
-    public static final MapCodec<EndRelayBlock> CODEC = createCodec(EndRelayBlock::new);
+public class EnderRelayBlock extends BlockWithEntity {
+    public static final MapCodec<EnderRelayBlock> CODEC = createCodec(EnderRelayBlock::new);
     public static final int NO_CHARGES = 0;
     public static final int MAX_CHARGES = 1;
     public static final IntProperty RELAY_CHARGES = ModProperties.RELAY_CHARGES;
@@ -66,11 +63,11 @@ public class EndRelayBlock extends BlockWithEntity {
             .build();
 
     @Override
-    public MapCodec<EndRelayBlock> getCodec() {
+    public MapCodec<EnderRelayBlock> getCodec() {
         return CODEC;
     }
 
-    public EndRelayBlock(AbstractBlock.Settings settings) {
+    public EnderRelayBlock(AbstractBlock.Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(RELAY_CHARGES, 0));
     }
@@ -84,7 +81,7 @@ public class EndRelayBlock extends BlockWithEntity {
         } else if(stack.getItem() == Items.COMPASS && stack.contains(DataComponentTypes.LODESTONE_TRACKER)) {
             LodestoneTrackerComponent tracker = stack.get(DataComponentTypes.LODESTONE_TRACKER);
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof EndRelayBlockEntity endRelayBlockEntity) {
+            if (blockEntity instanceof EnderRelayBlockEntity endRelayBlockEntity) {
                 if (tracker != null && tracker.tracked() && tracker.target().isPresent()) {
                     BlockPos lodestonePos = tracker.target().get().pos();
                     stack.decrement(1);
@@ -129,7 +126,7 @@ public class EndRelayBlock extends BlockWithEntity {
             if (!world.isClient) {
                 BlockEntity blockEntity = world.getBlockEntity(pos);
 
-                if (blockEntity instanceof EndRelayBlockEntity endRelayBlockEntity && endRelayBlockEntity.getConnectedPos() != null) {
+                if (blockEntity instanceof EnderRelayBlockEntity endRelayBlockEntity && endRelayBlockEntity.getConnectedPos() != null) {
                     BlockPos connectedPos = endRelayBlockEntity.getConnectedPos();
                     ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity) player;
                     if(world.getBlockState(connectedPos).getBlock() == Blocks.LODESTONE) {
@@ -260,7 +257,7 @@ public class EndRelayBlock extends BlockWithEntity {
 
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new EndRelayBlockEntity(pos, state);
+        return new EnderRelayBlockEntity(pos, state);
     }
 
     @Override

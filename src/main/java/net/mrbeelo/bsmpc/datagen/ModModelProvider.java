@@ -2,27 +2,16 @@ package net.mrbeelo.bsmpc.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
-import net.minecraft.client.render.entity.equipment.EquipmentModel;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.ModBlocks;
-import net.mrbeelo.bsmpc.block.custom.CSBerryBushBlock;
 import net.mrbeelo.bsmpc.block.custom.KokainaCropBlock;
 import net.mrbeelo.bsmpc.block.custom.RGBBlock;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.item.ModEquipmentAssets;
 import net.mrbeelo.bsmpc.item.ModItems;
 import net.mrbeelo.bsmpc.util.ModProperties;
-
-import java.util.Optional;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -161,29 +150,30 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.OVERCOOKED_BEEF_WELLINGTON, Models.GENERATED);
         itemModelGenerator.register(ModItems.CS_BERRIES, Models.GENERATED);
         itemModelGenerator.register(ModItems.RUBBER_DUCKY, Models.GENERATED);
+        itemModelGenerator.registerSpawnEgg(ModItems.PROTECTOR_SPAWN_EGG,  0x6c6e6b, 0x61f533);
         //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
     }
 
     private void registerEndRelay(BlockStateModelGenerator blockStateModelGenerator) {
-        Identifier identifier = TextureMap.getSubId(ModBlocks.END_RELAY, "_bottom");
+        Identifier identifier = TextureMap.getSubId(ModBlocks.ENDER_RELAY, "_bottom");
         Identifier[] identifiers = new Identifier[2];
 
         for (int i = 0; i < 2; i++) {
             TextureMap textureMap = new TextureMap()
                     .put(TextureKey.BOTTOM, identifier)
-                    .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.END_RELAY, "_top_" + i))
-                    .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.END_RELAY, "_side_" + i));
-            identifiers[i] = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.END_RELAY, "_" + i, textureMap, blockStateModelGenerator.modelCollector);
+                    .put(TextureKey.TOP, TextureMap.getSubId(ModBlocks.ENDER_RELAY, "_top_" + i))
+                    .put(TextureKey.SIDE, TextureMap.getSubId(ModBlocks.ENDER_RELAY, "_side_" + i));
+            identifiers[i] = Models.CUBE_BOTTOM_TOP.upload(ModBlocks.ENDER_RELAY, "_" + i, textureMap, blockStateModelGenerator.modelCollector);
         }
 
         blockStateModelGenerator.blockStateCollector
                 .accept(
-                        VariantsBlockStateSupplier.create(ModBlocks.END_RELAY)
+                        VariantsBlockStateSupplier.create(ModBlocks.ENDER_RELAY)
                                 .coordinate(
                                         BlockStateVariantMap.create(ModProperties.RELAY_CHARGES).register(relay_charges -> BlockStateVariant.create().put(VariantSettings.MODEL, identifiers[relay_charges]))
                                 )
                 );
-        blockStateModelGenerator.registerParentedItemModel(ModBlocks.END_RELAY, identifiers[0]);
+        blockStateModelGenerator.registerParentedItemModel(ModBlocks.ENDER_RELAY, identifiers[0]);
     }
 }

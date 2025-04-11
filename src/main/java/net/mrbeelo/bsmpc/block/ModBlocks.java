@@ -5,8 +5,6 @@ package net.mrbeelo.bsmpc.block;
 //import com.terraformersmc.terraform.sign.api.block.TerraformWallHangingSignBlock;
 //import com.terraformersmc.terraform.sign.api.block.TerraformWallSignBlock;
 import net.minecraft.block.*;
-import net.minecraft.data.family.BlockFamilies;
-import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -14,7 +12,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.block.custom.*;
 import net.mrbeelo.bsmpc.components.ModDataComponentTypes;
@@ -100,7 +97,7 @@ public class ModBlocks {
     public static final Block DELIBERILIUM_ORE = register("deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.RUBY_ORE), true);
     public static final Block DEEPSLATE_DELIBERILIUM_ORE = register("deepslate_deliberilium_ore", Block::new, AbstractBlock.Settings.copy(ModBlocks.DEEPSLATE_RUBY_ORE), true);
 
-    public static final Block END_RELAY = register("end_relay", EndRelayBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK), true);
+    public static final Block ENDER_RELAY = register("ender_relay", EnderRelayBlock::new, AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK), true);
 
     //public static final Identifier CS_SIGN_TEXTURE = BsmpC.id("entity/signs/cs");
     //public static final Identifier CS_HANGING_SIGN_TEXTURE = BsmpC.id("entity/signs/hanging/cs");
