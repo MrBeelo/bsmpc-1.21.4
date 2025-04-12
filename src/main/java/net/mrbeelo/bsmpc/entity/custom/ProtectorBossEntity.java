@@ -24,6 +24,7 @@ import net.mrbeelo.bsmpc.entity.client.ai.ProtectorGenericAttackGoal;
 public class ProtectorBossEntity extends HostileEntity {
     public ProtectorBossEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
+        this.setAiDisabled(true);
     }
 
     private final ServerBossBar bossBar = (ServerBossBar)new ServerBossBar(this.getDisplayName(), BossBar.Color.GREEN, BossBar.Style.PROGRESS).setDarkenSky(false);
@@ -52,6 +53,7 @@ public class ProtectorBossEntity extends HostileEntity {
 
     public final AnimationState awakeningAnimationState = new AnimationState();
     private int awakeningAnimationTimeout = 0;
+    private int awakeningTicksLeft = 170;
 
     public final AnimationState staticAnimationState = new AnimationState();
     private int staticAnimationTimeout = 0;
@@ -66,26 +68,26 @@ public class ProtectorBossEntity extends HostileEntity {
 
     private void setupAnimationStates() {
         // Static Animation
-        if (this.dataTracker.get(STATIC)) {
-            if (this.staticAnimationTimeout <= 0) {
-                this.staticAnimationTimeout = 20;
-                this.staticAnimationState.start(this.age);
-            } else {
-                --this.staticAnimationTimeout;
-            }
+        if (isKneeling() && this.staticAnimationTimeout <= 0) {
+            this.staticAnimationTimeout = 20;
+            this.staticAnimationState.start(this.age);
         } else {
+            --this.staticAnimationTimeout;
+        }
+
+        if (!isKneeling()) {
             this.staticAnimationState.stop();
         }
 
         // Awakening Animation
-        if (this.dataTracker.get(AWAKENING)) {
-            if (this.awakeningAnimationTimeout <= 0) {
-                this.awakeningAnimationTimeout = 60;
-                this.awakeningAnimationState.start(this.age);
-            } else {
-                --this.awakeningAnimationTimeout;
-            }
+        if (isAwakening() && this.awakeningAnimationTimeout <= 0) {
+            this.awakeningAnimationTimeout = 170;
+            this.awakeningAnimationState.start(this.age);
         } else {
+            --this.awakeningAnimationTimeout;
+        }
+
+        if (!isAwakening()) {
             this.awakeningAnimationState.stop();
         }
 
@@ -165,6 +167,27 @@ public class ProtectorBossEntity extends HostileEntity {
         if(this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+
+        if (isKneeling() && !isAwakening()) {
+            for (PlayerEntity player : this.getWorld().getPlayers()) {
+                if(player instanceof ServerPlayerEntity serverPlayer) {
+                    if (!serverPlayer.isCreative() && !serverPlayer.isSpectator() && serverPlayer.squaredDistanceTo(this) < 16) { // 10 blocks range
+                        startAwakening();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (isAwakening()) {
+            if (awakeningTicksLeft > 0) {
+                awakeningTicksLeft--;
+            } else {
+                setAwakening(false);
+                this.setAiDisabled(false);
+                this.initGoals();
+            }
+        }
     }
 
     @Override
@@ -205,6 +228,22 @@ public class ProtectorBossEntity extends HostileEntity {
         return this.dataTracker.get(DOING_GENERIC_ATTACK);
     }
 
+    public void setAwakening(boolean awakening) {
+        this.dataTracker.set(AWAKENING, awakening);
+    }
+
+    public boolean isAwakening() {
+        return this.dataTracker.get(AWAKENING);
+    }
+
+    public void setKneeling(boolean kneeling) {
+        this.dataTracker.set(STATIC, kneeling);
+    }
+
+    public boolean isKneeling() {
+        return this.dataTracker.get(STATIC);
+    }
+
     @Override
     public boolean damage(ServerWorld world, DamageSource source, float amount) {
         if (source.getTypeRegistryEntry().isIn(DamageTypeTags.IS_PROJECTILE))
@@ -223,6 +262,15 @@ public class ProtectorBossEntity extends HostileEntity {
         builder.add(DOING_ATTACK_2, false);
         builder.add(DOING_ATTACK_3, false);
         builder.add(AWAKENING, false);
-        builder.add(STATIC, false);
+        builder.add(STATIC, true);
     }
+
+    private void startAwakening() {
+        setKneeling(false);
+        setAwakening(true);
+        this.setAiDisabled(true);
+        awakeningTicksLeft = 170; // Or however long your animation lasts
+    }
+
+
 }
