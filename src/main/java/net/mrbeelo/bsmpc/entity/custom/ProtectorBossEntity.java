@@ -1,7 +1,6 @@
 package net.mrbeelo.bsmpc.entity.custom;
 
 import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -19,7 +18,7 @@ import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
-import net.mrbeelo.bsmpc.entity.client.ai.ProtectorGenericAttackGoal;
+import net.mrbeelo.bsmpc.entity.client.ai.ProtectorAttackGoal;
 
 public class ProtectorBossEntity extends HostileEntity {
     public ProtectorBossEntity(EntityType<? extends HostileEntity> entityType, World world) {
@@ -28,6 +27,7 @@ public class ProtectorBossEntity extends HostileEntity {
     }
 
     private final ServerBossBar bossBar = (ServerBossBar)new ServerBossBar(this.getDisplayName(), BossBar.Color.GREEN, BossBar.Style.PROGRESS).setDarkenSky(false);
+    public int currentAttackIndex = 0;
 
     private static final TrackedData<Boolean> DOING_GENERIC_ATTACK = DataTracker.registerData(ProtectorBossEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> DOING_ATTACK_1 = DataTracker.registerData(ProtectorBossEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
@@ -43,7 +43,7 @@ public class ProtectorBossEntity extends HostileEntity {
     public int genericAttackAnimationTimeout = 0;
 
     public final AnimationState attack1AnimationState = new AnimationState();
-    private int attack1AnimationTimeout = 0;
+    public int attack1AnimationTimeout = 0;
 
     public final AnimationState attack2AnimationState = new AnimationState();
     private int attack2AnimationTimeout = 0;
@@ -60,7 +60,8 @@ public class ProtectorBossEntity extends HostileEntity {
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(1, new ProtectorGenericAttackGoal(this, 1.0, true));
+        this.goalSelector.add(1, new ProtectorAttackGoal(this, 1.0, true));
+        this.goalSelector.add(2, new WanderAroundGoal(this, 1.0));
         this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         this.targetSelector.add(2, new RevengeGoal(this));
         super.initGoals();
@@ -104,7 +105,7 @@ public class ProtectorBossEntity extends HostileEntity {
 
         // Generic Attack Animation
         if (isDoingGenericAttack() && this.genericAttackAnimationTimeout <= 0) {
-            this.genericAttackAnimationTimeout = 30;
+            this.genericAttackAnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(0) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(0);
             this.genericAttackAnimationState.start(this.age);
         } else {
             --this.genericAttackAnimationTimeout;
@@ -115,14 +116,14 @@ public class ProtectorBossEntity extends HostileEntity {
         }
 
         // Attack 1
-        if (this.dataTracker.get(DOING_ATTACK_1)) {
-            if (this.attack1AnimationTimeout <= 0) {
-                this.attack1AnimationTimeout = 40;
-                this.attack1AnimationState.start(this.age);
-            } else {
-                --this.attack1AnimationTimeout;
-            }
+        if (isDoingAttack1() && this.attack1AnimationTimeout <= 0) {
+            this.attack1AnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(0) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(0);
+            this.attack1AnimationState.start(this.age);
         } else {
+            --this.attack1AnimationTimeout;
+        }
+
+        if (!isDoingAttack1()) {
             this.attack1AnimationState.stop();
         }
 
@@ -186,6 +187,11 @@ public class ProtectorBossEntity extends HostileEntity {
                 setAwakening(false);
                 this.setAiDisabled(false);
                 this.initGoals();
+                for (PlayerEntity player : this.getWorld().getPlayers()) {
+                    if(player instanceof ServerPlayerEntity serverPlayer && serverPlayer.squaredDistanceTo(this) < 20 * 20) {
+                        this.onStartedTrackingBy(serverPlayer);
+                    }
+                }
             }
         }
     }
@@ -193,7 +199,9 @@ public class ProtectorBossEntity extends HostileEntity {
     @Override
     public void onStartedTrackingBy(ServerPlayerEntity player) {
         super.onStartedTrackingBy(player);
-        this.bossBar.addPlayer(player);
+        if(!isKneeling() && !isAwakening()) {
+            this.bossBar.addPlayer(player);
+        }
     }
 
     @Override
@@ -244,6 +252,14 @@ public class ProtectorBossEntity extends HostileEntity {
         return this.dataTracker.get(STATIC);
     }
 
+    public void setDoingAttack1(boolean attacking) {
+        this.dataTracker.set(DOING_ATTACK_1, attacking);
+    }
+
+    public boolean isDoingAttack1() {
+        return this.dataTracker.get(DOING_ATTACK_1);
+    }
+
     @Override
     public boolean damage(ServerWorld world, DamageSource source, float amount) {
         if (source.getTypeRegistryEntry().isIn(DamageTypeTags.IS_PROJECTILE))
@@ -272,5 +288,18 @@ public class ProtectorBossEntity extends HostileEntity {
         awakeningTicksLeft = 170; // Or however long your animation lasts
     }
 
+    public void stopAllAnims()
+    {
+        setDoingGenericAttack(false);
+        setDoingAttack1(false);
+        setAwakening(false);
+        setKneeling(false);
 
+        genericAttackAnimationTimeout = 0;
+        attack1AnimationTimeout = 0;
+        attack2AnimationTimeout = 0;
+        attack3AnimationTimeout = 0;
+        awakeningAnimationTimeout = 0;
+        staticAnimationTimeout = 0;
+    }
 }
