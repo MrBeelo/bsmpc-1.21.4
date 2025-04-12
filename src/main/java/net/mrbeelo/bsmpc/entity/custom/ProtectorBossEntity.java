@@ -171,7 +171,7 @@ public class ProtectorBossEntity extends HostileEntity {
         if (isKneeling() && !isAwakening()) {
             for (PlayerEntity player : this.getWorld().getPlayers()) {
                 if(player instanceof ServerPlayerEntity serverPlayer) {
-                    if (!serverPlayer.isCreative() && !serverPlayer.isSpectator() && serverPlayer.squaredDistanceTo(this) < 16) { // 10 blocks range
+                    if (!serverPlayer.isCreative() && !serverPlayer.isSpectator() && serverPlayer.squaredDistanceTo(this) < 6 * 6) { // 10 blocks range
                         startAwakening();
                         break;
                     }

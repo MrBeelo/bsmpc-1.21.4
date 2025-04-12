@@ -227,6 +227,7 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.RUBBER_DUCKY, "Rubber Ducky");
         translationBuilder.add(ModBlocks.ENDER_RELAY, "End Relay");
         translationBuilder.add(ModItems.PROTECTOR_SPAWN_EGG, "Protector Spawn Egg");
+        translationBuilder.add(ModEntities.PROTECTOR, "The Protector");
         translationBuilder.addEnchantment(ModEnchantments.BANG_EFFECT_KEY, "Bang");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_BREAK, "Ruby Block Broken");
         addSoundEvent(translationBuilder, ModSounds.RUBY_BLOCK_FALL, "Ruby Block Fallen");

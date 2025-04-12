@@ -87,5 +87,5 @@ public class ProtectorGenericAttackGoal extends MeleeAttackGoal {
     { return ticksUntilNextAttack <= 0; }
 
     private boolean isEnemyWithinDistance(LivingEntity lEntity)
-    { return entity.distanceTo(lEntity) <= 4f; }
+    { return entity.distanceTo(lEntity) <= 5f; }
 }
