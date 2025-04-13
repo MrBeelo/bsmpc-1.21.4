@@ -5,38 +5,41 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.passive.AbstractHorseEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Arm;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.entity.ModEntities;
 import net.mrbeelo.bsmpc.item.ModItems;
+import net.mrbeelo.bsmpc.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
-public class BlobEntity extends AnimalEntity {
+public class BlobEntity extends AbstractHorseEntity {
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    public BlobEntity(EntityType<? extends AnimalEntity> entityType, World world) {
+    public BlobEntity(EntityType<? extends AbstractHorseEntity> entityType, World world) {
         super(entityType, world);
     }
 
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-
         this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
+        this.goalSelector.add(1, new HorseBondWithPlayerGoal(this, 1.2));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
-
-        this.goalSelector.add(3, new FollowParentGoal(this, 1.25));
-
-        this.goalSelector.add(4, new WanderAroundFarGoal(this, 1.0));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
-        this.goalSelector.add(6, new LookAroundGoal(this));
+        this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
+        this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0));
+        this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
+        this.goalSelector.add(8, new LookAroundGoal(this));
     }
 
     private void setupAnimationStates() {
@@ -65,12 +68,41 @@ public class BlobEntity extends AnimalEntity {
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(ModItems.KOKAINA);
+        return stack.isIn(ModTags.Items.BLOB_FOOD);
     }
 
     @Nullable
     @Override
     public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
         return ModEntities.BLOB.create(world, null);
+    }
+
+    /* RIDEABLE */
+    @Override
+    public ActionResult interactMob(PlayerEntity player, Hand hand) {
+        boolean bl = !isBaby() && isTame() && player.shouldCancelInteraction();
+        if (!hasPassengers() && !bl) {
+            ItemStack itemStack = player.getStackInHand(hand);
+            if (!itemStack.isEmpty()) {
+                if (isBreedingItem(itemStack)) {
+                    return interactHorse(player, itemStack);
+                }
+
+                if (!isTame()) {
+                    playAngrySound();
+                    return ActionResult.SUCCESS;
+                }
+            }
+
+            return super.interactMob(player, hand);
+        } else {
+            return super.interactMob(player, hand);
+        }
+    }
+
+    @Override
+    protected Vec3d getPassengerAttachmentPos(Entity passenger, EntityDimensions dimensions, float scaleFactor) {
+        return super.getPassengerAttachmentPos(passenger, dimensions, scaleFactor).add(new Vec3d(0.0, 0.65 * (double)scaleFactor,
+                -0.5 * (double)scaleFactor).rotateY(-this.getYaw() * ((float)Math.PI / 180)));
     }
 }

@@ -2,6 +2,7 @@ package net.mrbeelo.bsmpc.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
@@ -83,5 +84,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.LOGS)
                 .add(ModBlocks.CS_LOG.asItem())
                 .add(ModBlocks.STRIPPED_CS_LOG.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.BLOB_FOOD)
+                .add(Items.GOLDEN_APPLE)
+                .add(Items.GOLDEN_CARROT)
+                .add(ModItems.KOKAINA);
     }
 }

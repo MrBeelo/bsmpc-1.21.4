@@ -15,6 +15,7 @@ import net.mrbeelo.bsmpc.entity.custom.BlobEntity;
 
 public class BlobRenderer extends MobEntityRenderer<BlobEntity, BlobEntityRenderState, BlobModel> {
     public static final Identifier TEXTURE = BsmpC.id("textures/entity/blob/blob.png");
+    public static final Identifier TEXTURE_SADDLED = BsmpC.id("textures/entity/blob/blob_saddled.png");
 
     public BlobRenderer(EntityRendererFactory.Context context) {
         super(context, new BlobModel(context.getPart(ModEntityModelLayers.BLOB)), 0.5f);
@@ -33,6 +34,7 @@ public class BlobRenderer extends MobEntityRenderer<BlobEntity, BlobEntityRender
         livingEntityRenderState.limbAmplitudeMultiplier = livingEntity.limbAnimator.getSpeed();
 
         livingEntityRenderState.baby = livingEntity.isBaby();
+        livingEntityRenderState.isSaddled = livingEntity.isSaddled();
     }
 
     @Override
@@ -45,6 +47,10 @@ public class BlobRenderer extends MobEntityRenderer<BlobEntity, BlobEntityRender
 
     @Override
     public Identifier getTexture(BlobEntityRenderState state) {
-        return TEXTURE;
+        if(state.isSaddled) {
+            return TEXTURE_SADDLED;
+        } else {
+            return TEXTURE;
+        }
     }
 }

@@ -17,6 +17,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.entity.client.ai.ProtectorAttackGoal;
 
@@ -62,8 +63,8 @@ public class ProtectorBossEntity extends HostileEntity {
     protected void initGoals() {
         this.goalSelector.add(1, new ProtectorAttackGoal(this, 1.0, true));
         this.goalSelector.add(2, new WanderAroundGoal(this, 1.0));
-        this.targetSelector.add(1, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(2, new RevengeGoal(this));
+        this.targetSelector.add(1, new RevengeGoal(this));
+        this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
         super.initGoals();
     }
 
@@ -117,7 +118,7 @@ public class ProtectorBossEntity extends HostileEntity {
 
         // Attack 1
         if (isDoingAttack1() && this.attack1AnimationTimeout <= 0) {
-            this.attack1AnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(0) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(0);
+            this.attack1AnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(1) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(1);
             this.attack1AnimationState.start(this.age);
         } else {
             --this.attack1AnimationTimeout;
@@ -127,27 +128,27 @@ public class ProtectorBossEntity extends HostileEntity {
             this.attack1AnimationState.stop();
         }
 
-        // Attack 2
-        if (this.dataTracker.get(DOING_ATTACK_2)) {
-            if (this.attack2AnimationTimeout <= 0) {
-                this.attack2AnimationTimeout = 40;
-                this.attack2AnimationState.start(this.age);
-            } else {
-                --this.attack2AnimationTimeout;
-            }
+        //Attack 2
+        if (isDoingAttack2() && this.attack2AnimationTimeout <= 0) {
+            this.attack2AnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(2) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(2);
+            this.attack2AnimationState.start(this.age);
         } else {
+            --this.attack2AnimationTimeout;
+        }
+
+        if (!isDoingAttack2()) {
             this.attack2AnimationState.stop();
         }
 
         // Attack 3
-        if (this.dataTracker.get(DOING_ATTACK_3)) {
-            if (this.attack3AnimationTimeout <= 0) {
-                this.attack3AnimationTimeout = 40;
-                this.attack3AnimationState.start(this.age);
-            } else {
-                --this.attack3AnimationTimeout;
-            }
+        if (isDoingAttack3() && this.attack3AnimationTimeout <= 0) {
+            this.attack3AnimationTimeout = ProtectorAttackGoal.getTicksInAnimationBeforeAttack(3) + ProtectorAttackGoal.getTicksInAnimationAfterAttack(3);
+            this.attack3AnimationState.start(this.age);
         } else {
+            --this.attack3AnimationTimeout;
+        }
+
+        if (!isDoingAttack3()) {
             this.attack3AnimationState.stop();
         }
     }
@@ -260,6 +261,22 @@ public class ProtectorBossEntity extends HostileEntity {
         return this.dataTracker.get(DOING_ATTACK_1);
     }
 
+    public void setDoingAttack2(boolean attacking) {
+        this.dataTracker.set(DOING_ATTACK_2, attacking);
+    }
+
+    public boolean isDoingAttack2() {
+        return this.dataTracker.get(DOING_ATTACK_2);
+    }
+
+    public void setDoingAttack3(boolean attacking) {
+        this.dataTracker.set(DOING_ATTACK_3, attacking);
+    }
+
+    public boolean isDoingAttack3() {
+        return this.dataTracker.get(DOING_ATTACK_3);
+    }
+
     @Override
     public boolean damage(ServerWorld world, DamageSource source, float amount) {
         if (source.getTypeRegistryEntry().isIn(DamageTypeTags.IS_PROJECTILE))
@@ -292,6 +309,8 @@ public class ProtectorBossEntity extends HostileEntity {
     {
         setDoingGenericAttack(false);
         setDoingAttack1(false);
+        setDoingAttack2(false);
+        setDoingAttack3(false);
         setAwakening(false);
         setKneeling(false);
 
