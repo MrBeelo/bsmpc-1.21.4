@@ -37,8 +37,6 @@ public class ModTags {
         public static final TagKey<Item> REPAIRS_RUBY_ARMOR = TagKey.of(RegistryKeys.ITEM, BsmpC.id("repairs_ruby_armor"));
         public static final TagKey<Item> REPAIRS_MITHRILL_ARMOR = TagKey.of(RegistryKeys.ITEM, BsmpC.id("repairs_mithrill_armor"));
         public static final TagKey<Item> REPAIRS_SNEK_ARMOR = TagKey.of(RegistryKeys.ITEM, BsmpC.id("repairs_snek_armor"));
-
-        public static final TagKey<Item> BLOB_FOOD = TagKey.of(RegistryKeys.ITEM, BsmpC.id("blob_food"));
     }
 
     public static class EntityTypes {

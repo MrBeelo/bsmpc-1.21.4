@@ -84,10 +84,5 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.LOGS)
                 .add(ModBlocks.CS_LOG.asItem())
                 .add(ModBlocks.STRIPPED_CS_LOG.asItem());
-
-        getOrCreateTagBuilder(ModTags.Items.BLOB_FOOD)
-                .add(Items.GOLDEN_APPLE)
-                .add(Items.GOLDEN_CARROT)
-                .add(ModItems.KOKAINA);
     }
 }

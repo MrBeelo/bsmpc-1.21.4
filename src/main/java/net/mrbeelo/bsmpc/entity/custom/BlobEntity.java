@@ -5,11 +5,10 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.AbstractHorseEntity;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Arm;
@@ -68,7 +67,7 @@ public class BlobEntity extends AbstractHorseEntity {
 
     @Override
     public boolean isBreedingItem(ItemStack stack) {
-        return stack.isIn(ModTags.Items.BLOB_FOOD);
+        return stack.isOf(Items.GOLDEN_CARROT);
     }
 
     @Nullable
@@ -102,7 +101,16 @@ public class BlobEntity extends AbstractHorseEntity {
 
     @Override
     protected Vec3d getPassengerAttachmentPos(Entity passenger, EntityDimensions dimensions, float scaleFactor) {
-        return super.getPassengerAttachmentPos(passenger, dimensions, scaleFactor).add(new Vec3d(0.0, 0.65 * (double)scaleFactor,
-                -0.5 * (double)scaleFactor).rotateY(-this.getYaw() * ((float)Math.PI / 180)));
+        return super.getPassengerAttachmentPos(passenger, dimensions, scaleFactor).add(new Vec3d(0.0, 0.2 * (double)scaleFactor,
+                0.0 * (double)scaleFactor).rotateY(-this.getYaw() * ((float)Math.PI / 180)));
+    }
+
+    @Override
+    public boolean canBreedWith(AnimalEntity other) {
+        if(other instanceof BlobEntity)
+        {
+            return true;
+        }
+        return false;
     }
 }
