@@ -33,6 +33,7 @@ import net.mrbeelo.bsmpc.entity.client.custom.model.SnekModel;
 import net.mrbeelo.bsmpc.entity.client.custom.renderer.*;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.particle.ModParticles;
+import net.mrbeelo.bsmpc.particle.custom.MobiliumParticle;
 import net.mrbeelo.bsmpc.screen.ModScreenHandlers;
 import net.mrbeelo.bsmpc.screen.custom.DeliberatorScreen;
 import net.mrbeelo.bsmpc.screen.custom.SafeScreen;
@@ -52,7 +53,7 @@ public class BsmpCClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CS_BERRY_BUSH, RenderLayer.getCutout());
 
 		ParticleFactoryRegistry.getInstance().register(ModParticles.SPARKLE_PARTICLE, EndRodParticle.Factory::new);
-		ParticleFactoryRegistry.getInstance().register(ModParticles.MOBILIUM_PARTICLE, EndRodParticle.Factory::new);
+		ParticleFactoryRegistry.getInstance().register(ModParticles.MOBILIUM_PARTICLE, MobiliumParticle.Factory::new);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.PEDESTAL_BE, PedestalBlockEntityRenderer::new);
 

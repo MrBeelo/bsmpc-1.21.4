@@ -1,5 +1,13 @@
 {
   "asset_id": "bsmpc:world",
+  "author": {
+    "color": "gray",
+    "translate": "painting.bsmpc.world.author"
+  },
+  "title": {
+    "color": "yellow",
+    "translate": "painting.bsmpc.world.title"
+  },
   "height": 2,
   "width": 2
 }

@@ -11,7 +11,7 @@ import net.mrbeelo.bsmpc.screen.custom.handler.SafeScreenHandler;
 
 public class ModScreenHandlers {
     public static final ScreenHandlerType<SafeScreenHandler> SAFE_SCREEN_HANDLER =
-            Registry.register(Registries.SCREEN_HANDLER, BsmpC.id("pedestal_screen_handler"),
+            Registry.register(Registries.SCREEN_HANDLER, BsmpC.id("safe_screen_handler"),
                     new ExtendedScreenHandlerType<>(SafeScreenHandler::new, BlockPos.PACKET_CODEC));
 
     public static final ScreenHandlerType<DeliberatorScreenHandler> DELIBERATOR_SCREEN_HANDLER =

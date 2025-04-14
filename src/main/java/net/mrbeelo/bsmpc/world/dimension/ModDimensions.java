@@ -1,5 +1,6 @@
 package net.mrbeelo.bsmpc.world.dimension;
 
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -13,6 +14,7 @@ import net.minecraft.world.dimension.DimensionTypes;
 import net.mrbeelo.bsmpc.BsmpC;
 
 import java.util.OptionalLong;
+import java.util.function.Predicate;
 
 public class ModDimensions {
     public static final RegistryKey<DimensionOptions> CS_DIMENSION_KEY = RegistryKey.of(RegistryKeys.DIMENSION,
@@ -39,5 +41,9 @@ public class ModDimensions {
                 DimensionTypes.OVERWORLD_ID, // effectsLocation
                 1.0f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, UniformIntProvider.create(0, 0), 0)));
+    }
+
+    public static Predicate<BiomeSelectionContext> foundInCSBiome() {
+        return context -> context.canGenerateIn(CS_DIMENSION_KEY);
     }
 }

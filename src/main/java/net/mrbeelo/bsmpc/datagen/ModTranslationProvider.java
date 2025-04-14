@@ -69,13 +69,6 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         }
     }
 
-    private static void addPainting(@NotNull TranslationBuilder builder, @NotNull String paintingId, @NotNull String paintingName, @NotNull String paintingAuthor) {
-        String paintingKey = "painting.bsmpc." + paintingId + ".title";
-        String paintingAuthorKey = "painting.bsmpc." + paintingId + ".author";
-        builder.add(paintingKey, paintingName);
-        builder.add(paintingAuthorKey, paintingAuthor);
-    }
-
     private static void addMusicDisc(@NotNull TranslationBuilder builder, @NotNull String discId, @NotNull String discName, @NotNull String discDescription) {
         String discKey = "item.bsmpc." + discId;
         String discDescriptionKey = "item.bsmpc." + discId + ".desc";
@@ -103,6 +96,13 @@ public class ModTranslationProvider extends FabricLanguageProvider {
     private static void addChestBoat(@NotNull TranslationBuilder builder, @NotNull String messageId, @NotNull String messageValue) {
         String guiKey = "entity.bsmpc." + messageId + "_chest_boat";
         builder.add(guiKey, messageValue);
+    }
+
+    private static void addPainting(@NotNull TranslationBuilder builder, @NotNull String paintingId, @NotNull String paintingName, @NotNull String paintingAuthor) {
+        String paintingKey = "painting.bsmpc." + paintingId + ".title";
+        String paintingAuthorKey = "painting.bsmpc." + paintingId + ".author";
+        builder.add(paintingKey, paintingName);
+        builder.add(paintingAuthorKey, paintingAuthor);
     }
 
     @Override
@@ -240,9 +240,9 @@ public class ModTranslationProvider extends FabricLanguageProvider {
         addText(translationBuilder, ModItemGroups.RUBY_ITEM_GROUP.getDisplayName(), "The Ruby Collection");
         addText(translationBuilder, ModItemGroups.BSMPS3_ARTIFACTS.getDisplayName(), "BSMPS3 Artifacts & Memes");
         addText(translationBuilder, ModItemGroups.CS_GROUP.getDisplayName(), "Cupressus Sempervirens");
+        addPainting(translationBuilder, "world", "The World Of Errors", "MrBeelo");
         addVillager(translationBuilder, ModVillagers.RUBERT, "Rubert");
         addPotionTranslations(translationBuilder, ModPotions.KOKAINA, "Kokaina");
-        addPainting(translationBuilder, "world", "The World Of Errors", "MrBeelo");
         addMusicDisc(translationBuilder, "xo_music_disc", "XO Music Disc", "XO (eden cover and remake)");
         addDamageType(translationBuilder, "emotional_damage", "Emotional Damage.");
         addGui(translationBuilder, "safe", "Safe");
