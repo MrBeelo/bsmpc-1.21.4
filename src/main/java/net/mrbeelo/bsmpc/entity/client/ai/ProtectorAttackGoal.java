@@ -76,7 +76,7 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
 
     @Override
     protected void attack(LivingEntity target) {
-        if (isEnemySpotted(target)) {
+        if (isEnemySpotted(target) && isEnemyWithinPresetDistance(target, currentAttack)) {
             shouldCountTillNextAttack = true;
 
 
@@ -85,23 +85,19 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
                 switch (currentAttack)
                 {
                     case 0:
-                        if(isEnemyWithinDistance(target, 6))
-                        { entity.setDoingGenericAttack(true); }
+                        entity.setDoingGenericAttack(true);
                         break;
 
                     case 1:
-                        if(isEnemyWithinDistance(target, 9))
-                        { entity.setDoingAttack1(true); }
+                        entity.setDoingAttack1(true);
                         break;
 
                     case 2:
-                        if(isEnemyWithinDistance(target, 14))
-                        { entity.setDoingAttack2(true); }
+                        entity.setDoingAttack2(true);
                         break;
 
                     case 3:
-                        if(isEnemyWithinDistance(target, 9))
-                        { entity.setDoingAttack3(true); }
+                        entity.setDoingAttack3(true);
                         break;
                 }
             }
@@ -112,7 +108,6 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
             }
         } else {
             shouldCountTillNextAttack = false;
-            entity.stopAllAnims();
         }
     }
 
@@ -167,6 +162,18 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
         return entity.distanceTo(lEntity) <= distance;
     }
 
+    private boolean isEnemyWithinPresetDistance(LivingEntity lEntity, int currentAttack)
+    {
+        return switch (currentAttack) {
+            case 0 -> isEnemyWithinDistance(lEntity, 6);
+            case 1 -> isEnemyWithinDistance(lEntity, 9);
+            case 2 -> isEnemyWithinDistance(lEntity, 14);
+            case 3 -> isEnemyWithinDistance(lEntity, 9);
+            default -> true;
+        };
+
+    }
+
     public static int getTicksInAnimationBeforeAttack(int currentAttack)
     {
         return attackData.get(currentAttack).getA();
@@ -189,10 +196,3 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
         }
     }
 }
-
-/*TODO KNOWN ISSUES
-
-1. WHEN REJOINING GAME, PRROTECTOR IS IN KNEELING POSE
-2. WHEN JOINING GAME, BOSSBAR GOES AWAY
-
- */

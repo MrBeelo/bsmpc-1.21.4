@@ -14,10 +14,10 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.entity.client.ai.ProtectorAttackGoal;
 
@@ -28,7 +28,6 @@ public class ProtectorBossEntity extends HostileEntity {
     }
 
     private final ServerBossBar bossBar = (ServerBossBar)new ServerBossBar(this.getDisplayName(), BossBar.Color.GREEN, BossBar.Style.PROGRESS).setDarkenSky(false);
-    public int currentAttackIndex = 0;
 
     private static final TrackedData<Boolean> DOING_GENERIC_ATTACK = DataTracker.registerData(ProtectorBossEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> DOING_ATTACK_1 = DataTracker.registerData(ProtectorBossEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
@@ -321,4 +320,35 @@ public class ProtectorBossEntity extends HostileEntity {
         awakeningAnimationTimeout = 0;
         staticAnimationTimeout = 0;
     }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("Awakening", isAwakening());
+        nbt.putBoolean("Kneeling", isKneeling());
+        nbt.putBoolean("DoingGenericAttack", isDoingGenericAttack());
+        nbt.putBoolean("DoingAttack1", isDoingAttack1());
+        nbt.putBoolean("DoingAttack2", isDoingAttack2());
+        nbt.putBoolean("DoingAttack3", isDoingAttack3());
+        nbt.putInt("AwakeningTicksLeft", awakeningTicksLeft);
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        setAwakening(nbt.getBoolean("Awakening"));
+        setKneeling(nbt.getBoolean("Kneeling"));
+        setDoingGenericAttack(nbt.getBoolean("DoingGenericAttack"));
+        setDoingAttack1(nbt.getBoolean("DoingAttack1"));
+        setDoingAttack2(nbt.getBoolean("DoingAttack2"));
+        setDoingAttack3(nbt.getBoolean("DoingAttack3"));
+        awakeningTicksLeft = nbt.getInt("AwakeningTicksLeft");
+
+        // If boss already awakened, enable AI and init goals again
+        if (!isKneeling() && !isAwakening()) {
+            this.setAiDisabled(false);
+            this.initGoals();
+        }
+    }
+
 }
