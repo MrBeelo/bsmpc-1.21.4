@@ -212,10 +212,10 @@ public class ProtectorBossEntity extends HostileEntity {
 
     public static DefaultAttributeContainer.Builder createProtectorBossAttributes() {
         return MobEntity.createMobAttributes()
-                .add(EntityAttributes.MAX_HEALTH, 350)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.3)
-                .add(EntityAttributes.ATTACK_DAMAGE, 20)
-                .add(EntityAttributes.ARMOR, 20)
+                .add(EntityAttributes.MAX_HEALTH, 400)
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.4)
+                .add(EntityAttributes.ATTACK_DAMAGE, 30)
+                .add(EntityAttributes.ARMOR, 30)
                 .add(EntityAttributes.KNOCKBACK_RESISTANCE, 0.5f);
     }
 
@@ -350,5 +350,4 @@ public class ProtectorBossEntity extends HostileEntity {
             this.initGoals();
         }
     }
-
 }

@@ -104,6 +104,8 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
 
             if (isTimeToAttack() && target.getWorld() instanceof ServerWorld serverWorld) {
                 mob.getLookControl().lookAt(target.getX(), target.getY(), target.getZ());
+
+                performSpecialAttack(target);
                 performAttack(serverWorld, target);
             }
         } else {
@@ -116,28 +118,30 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
         setAttackCooldownForEndOfAnimation();
         mob.swingHand(Hand.MAIN_HAND);
         mob.tryAttack(world, lEntity);
+        currentAttack = getRandomAttack();
+        setAttackCooldownForStartOfAnimation();
+    }
 
+    protected void performSpecialAttack(LivingEntity target)
+    {
         switch (currentAttack)
         {
             case 0, 2:
                 break;
 
             case 1:
-                lEntity.setVelocity(new Vec3d(0, 1.5f, 0));
-                lEntity.velocityModified = true;
+                target.setVelocity(new Vec3d(0, 2f, 0));
+                target.velocityModified = true;
                 break;
 
             case 3:
-                Vec3d launchDirection = lEntity.getPos().subtract(entity.getPos()).normalize();
-                lEntity.setVelocity(launchDirection.multiply(2.5f).add(0, 0.8, 0));
-                lEntity.velocityModified = true;
-                lEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 140, 0, true, false, false));
-                lEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 140, 3, true, false, false));
+                Vec3d launchDirection = target.getPos().subtract(entity.getPos()).normalize();
+                target.setVelocity(launchDirection.multiply(2.5f).add(0, 0.8, 0));
+                target.velocityModified = true;
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 140, 1, true, false, false));
+                target.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 140, 4, true, false, false));
                 break;
         }
-
-        currentAttack = getRandomAttack();
-        setAttackCooldownForStartOfAnimation();
     }
 
     protected void setAttackCooldownForEndOfAnimation()
@@ -186,6 +190,12 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
 
     public static int getRandomAttack() {
         Random random = new Random();
+        return random.nextInt(attackData.size());  // 40% chance of 1, 2, or 3
+
+    }
+
+    public static int getRandomAttackGeneralWeighted() {
+        Random random = new Random();
         int weightedRandom = random.nextInt(100);  // Generate a random number between 0 and 99
 
         // Higher chance for attack 0 (e.g., 60% chance), then distribute remaining chances
@@ -196,3 +206,9 @@ public class ProtectorAttackGoal extends MeleeAttackGoal {
         }
     }
 }
+
+/* TODO
+
+1. NOT BE ABLE TO BLOCK STUFF WITH SHIELD, JUST BLOCK DAMAGE
+
+ */
