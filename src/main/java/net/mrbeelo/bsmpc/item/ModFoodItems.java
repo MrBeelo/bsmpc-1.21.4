@@ -54,6 +54,12 @@ public class ModFoodItems {
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 200, 5, false, false)))
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0, false, false)))
             .build();
+
+    public static final FoodComponent LAVA_CHICKEN_COMPONENT = new FoodComponent.Builder()
+            .alwaysEdible()
+            .nutrition(10)
+            .saturationModifier(0.7F)
+            .build();
 }
 
 

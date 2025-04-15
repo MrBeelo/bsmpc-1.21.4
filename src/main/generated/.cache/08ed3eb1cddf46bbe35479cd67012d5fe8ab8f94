@@ -81,6 +81,7 @@ f39c13b155656f4c5c947812e05b8a913b24c408 assets/bsmpc/items/global_key.json
 1b8972bf8459f4766ad21f573e84e58940d88f83 assets/bsmpc/items/key.json
 21e8d7dc1026932852f3fdf9c29219684b9bcc04 assets/bsmpc/items/kokaina.json
 934e3966b2e0ab8927e5b5a4e65870d6dfd69d9a assets/bsmpc/items/kokaina_seed.json
+5b95dc3a5d90c6dccdbee139eb6344baaddfc4b1 assets/bsmpc/items/lava_chicken.json
 63918b19b8aa3cea80cce1abc09618d7b41d3861 assets/bsmpc/items/meeper.json
 dbe1e705ae71e1656c81b4d8ee32dd3abff85164 assets/bsmpc/items/metal_rod.json
 13fd6ce16a4f706648a7ff5e44533dad06f9330c assets/bsmpc/items/mithrill.json
@@ -273,6 +274,7 @@ a04fc7071753108c33f874c8b065624261181d63 assets/bsmpc/models/item/jetpack_amethy
 b5d2f2979e36f2ac3a1bf8c6052fe2cc9c337373 assets/bsmpc/models/item/key.json
 48403f0a9ef1afbf3f2a54fa9102bfffb731c897 assets/bsmpc/models/item/kokaina.json
 421729d9ac5d8a23b0d5cf00fbafa4a7199d16f1 assets/bsmpc/models/item/kokaina_seed.json
+0c70d1cd9b8be28e44d076be15921ee234a08209 assets/bsmpc/models/item/lava_chicken.json
 acfba3beeec7f9719168074bc412ab89ed0e3e5e assets/bsmpc/models/item/metal_rod.json
 96d391d81b2bf18041e29e3992b54969257c629c assets/bsmpc/models/item/mithrill.json
 b423957e2196ac0ce0e0ba19d2f0fc60949d2fff assets/bsmpc/models/item/mithrill_axe.json

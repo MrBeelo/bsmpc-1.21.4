@@ -32,8 +32,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeGenerator(wrapperLookup, recipeExporter) {
             @Override
             public void generate() {
-                RegistryWrapper.Impl<Item> itemLookup = registries.getOrThrow(RegistryKeys.ITEM);
-
                 createShaped(RecipeCategory.MISC, ModBlocks.RUBY_BLOCK, 1)
                         .input('E', ModItems.RUBY)
                         .pattern("EEE")

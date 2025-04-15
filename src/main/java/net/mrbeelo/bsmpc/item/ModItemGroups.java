@@ -149,6 +149,8 @@ public class ModItemGroups {
 
                         entries.add(ModItems.PROTECTOR_SPAWN_EGG);
 
+                        entries.add(ModItems.LAVA_CHICKEN);
+
                     }).build());
 
     public static final ItemGroup CS_GROUP = Registry.register(Registries.ITEM_GROUP,

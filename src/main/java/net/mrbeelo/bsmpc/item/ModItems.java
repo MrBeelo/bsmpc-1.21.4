@@ -122,6 +122,8 @@ public class ModItems {
 
     public static final Item RUBBER_DUCKY = register("rubber_ducky", RubberDuckyItem::new, new Item.Settings());
 
+    public static final Item LAVA_CHICKEN = register("lava_chicken", Item::new, new Item.Settings().maxCount(16).food(ModFoodItems.LAVA_CHICKEN_COMPONENT));
+
     //public static final
 
     //public static final SignItem CS_SIGN = register("cs_sign", new SignItem(ModBlocks.STANDING_CS_SIGN, ModBlocks.WALL_CS_SIGN, new Item.Settings().registryKey(regKeyItem("cs_sign")).maxCount(16)));

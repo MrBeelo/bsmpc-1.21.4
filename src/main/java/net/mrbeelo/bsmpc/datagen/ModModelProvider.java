@@ -151,6 +151,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CS_BERRIES, Models.GENERATED);
         itemModelGenerator.register(ModItems.RUBBER_DUCKY, Models.GENERATED);
         itemModelGenerator.registerSpawnEgg(ModItems.PROTECTOR_SPAWN_EGG,  0x6c6e6b, 0x61f533);
+        itemModelGenerator.register(ModItems.LAVA_CHICKEN, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
     }
