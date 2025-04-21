@@ -35,6 +35,7 @@ public class BlobEntity extends AbstractHorseEntity {
         this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0));
         this.goalSelector.add(1, new HorseBondWithPlayerGoal(this, 1.2));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0));
+        this.goalSelector.add(3, new TemptGoal(this, 1.25, this::isBreedingItem, false));
         this.goalSelector.add(4, new FollowParentGoal(this, 1.25));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0f));
@@ -53,7 +54,8 @@ public class BlobEntity extends AbstractHorseEntity {
     public static DefaultAttributeContainer.Builder createBlobAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.MAX_HEALTH, 10)
-                .add(EntityAttributes.MOVEMENT_SPEED, 0.1);
+                .add(EntityAttributes.MOVEMENT_SPEED, 0.1)
+                .add(EntityAttributes.TEMPT_RANGE, 1);
     }
 
     @Override
