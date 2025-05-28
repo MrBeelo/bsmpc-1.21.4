@@ -1,7 +1,6 @@
 package net.mrbeelo.bsmpc.screen.custom;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gl.ShaderProgramKeys;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
@@ -21,9 +20,9 @@ public class DeliberatorScreen extends HandledScreen<DeliberatorScreenHandler> {
 
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-        RenderSystem.setShader(ShaderProgramKeys.POSITION_TEX_COLOR);
-        RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-        RenderSystem.setShaderTexture(0, GUI_TEXTURE);
+        //RenderSystem.setShader(ShaderProgramKeys.POSITION_TEX_COLOR);
+        //RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
+        //RenderSystem.setShaderTexture(0, GUI_TEXTURE);
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         int regionWidth = 176;

@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -50,15 +51,13 @@ public class PedestalBlock extends BlockWithEntity implements BlockEntityProvide
     }
 
     @Override
-    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof PedestalBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((PedestalBlockEntity) blockEntity));
-                world.updateComparators(pos, this);
-            }
-            super.onStateReplaced(state, world, pos, newState, moved);
+    protected void onStateReplaced(BlockState state, ServerWorld world, BlockPos pos, boolean moved) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if(blockEntity instanceof PedestalBlockEntity) {
+            ItemScatterer.spawn(world, pos, ((PedestalBlockEntity) blockEntity));
+            world.updateComparators(pos, this);
         }
+        super.onStateReplaced(state, world, pos, moved);
     }
 
     @Override

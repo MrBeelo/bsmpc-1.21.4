@@ -69,16 +69,4 @@ public class RandomArtifactItem extends Item {
 
         return ActionResult.SUCCESS;
     }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if (!Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("Press §eShift§r to learn more!"));
-        } else {
-            tooltip.add(Text.literal("An item that gives the player a random artifact"));
-            tooltip.add(Text.literal("when right clicked and deletes itself."));
-        }
-
-        super.appendTooltip(stack, context, tooltip, type);
-    }
 }

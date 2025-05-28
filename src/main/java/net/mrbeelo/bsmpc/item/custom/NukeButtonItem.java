@@ -42,15 +42,4 @@ public class NukeButtonItem extends Item {
 
         return ActionResult.SUCCESS;
     }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("Press §eShift§r to learn more!"));
-        } else {
-            tooltip.add(Text.literal("A nuke button that summons a nuke 10 blocks in front of the player."));
-        }
-
-        super.appendTooltip(stack, context, tooltip, type);
-    }
 }

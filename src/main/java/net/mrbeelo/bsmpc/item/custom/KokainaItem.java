@@ -12,16 +12,4 @@ public class KokainaItem extends Item {
     public KokainaItem(Settings settings) {
         super(settings);
     }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("Press §eShift§r to learn more!"));
-        } else {
-            tooltip.add(Text.literal("A food item that gives the player a speed boost and various nautious"));
-            tooltip.add(Text.literal("effects when eaten."));
-        }
-
-        super.appendTooltip(stack, context, tooltip, type);
-    }
 }

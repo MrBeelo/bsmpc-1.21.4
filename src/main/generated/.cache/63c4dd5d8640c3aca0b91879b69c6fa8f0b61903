@@ -1,6 +1,6 @@
-// 1.21.4	-999999999-01-01T00:00:00	bsmpc/World Generator
+// 1.21.5	-999999999-01-01T00:00:00	bsmpc/World Generator
 d8958084ca84e6b947809d5f3c3bd488a49651d8 data/bsmpc/dimension_type/cs_dimension_type.json
-da1e4135464823a2406ca8873e7d5083e67983c9 data/bsmpc/worldgen/biome/cs_biome.json
+b04e75ee93b1fe7d358efa0ebd10f98222628475 data/bsmpc/worldgen/biome/cs_biome.json
 1731a49ed8b0c94f0cc58beb51c5c26cb9a9da60 data/bsmpc/worldgen/configured_feature/cs.json
 8d7acd16ac57e9118100558bcfe7d25479d4c29e data/bsmpc/worldgen/configured_feature/cs_berry_bush.json
 091a2cfae5a0a87373b6e983d6ae355c7295705a data/bsmpc/worldgen/configured_feature/cs_biome_deliberilium_ore.json

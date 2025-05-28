@@ -14,7 +14,7 @@ import net.mrbeelo.bsmpc.item.ModItems;
 public class ModCustomTrades {
 
     public static void register() {
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT, 1, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT_KEY, 1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new TradedItem(ModItems.RUBY, 2),
                     new ItemStack(Items.EMERALD, 20),
@@ -48,7 +48,7 @@ public class ModCustomTrades {
             ));
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT, 2, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT_KEY, 2, factories -> {
             factories.add((entity, random) -> {
                 Item[] armorTrims = {
                         Items.BOLT_ARMOR_TRIM_SMITHING_TEMPLATE,
@@ -108,7 +108,7 @@ public class ModCustomTrades {
 
         });
 
-        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT, 3, factories -> {
+        TradeOfferHelper.registerVillagerOffers(ModVillagers.RUBERT_KEY, 3, factories -> {
             factories.add((entity, random) -> {
                 Item[] artifactItems = {
                         ModItems.DEATH_AXE,

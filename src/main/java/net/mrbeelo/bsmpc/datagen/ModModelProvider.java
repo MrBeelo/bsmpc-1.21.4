@@ -2,7 +2,9 @@ package net.mrbeelo.bsmpc.datagen;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.data.*;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
 import net.mrbeelo.bsmpc.block.ModBlocks;
@@ -43,9 +45,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.COMPANION_CUBE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GD_CUBE);
 
-
-        blockStateModelGenerator.registerLog(ModBlocks.CS_LOG).log(ModBlocks.CS_LOG).wood(ModBlocks.CS_WOOD);
-        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_CS_LOG).log(ModBlocks.STRIPPED_CS_LOG).wood(ModBlocks.STRIPPED_CS_WOOD);
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.CS_LOG).log(ModBlocks.CS_LOG).wood(ModBlocks.CS_WOOD);
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.STRIPPED_CS_LOG).log(ModBlocks.STRIPPED_CS_LOG).wood(ModBlocks.STRIPPED_CS_WOOD);
 
         BlockStateModelGenerator.BlockTexturePool csPlankTexturePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CS_PLANKS);
         blockStateModelGenerator.registerTintableCross(ModBlocks.CS_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
@@ -73,19 +74,19 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerTintedBlockAndItem(ModBlocks.CS_LEAVES, TexturedModel.LEAVES, -12012264);
 
-        Identifier rgbOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.RGB_BLOCK, blockStateModelGenerator.modelCollector);
-        Identifier rgbOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.RGB_BLOCK, "_on", Models.CUBE_ALL, TextureMap::all);
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.RGB_BLOCK)
-                .coordinate(BlockStateModelGenerator.createBooleanModelMap(RGBBlock.CLICKED, rgbOnIdentifier, rgbOffIdentifier)));
+        WeightedVariant rgbOffIdentifier = BlockStateModelGenerator.createWeightedVariant(TexturedModel.CUBE_ALL.upload(ModBlocks.RGB_BLOCK, blockStateModelGenerator.modelCollector));
+        WeightedVariant rgbOnIdentifier = BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.RGB_BLOCK, "_on", Models.CUBE_ALL, TextureMap::all));
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.RGB_BLOCK)
+                .with(BlockStateModelGenerator.createBooleanModelMap(RGBBlock.CLICKED, rgbOnIdentifier, rgbOffIdentifier)));
 
         //blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.CS_BERRY_BUSH, BlockStateModelGenerator.CrossType.NOT_TINTED, CSBerryBushBlock.AGE, 0, 1, 2, 3);
         blockStateModelGenerator.blockStateCollector.accept(
-                VariantsBlockStateSupplier.create(ModBlocks.CS_BERRY_BUSH).coordinate(
-                        BlockStateVariantMap.create(Properties.AGE_3)
-                                .register(stage -> BlockStateVariant.create()
-                                        .put(VariantSettings.MODEL, blockStateModelGenerator.createSubModel(ModBlocks.CS_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross)))
+                VariantsBlockModelDefinitionCreator.of(ModBlocks.CS_BERRY_BUSH).with(
+                        BlockStateVariantMap.models(Properties.AGE_3)
+                                .generate(stage -> BlockStateModelGenerator.createWeightedVariant(blockStateModelGenerator.createSubModel(ModBlocks.CS_BERRY_BUSH, "_stage" + stage, Models.CROSS, TextureMap::cross))
                 )
-        );
+        ));
     }
 
     @Override
@@ -101,40 +102,40 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RUBY_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.RUBY_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.RUBY_KNOCKER, Models.HANDHELD);
-        itemModelGenerator.registerArmor(ModItems.RUBY_HELMET, ModEquipmentAssets.RUBY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.RUBY_CHESTPLATE, ModEquipmentAssets.RUBY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.RUBY_LEGGINGS, ModEquipmentAssets.RUBY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.RUBY_BOOTS, ModEquipmentAssets.RUBY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.RUBY_HELMET, ModEquipmentAssets.RUBY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.RUBY_CHESTPLATE, ModEquipmentAssets.RUBY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.RUBY_LEGGINGS, ModEquipmentAssets.RUBY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.RUBY_BOOTS, ModEquipmentAssets.RUBY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
         itemModelGenerator.registerBow(ModItems.RUBY_BOW);
         itemModelGenerator.register(ModItems.PISTOL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.BULLET, Models.GENERATED);
         itemModelGenerator.register(ModItems.DEATH_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.NUKE_BUTTON, Models.GENERATED);
-        itemModelGenerator.registerSpawnEgg(ModItems.SNEK_SPAWN_EGG, 0x78fa40, 0x5ed32b);
+        itemModelGenerator.register(ModItems.SNEK_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.XO_MUSIC_DISC, Models.GENERATED);
         itemModelGenerator.register(ModFluids.FROOTOP_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.RANDOM_ARTIFACT, Models.GENERATED);
         itemModelGenerator.register(ModItems.POKE_BALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.WARDEN_SWORD, Models.HANDHELD);
-        itemModelGenerator.registerArmor(ModItems.SNEK_HELMET, ModEquipmentAssets.SNEK, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.SNEK_CHESTPLATE, ModEquipmentAssets.SNEK, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.SNEK_LEGGINGS, ModEquipmentAssets.SNEK, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.SNEK_BOOTS, ModEquipmentAssets.SNEK, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.SNEK_HELMET, ModEquipmentAssets.SNEK, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SNEK_CHESTPLATE, ModEquipmentAssets.SNEK, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SNEK_LEGGINGS, ModEquipmentAssets.SNEK, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SNEK_BOOTS, ModEquipmentAssets.SNEK, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.WARDEN_HORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.SNEK_SCALE, Models.GENERATED);
-        itemModelGenerator.registerSpawnEgg(ModItems.BLOB_SPAWN_EGG, 0x7bd4ff, 0xffa7a4);
-        itemModelGenerator.registerSpawnEgg(ModItems.PYRO_SPAWN_EGG, 0x3e3e42, 0xd21129);
-        itemModelGenerator.registerArmor(ModItems.JETPACK, ModEquipmentAssets.JETPACK, "chestplate", false);
+        itemModelGenerator.register(ModItems.BLOB_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PYRO_SPAWN_EGG, Models.GENERATED);
+        itemModelGenerator.registerArmor(ModItems.JETPACK, ModEquipmentAssets.JETPACK, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.MITHRILL, Models.GENERATED);
         itemModelGenerator.register(ModItems.MITHRILL_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRILL_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRILL_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRILL_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRILL_HOE, Models.HANDHELD);
-        itemModelGenerator.registerArmor(ModItems.MITHRILL_HELMET, ModEquipmentAssets.MITHRILL, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.MITHRILL_CHESTPLATE, ModEquipmentAssets.MITHRILL, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.MITHRILL_LEGGINGS, ModEquipmentAssets.MITHRILL, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.MITHRILL_BOOTS, ModEquipmentAssets.MITHRILL, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.MITHRILL_HELMET, ModEquipmentAssets.MITHRILL, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MITHRILL_CHESTPLATE, ModEquipmentAssets.MITHRILL, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MITHRILL_LEGGINGS, ModEquipmentAssets.MITHRILL, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.MITHRILL_BOOTS, ModEquipmentAssets.MITHRILL, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
         itemModelGenerator.register(ModItems.THALLEOUS_LONGSWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.MITHRILLED_THALLEOUS_LONGSWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.FISH_MEME, Models.GENERATED);
@@ -150,7 +151,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.OVERCOOKED_BEEF_WELLINGTON, Models.GENERATED);
         itemModelGenerator.register(ModItems.CS_BERRIES, Models.GENERATED);
         itemModelGenerator.register(ModItems.RUBBER_DUCKY, Models.GENERATED);
-        itemModelGenerator.registerSpawnEgg(ModItems.PROTECTOR_SPAWN_EGG,  0x6c6e6b, 0x61f533);
+        itemModelGenerator.register(ModItems.PROTECTOR_SPAWN_EGG, Models.GENERATED);
         itemModelGenerator.register(ModItems.LAVA_CHICKEN, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_BOAT, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CS_CHEST_BOAT, Models.GENERATED);
@@ -170,10 +171,11 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.blockStateCollector
                 .accept(
-                        VariantsBlockStateSupplier.create(ModBlocks.ENDER_RELAY)
-                                .coordinate(
-                                        BlockStateVariantMap.create(ModProperties.RELAY_CHARGES).register(relay_charges -> BlockStateVariant.create().put(VariantSettings.MODEL, identifiers[relay_charges]))
-                                )
+                        VariantsBlockModelDefinitionCreator.of(ModBlocks.ENDER_RELAY)
+                                .with(BlockStateVariantMap.models(ModProperties.RELAY_CHARGES).generate(relay_charges -> BlockStateModelGenerator.createWeightedVariant(identifiers[relay_charges])))
+                                //.coordinate(
+                                        //BlockStateVariantMap.create(ModProperties.RELAY_CHARGES).register(relay_charges -> BlockStateVariant.create().put(VariantSettings.MODEL, identifiers[relay_charges]))
+                                //)
                 );
         blockStateModelGenerator.registerParentedItemModel(ModBlocks.ENDER_RELAY, identifiers[0]);
     }

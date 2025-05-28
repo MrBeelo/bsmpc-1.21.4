@@ -8,8 +8,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameMode;
 import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.item.ModItems;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -20,6 +22,11 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public class AbstractClientPlayerEntityMixin extends PlayerEntity {
     public AbstractClientPlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
         super(world, pos, yaw, gameProfile);
+    }
+
+    @Override
+    public @Nullable GameMode getGameMode() {
+        return GameMode.SURVIVAL;
     }
 
     @Override

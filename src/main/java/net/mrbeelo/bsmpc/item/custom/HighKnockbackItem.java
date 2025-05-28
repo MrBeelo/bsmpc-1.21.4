@@ -13,13 +13,12 @@ public class HighKnockbackItem extends Item {
     }
 
     @Override
-    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!target.getWorld().isClient) {
             // Apply a high knockback force
             Vec3d knockbackVector = target.getPos().subtract(attacker.getPos()).normalize().multiply(knockbackMultiplier); // Adjust strength here
             target.addVelocity(knockbackVector.x, 0.5, knockbackVector.z);
             target.velocityDirty = true; // Ensure velocity updates on the client
         }
-        return super.postHit(stack, target, attacker);
     }
 }

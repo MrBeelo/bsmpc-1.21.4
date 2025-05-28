@@ -26,13 +26,13 @@ public class BlobModel extends EntityModel<BlobEntityRenderState> {
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+		ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create(), ModelTransform.origin(0.0F, 24.0F, 0.0F));
 
-		ModelPartData body = main.addChild("body", ModelPartBuilder.create().uv(0, 0).cuboid(-8.0F, -7.0F, -8.0F, 16.0F, 16.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -19.0F, 0.0F));
+		ModelPartData body = main.addChild("body", ModelPartBuilder.create().uv(0, 0).cuboid(-8.0F, -7.0F, -8.0F, 16.0F, 16.0F, 16.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, -19.0F, 0.0F));
 
-		ModelPartData leftleg = main.addChild("leftleg", ModelPartBuilder.create().uv(0, 32).cuboid(-2.0F, -1.0F, -2.0F, 4.0F, 11.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(-5.0F, -10.0F, 0.0F));
+		ModelPartData leftleg = main.addChild("leftleg", ModelPartBuilder.create().uv(0, 32).cuboid(-2.0F, -1.0F, -2.0F, 4.0F, 11.0F, 4.0F, new Dilation(0.0F)), ModelTransform.origin(-5.0F, -10.0F, 0.0F));
 
-		ModelPartData rightleg = main.addChild("rightleg", ModelPartBuilder.create().uv(0, 0).cuboid(-2.0F, -1.0F, -2.0F, 4.0F, 11.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(5.0F, -10.0F, 0.0F));
+		ModelPartData rightleg = main.addChild("rightleg", ModelPartBuilder.create().uv(0, 0).cuboid(-2.0F, -1.0F, -2.0F, 4.0F, 11.0F, 4.0F, new Dilation(0.0F)), ModelTransform.origin(5.0F, -10.0F, 0.0F));
 		return TexturedModelData.of(modelData, 64, 64);
 	}
 
@@ -43,7 +43,7 @@ public class BlobModel extends EntityModel<BlobEntityRenderState> {
 		this.getMain().traverse().forEach(ModelPart::resetTransform);
 		this.setHeadAngles(this.getBody().yaw, this.getBody().pitch);
 
-		this.animateWalking(BlobAnimations.WALK, state.limbFrequency, state.limbAmplitudeMultiplier, 2.0f, 2.5f);
+		this.animateWalking(BlobAnimations.WALK, state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2.0f, 2.5f);
 	}
 
 	private void setHeadAngles(float headYaw, float headPitch) {

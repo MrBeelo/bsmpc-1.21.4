@@ -31,6 +31,7 @@ import net.mrbeelo.bsmpc.components.ModDataComponentTypes;
 import net.mrbeelo.bsmpc.entity.ModEntities;
 import net.mrbeelo.bsmpc.entity.custom.BulletProjectileEntity;
 import net.mrbeelo.bsmpc.particle.ModParticles;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.util.*;
@@ -181,7 +182,7 @@ public class MBSItem extends Item {
 
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
         if (entity instanceof PlayerEntity player && !world.isClient && world instanceof ServerWorld serverWorld) {
             //serverCommand((ServerWorld) world, player, "execute at @e[type=minecraft:interaction,tag=lazer] if entity @e[distance=..1.7] run execute as @e[distance=..1.7] run effect give @s instant_damage 1 1");
             double radius = 0;

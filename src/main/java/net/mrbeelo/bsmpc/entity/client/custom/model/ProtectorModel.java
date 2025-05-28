@@ -22,15 +22,15 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create().uv(80, 68).cuboid(-15.0F, -35.0F, -6.0F, 30.0F, 8.0F, 12.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 18.0F, 0.0F));
+		ModelPartData main = modelPartData.addChild("main", ModelPartBuilder.create().uv(80, 68).cuboid(-15.0F, -35.0F, -6.0F, 30.0F, 8.0F, 12.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, 18.0F, 0.0F));
 
-		ModelPartData rightleg = main.addChild("rightleg", ModelPartBuilder.create().uv(48, 159).cuboid(-3.0F, -3.0F, -5.0F, 10.0F, 21.0F, 10.0F, new Dilation(0.0F)), ModelTransform.pivot(-11.0F, -27.0F, 0.0F));
+		ModelPartData rightleg = main.addChild("rightleg", ModelPartBuilder.create().uv(48, 159).cuboid(-3.0F, -3.0F, -5.0F, 10.0F, 21.0F, 10.0F, new Dilation(0.0F)), ModelTransform.origin(-11.0F, -27.0F, 0.0F));
 
-		ModelPartData rightfoot = rightleg.addChild("rightfoot", ModelPartBuilder.create().uv(64, 126).cuboid(-6.0F, -2.0F, -7.0F, 14.0F, 19.0F, 14.0F, new Dilation(0.0F)), ModelTransform.pivot(1.0F, 16.0F, 0.0F));
+		ModelPartData rightfoot = rightleg.addChild("rightfoot", ModelPartBuilder.create().uv(64, 126).cuboid(-6.0F, -2.0F, -7.0F, 14.0F, 19.0F, 14.0F, new Dilation(0.0F)), ModelTransform.origin(1.0F, 16.0F, 0.0F));
 
-		ModelPartData leftleg = main.addChild("leftleg", ModelPartBuilder.create().uv(88, 159).cuboid(-7.0F, -3.0F, -5.0F, 10.0F, 21.0F, 10.0F, new Dilation(0.0F)), ModelTransform.pivot(11.0F, -27.0F, 0.0F));
+		ModelPartData leftleg = main.addChild("leftleg", ModelPartBuilder.create().uv(88, 159).cuboid(-7.0F, -3.0F, -5.0F, 10.0F, 21.0F, 10.0F, new Dilation(0.0F)), ModelTransform.origin(11.0F, -27.0F, 0.0F));
 
-		ModelPartData leftfoot = leftleg.addChild("leftfoot", ModelPartBuilder.create().uv(120, 126).cuboid(-8.0F, -2.0F, -7.0F, 14.0F, 19.0F, 14.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.0F, 16.0F, 0.0F));
+		ModelPartData leftfoot = leftleg.addChild("leftfoot", ModelPartBuilder.create().uv(120, 126).cuboid(-8.0F, -2.0F, -7.0F, 14.0F, 19.0F, 14.0F, new Dilation(0.0F)), ModelTransform.origin(-1.0F, 16.0F, 0.0F));
 
 		ModelPartData chest = main.addChild("chest", ModelPartBuilder.create().uv(0, 37).cuboid(-17.0F, -15.0F, -6.0F, 34.0F, 16.0F, 15.0F, new Dilation(0.0F))
 		.uv(132, 17).cuboid(-17.0F, -15.0F, -9.0F, 11.0F, 16.0F, 3.0F, new Dilation(0.0F))
@@ -44,11 +44,11 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 		.uv(64, 116).cuboid(8.0F, -10.0F, -9.0F, 3.0F, 3.0F, 3.0F, new Dilation(0.0F))
 		.uv(150, 60).cuboid(0.0F, -7.0F, -9.0F, 17.0F, 2.0F, 3.0F, new Dilation(0.0F))
 		.uv(0, 0).cuboid(-22.0F, -30.0F, -11.0F, 44.0F, 15.0F, 22.0F, new Dilation(0.0F))
-		.uv(98, 37).cuboid(-11.0F, -37.0F, -5.0F, 22.0F, 7.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -36.0F, 0.0F));
+		.uv(98, 37).cuboid(-11.0F, -37.0F, -5.0F, 22.0F, 7.0F, 16.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, -36.0F, 0.0F));
 
-		ModelPartData rightarm = chest.addChild("rightarm", ModelPartBuilder.create().uv(144, 88).cuboid(-5.0F, 0.0F, -6.0F, 12.0F, 22.0F, 12.0F, new Dilation(0.0F)), ModelTransform.pivot(-28.0F, -25.0F, 0.0F));
+		ModelPartData rightarm = chest.addChild("rightarm", ModelPartBuilder.create().uv(144, 88).cuboid(-5.0F, 0.0F, -6.0F, 12.0F, 22.0F, 12.0F, new Dilation(0.0F)), ModelTransform.origin(-28.0F, -25.0F, 0.0F));
 
-		ModelPartData righthand = rightarm.addChild("righthand", ModelPartBuilder.create().uv(80, 88).cuboid(-7.0F, 0.0F, -8.0F, 16.0F, 22.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 22.0F, 0.0F));
+		ModelPartData righthand = rightarm.addChild("righthand", ModelPartBuilder.create().uv(80, 88).cuboid(-7.0F, 0.0F, -8.0F, 16.0F, 22.0F, 16.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, 22.0F, 0.0F));
 
 		ModelPartData cube_r1 = righthand.addChild("cube_r1", ModelPartBuilder.create().uv(24, 180).cuboid(-2.0F, -7.0F, -2.0F, 3.0F, 26.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(4.0F, 15.0F, 4.0F, 2.1666F, 0.4442F, 1.3437F));
 
@@ -60,7 +60,7 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 
 		ModelPartData cube_r5 = righthand.addChild("cube_r5", ModelPartBuilder.create().uv(176, 122).cuboid(-2.0F, -7.0F, -2.0F, 3.0F, 26.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-3.0F, 16.0F, 0.0F, 0.0F, 0.0F, 2.138F));
 
-		ModelPartData leftarm = chest.addChild("leftarm", ModelPartBuilder.create().uv(0, 146).cuboid(-7.0F, 0.0F, -6.0F, 12.0F, 22.0F, 12.0F, new Dilation(0.0F)), ModelTransform.pivot(28.0F, -25.0F, 0.0F));
+		ModelPartData leftarm = chest.addChild("leftarm", ModelPartBuilder.create().uv(0, 146).cuboid(-7.0F, 0.0F, -6.0F, 12.0F, 22.0F, 12.0F, new Dilation(0.0F)), ModelTransform.origin(28.0F, -25.0F, 0.0F));
 
 		ModelPartData cube_r6 = leftarm.addChild("cube_r6", ModelPartBuilder.create().uv(164, 159).cuboid(-2.0F, -33.0F, -2.0F, 3.0F, 34.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(2.0F, 5.0F, 3.0F, -0.4124F, 1.0466F, -0.7381F));
 
@@ -72,9 +72,9 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 
 		ModelPartData cube_r10 = leftarm.addChild("cube_r10", ModelPartBuilder.create().uv(128, 159).cuboid(-2.0F, -33.0F, -2.0F, 3.0F, 34.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 8.0F, 5.0F, -0.2359F, -0.422F, 0.5307F));
 
-		ModelPartData lefthand = leftarm.addChild("lefthand", ModelPartBuilder.create().uv(0, 108).cuboid(-9.0F, 0.0F, -8.0F, 16.0F, 22.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 22.0F, 0.0F));
+		ModelPartData lefthand = leftarm.addChild("lefthand", ModelPartBuilder.create().uv(0, 108).cuboid(-9.0F, 0.0F, -8.0F, 16.0F, 22.0F, 16.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, 22.0F, 0.0F));
 
-		ModelPartData head = chest.addChild("head", ModelPartBuilder.create().uv(0, 68).cuboid(-10.0F, -17.0F, -10.0F, 20.0F, 20.0F, 20.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -27.0F, -13.0F));
+		ModelPartData head = chest.addChild("head", ModelPartBuilder.create().uv(0, 68).cuboid(-10.0F, -17.0F, -10.0F, 20.0F, 20.0F, 20.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, -27.0F, -13.0F));
 
 		ModelPartData cube_r11 = head.addChild("cube_r11", ModelPartBuilder.create().uv(188, 122).cuboid(-1.0F, -22.0F, -1.0F, 2.0F, 22.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-6.0F, -15.0F, 1.0F, -0.3695F, 0.3272F, -0.5602F));
 
@@ -98,7 +98,7 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 		.uv(72, 122).cuboid(8.0F, -7.0F, -11.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F))
 		.uv(144, 122).cuboid(10.0F, -7.0F, -9.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F))
 		.uv(152, 122).cuboid(-12.0F, -7.0F, -9.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F))
-		.uv(168, 122).cuboid(-12.0F, -7.0F, -5.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 3.0F, -1.0F));
+		.uv(168, 122).cuboid(-12.0F, -7.0F, -5.0F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.origin(0.0F, 3.0F, -1.0F));
 		return TexturedModelData.of(modelData, 256, 256);
 	}
 
@@ -109,7 +109,7 @@ public class ProtectorModel extends EntityModel<ProtectorBossEntityRenderState> 
 		this.getMain().traverse().forEach(ModelPart::resetTransform);
 		this.setHeadAngles(this.getHead().yaw, this.getHead().pitch);
 
-		this.animateWalking(ProtectorAnimations.MOVE, state.limbFrequency, state.limbAmplitudeMultiplier, 2.0f, 2.5f);
+		this.animateWalking(ProtectorAnimations.MOVE, state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2.0f, 2.5f);
 		this.animate(state.idleAnimationState, ProtectorAnimations.IDLE, state.age, 1f);
 		this.animate(state.genericAttackAnimationState, ProtectorAnimations.GENERIC_ATTACK, state.age, 1f);
 		this.animate(state.attack1AnimationState, ProtectorAnimations.ATTACK1, state.age, 1f);

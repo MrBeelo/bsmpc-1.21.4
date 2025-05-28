@@ -1,6 +1,7 @@
 package net.mrbeelo.bsmpc.item.custom;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.mrbeelo.bsmpc.sound.ModSounds;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -22,8 +24,8 @@ public class RulerItem extends Item {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        super.inventoryTick(stack, world, entity, slot, selected);
+    public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
+        super.inventoryTick(stack, world, entity, slot);
 
         if(entity instanceof PlayerEntity player && player.getWeaponStack() == stack && world instanceof ServerWorld serverWorld)
         {

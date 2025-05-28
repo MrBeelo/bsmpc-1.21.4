@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -67,14 +68,12 @@ public class DeliberatorBlock extends BlockWithEntity {
     }
 
     @Override
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
-            if (world.getBlockEntity(pos) instanceof DeliberatorBlockEntity deliberatorBlockEntity) {
-                ItemScatterer.spawn(world, pos, deliberatorBlockEntity);
-                world.updateComparators(pos,this);
-            }
-            super.onStateReplaced(state, world, pos, newState, moved);
+    protected void onStateReplaced(BlockState state, ServerWorld world, BlockPos pos, boolean moved) {
+        if (world.getBlockEntity(pos) instanceof DeliberatorBlockEntity deliberatorBlockEntity) {
+            ItemScatterer.spawn(world, pos, deliberatorBlockEntity);
+            world.updateComparators(pos,this);
         }
+        super.onStateReplaced(state, world, pos, moved);
     }
 
     @Override

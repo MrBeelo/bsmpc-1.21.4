@@ -55,7 +55,7 @@
   "entity.bsmpc.protector": "The Protector",
   "entity.bsmpc.pyro": "Pyroraptor",
   "entity.bsmpc.snek": "Snek",
-  "entity.minecraft.villager.rubert": "Rubert",
+  "entity.minecraft.villager.literal{rubert}": "Rubert",
   "gui.bsmpc.deliberator": "Deliberator",
   "gui.bsmpc.safe": "Safe",
   "item.bsmpc.bardiche": "Bardiche",

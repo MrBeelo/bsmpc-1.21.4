@@ -336,13 +336,13 @@ public class ProtectorBossEntity extends HostileEntity {
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
-        setAwakening(nbt.getBoolean("Awakening"));
-        setKneeling(nbt.getBoolean("Kneeling"));
-        setDoingGenericAttack(nbt.getBoolean("DoingGenericAttack"));
-        setDoingAttack1(nbt.getBoolean("DoingAttack1"));
-        setDoingAttack2(nbt.getBoolean("DoingAttack2"));
-        setDoingAttack3(nbt.getBoolean("DoingAttack3"));
-        awakeningTicksLeft = nbt.getInt("AwakeningTicksLeft");
+        setAwakening(nbt.getBoolean("Awakening").get());
+        setKneeling(nbt.getBoolean("Kneeling").get());
+        setDoingGenericAttack(nbt.getBoolean("DoingGenericAttack").get());
+        setDoingAttack1(nbt.getBoolean("DoingAttack1").get());
+        setDoingAttack2(nbt.getBoolean("DoingAttack2").get());
+        setDoingAttack3(nbt.getBoolean("DoingAttack3").get());
+        awakeningTicksLeft = nbt.getInt("AwakeningTicksLeft").get();
 
         // If boss already awakened, enable AI and init goals again
         if (!isKneeling() && !isAwakening()) {

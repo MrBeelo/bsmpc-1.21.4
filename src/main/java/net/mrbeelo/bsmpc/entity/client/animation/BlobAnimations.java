@@ -9,7 +9,7 @@ public class BlobAnimations {
 
     public static final Animation WALK = Animation.Builder.create(2f).looping()
             .addBoneAnimation("main",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(0f, 2f, 0f),

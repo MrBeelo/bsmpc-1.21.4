@@ -8,7 +8,7 @@ import net.minecraft.client.render.entity.animation.Transformation;
 public class SnekAnimations {
     public static final Animation IDLE = Animation.Builder.create(1f).looping()
             .addBoneAnimation("bodypart1",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, -4f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(0f, -4f, 0f),
@@ -28,7 +28,7 @@ public class SnekAnimations {
                             new Keyframe(1f, AnimationHelper.createRotationalVector(-26.82f, -32f, 15f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart2",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(1f, 0f, 9f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(1f, 0f, 9f),
@@ -44,7 +44,7 @@ public class SnekAnimations {
                             new Keyframe(1f, AnimationHelper.createRotationalVector(24.38f, 23.4f, 9.06f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart3",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(22f, 4f, 3f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(22f, 4f, 3f),
@@ -60,7 +60,7 @@ public class SnekAnimations {
                             new Keyframe(1f, AnimationHelper.createRotationalVector(5f, 30f, -22.5f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart4",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(-7f, 0f, 18f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(-7f, 0f, 18f),
@@ -76,7 +76,7 @@ public class SnekAnimations {
                             new Keyframe(1f, AnimationHelper.createRotationalVector(14.2f, -15.76f, 1.04f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("head",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, -9f, -7f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.5f, AnimationHelper.createTranslationalVector(0f, -9f, -7f),
@@ -105,7 +105,7 @@ public class SnekAnimations {
                                     Transformation.Interpolations.LINEAR))).build();
     public static final Animation ATTACK = Animation.Builder.create(0.75f).looping()
             .addBoneAnimation("bodypart1",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, -3f, 0f),
@@ -125,7 +125,7 @@ public class SnekAnimations {
                             new Keyframe(0.65f, AnimationHelper.createRotationalVector(42.5f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart2",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, 0f, -7f),
@@ -145,7 +145,7 @@ public class SnekAnimations {
                             new Keyframe(0.5f, AnimationHelper.createRotationalVector(25f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart3",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, 0f, -9f),
@@ -165,7 +165,7 @@ public class SnekAnimations {
                             new Keyframe(0.5f, AnimationHelper.createRotationalVector(12.5f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("bodypart4",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, 0f, -13f),
@@ -185,7 +185,7 @@ public class SnekAnimations {
                             new Keyframe(0.5f, AnimationHelper.createRotationalVector(20f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("head",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, -7f, -2f),
@@ -199,7 +199,7 @@ public class SnekAnimations {
                             new Keyframe(0.25f, AnimationHelper.createRotationalVector(-42.5f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("upjaw",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.25f, AnimationHelper.createTranslationalVector(0f, -2f, 0f),
@@ -213,7 +213,7 @@ public class SnekAnimations {
                             new Keyframe(0.5f, AnimationHelper.createRotationalVector(10f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR)))
             .addBoneAnimation("lowjaw",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(0.15f, AnimationHelper.createTranslationalVector(0f, 3f, 0f),

@@ -28,9 +28,6 @@ public class PyroRenderer extends MobEntityRenderer<PyroEntity, PyroEntityRender
     public void updateRenderState(PyroEntity livingEntity, PyroEntityRenderState livingEntityRenderState, float f) {
         super.updateRenderState(livingEntity, livingEntityRenderState, f);
 
-        livingEntityRenderState.limbFrequency = livingEntity.limbAnimator.getPos();
-        livingEntityRenderState.limbAmplitudeMultiplier = livingEntity.limbAnimator.getSpeed();
-
         livingEntityRenderState.idleAnimationState.copyFrom(livingEntity.idleAnimationState);
         livingEntityRenderState.attackAnimationState.copyFrom(livingEntity.attackAnimationState);
         livingEntityRenderState.age = livingEntity.age;

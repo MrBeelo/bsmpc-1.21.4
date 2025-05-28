@@ -44,15 +44,15 @@ public class ModItems {
     public static final Item KOKAINA_SEED = register("kokaina_seed", new BlockItem(ModBlocks.KOKAINA_CROP, new Item.Settings().registryKey(regKeyItem("kokaina_seed"))));
     public static final KokainaItem KOKAINA = register("kokaina", new KokainaItem(new Item.Settings().registryKey(regKeyItem("kokaina")).maxCount(16).food(ModFoodItems.KOKAINA_COMPONENT, ModFoodItems.KOKAINA_CONSUMABLE_COMPONENT)));
 
-    public static final SwordItem RUBY_SWORD = register("ruby_sword", new SwordItem(ModToolMaterials.RUBY, 3, -2.4F, new Item.Settings().registryKey(regKeyItem("ruby_sword")))); //2 BONUS DMG INSTEAD OF 1
-    public static final PickaxeItem RUBY_PICKAXE = register("ruby_pickaxe", new PickaxeItem(ModToolMaterials.RUBY, 0, -2.8f, new Item.Settings().registryKey(regKeyItem("ruby_pickaxe"))));
+    public static final Item RUBY_SWORD = register("ruby_sword", Item::new, new Item.Settings().sword(ModToolMaterials.RUBY, 3, -2.4F)); //2 BONUS DMG INSTEAD OF 1
+    public static final Item RUBY_PICKAXE = register("ruby_pickaxe", Item::new, new Item.Settings().pickaxe(ModToolMaterials.RUBY, 0, -2.8f));
     public static final AxeItem RUBY_AXE = register("ruby_axe", new AxeItem(ModToolMaterials.RUBY, 0, -2.8f, new Item.Settings().registryKey(regKeyItem("ruby_axe")))); //2 BONUS DMG INSTEAD OF 1
     public static final ShovelItem RUBY_SHOVEL = register("ruby_shovel", new ShovelItem(ModToolMaterials.RUBY, 0.5f, -3f, new Item.Settings().registryKey(regKeyItem("ruby_shovel"))));
     public static final HoeItem RUBY_HOE = register("ruby_hoe", new HoeItem(ModToolMaterials.RUBY, -6f, 0f, new Item.Settings().registryKey(regKeyItem("ruby_hoe"))));
-    public static final ArmorItem RUBY_HELMET = register("ruby_helmet", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.HELMET, new Item.Settings().registryKey(regKeyItem("ruby_helmet")).maxDamage(EquipmentType.HELMET.getMaxDamage(45))));
-    public static final ModArmorItem RUBY_CHESTPLATE = register("ruby_chestplate", new ModArmorItem(ModArmorMaterials.RUBY, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("ruby_chestplate")).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(45))));
-    public static final ArmorItem RUBY_LEGGINGS = register("ruby_leggings", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.LEGGINGS, new Item.Settings().registryKey(regKeyItem("ruby_leggings")).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(45))));
-    public static final ArmorItem RUBY_BOOTS = register("ruby_boots", new ArmorItem(ModArmorMaterials.RUBY, EquipmentType.BOOTS, new Item.Settings().registryKey(regKeyItem("ruby_boots")).maxDamage(EquipmentType.BOOTS.getMaxDamage(45))));
+    public static final Item RUBY_HELMET = register("ruby_helmet", Item::new, new Item.Settings().armor(ModArmorMaterials.RUBY, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(45)));
+    public static final ModArmorItem RUBY_CHESTPLATE = register("ruby_chestplate", new ModArmorItem(ModArmorMaterials.RUBY, EquipmentType.CHESTPLATE, new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(45)).registryKey(regKeyItem("ruby_chestplate"))));
+    public static final Item RUBY_LEGGINGS = register("ruby_leggings", Item::new, new Item.Settings().armor(ModArmorMaterials.RUBY, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(45)));
+    public static final Item RUBY_BOOTS = register("ruby_boots", Item::new, new Item.Settings().armor(ModArmorMaterials.RUBY, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(45)));
     public static final HighKnockbackItem RUBY_KNOCKER = register("ruby_knocker", new HighKnockbackItem(new Item.Settings().registryKey(regKeyItem("ruby_knocker")).maxCount(1), 8f));
     public static final Item RUBY_BOW = register("ruby_bow", BowItem::new, new Item.Settings().maxCount(1));
 
@@ -66,12 +66,12 @@ public class ModItems {
     public static final PokeBallItem POKE_BALL = register("poke_ball", new PokeBallItem(new Item.Settings().registryKey(regKeyItem("poke_ball"))));
 
     public static final Item WARDEN_HORN = register("warden_horn", new Item(new Item.Settings().registryKey(regKeyItem("warden_horn"))));
-    public static final SwordItem WARDEN_SWORD = register("warden_sword", new SwordItem(ModToolMaterials.WARDEN_HORN, 3, -2.4f, new Item.Settings().registryKey(regKeyItem("warden_sword"))));
+    public static final Item WARDEN_SWORD = register("warden_sword", Item::new, new Item.Settings().sword(ModToolMaterials.WARDEN_HORN, 3, -2.4f));
 
-    public static final ArmorItem SNEK_HELMET = register("snek_helmet", new ArmorItem(ModArmorMaterials.SNEK, EquipmentType.HELMET, new Item.Settings().registryKey(regKeyItem("snek_helmet")).maxDamage(EquipmentType.HELMET.getMaxDamage(50))));
-    public static final ModArmorItem SNEK_CHESTPLATE = register("snek_chestplate", new ModArmorItem(ModArmorMaterials.SNEK, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("snek_chestplate")).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(50))));
-    public static final ArmorItem SNEK_LEGGINGS = register("snek_leggings", new ArmorItem(ModArmorMaterials.SNEK, EquipmentType.LEGGINGS, new Item.Settings().registryKey(regKeyItem("snek_leggings")).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(50))));
-    public static final ArmorItem SNEK_BOOTS = register("snek_boots", new ArmorItem(ModArmorMaterials.SNEK, EquipmentType.BOOTS, new Item.Settings().registryKey(regKeyItem("snek_boots")).maxDamage(EquipmentType.BOOTS.getMaxDamage(50))));
+    public static final Item SNEK_HELMET = register("snek_helmet", Item::new, new Item.Settings().armor(ModArmorMaterials.SNEK, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(50)));
+    public static final ModArmorItem SNEK_CHESTPLATE = register("snek_chestplate", new ModArmorItem(ModArmorMaterials.SNEK, EquipmentType.CHESTPLATE, new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(50)).registryKey(regKeyItem("snek_chestplate"))));
+    public static final Item SNEK_LEGGINGS = register("snek_leggings", Item::new, new Item.Settings().armor(ModArmorMaterials.SNEK, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(50)));
+    public static final Item SNEK_BOOTS = register("snek_boots", Item::new, new Item.Settings().armor(ModArmorMaterials.SNEK, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(50)));
     public static final Item SNEK_SCALE = register("snek_scale", new Item(new Item.Settings().registryKey(regKeyItem("snek_scale"))));
 
     public static final Item SNEK_SPAWN_EGG = register("snek_spawn_egg", new SpawnEggItem(ModEntities.SNEK,  new Item.Settings().registryKey(regKeyItem("snek_spawn_egg"))));
@@ -82,23 +82,23 @@ public class ModItems {
     public static final JetpackItem JETPACK = register("jetpack", new JetpackItem(ModArmorMaterials.JETPACK, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("jetpack")).maxDamage(20000)));
 
     public static final Item MITHRILL = register("mithrill", new Item(new Item.Settings().registryKey(regKeyItem("mithrill"))));
-    public static final SwordItem MITHRILL_SWORD = register("mithrill_sword", new SwordItem(ModToolMaterials.MITHRILL, 2, -2.6f, new Item.Settings().registryKey(regKeyItem("mithrill_sword")))); //2 BONUS DMG INSTEAD OF 1
-    public static final PickaxeItem MITHRILL_PICKAXE = register("mithrill_pickaxe", new PickaxeItem(ModToolMaterials.MITHRILL, -3f, -2.8f, new Item.Settings().registryKey(regKeyItem("mithrill_pickaxe"))));
+    public static final Item MITHRILL_SWORD = register("mithrill_sword", Item::new, new Item.Settings().sword(ModToolMaterials.MITHRILL, 2, -2.6f)); //2 BONUS DMG INSTEAD OF 1
+    public static final Item MITHRILL_PICKAXE = register("mithrill_pickaxe", Item::new, new Item.Settings().pickaxe(ModToolMaterials.MITHRILL, -3f, -2.8f));
     public static final AxeItem MITHRILL_AXE = register("mithrill_axe", new AxeItem(ModToolMaterials.MITHRILL, 5, -3.1f, new Item.Settings().registryKey(regKeyItem("mithrill_axe")))); //2 BONUS DMG INSTEAD OF 1
     public static final ShovelItem MITHRILL_SHOVEL = register("mithrill_shovel", new ShovelItem(ModToolMaterials.MITHRILL, -2.5f, -3f, new Item.Settings().registryKey(regKeyItem("mithrill_shovel"))));
     public static final HoeItem MITHRILL_HOE = register("mithrill_hoe", new HoeItem(ModToolMaterials.MITHRILL, -2.5f, -3f, new Item.Settings().registryKey(regKeyItem("mithrill_hoe"))));
-    public static final ArmorItem MITHRILL_HELMET = register("mithrill_helmet", new ArmorItem(ModArmorMaterials.MITHRILL, EquipmentType.HELMET, new Item.Settings().registryKey(regKeyItem("mithrill_helmet")).maxDamage(EquipmentType.HELMET.getMaxDamage(50))));
-    public static final ModArmorItem MITHRILL_CHESTPLATE = register("mithrill_chestplate", new ModArmorItem(ModArmorMaterials.MITHRILL, EquipmentType.CHESTPLATE, new Item.Settings().registryKey(regKeyItem("mithrill_chestplate")).maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(50))));
-    public static final ArmorItem MITHRILL_LEGGINGS = register("mithrill_leggings", new ArmorItem(ModArmorMaterials.MITHRILL, EquipmentType.LEGGINGS, new Item.Settings().registryKey(regKeyItem("mithrill_leggings")).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(50))));
-    public static final ArmorItem MITHRILL_BOOTS = register("mithrill_boots", new ArmorItem(ModArmorMaterials.MITHRILL, EquipmentType.BOOTS, new Item.Settings().registryKey(regKeyItem("mithrill_boots")).maxDamage(EquipmentType.BOOTS.getMaxDamage(50))));
+    public static final Item MITHRILL_HELMET = register("mithrill_helmet", Item::new, new Item.Settings().armor(ModArmorMaterials.MITHRILL, EquipmentType.HELMET).maxDamage(EquipmentType.HELMET.getMaxDamage(50)));
+    public static final ModArmorItem MITHRILL_CHESTPLATE = register("mithrill_chestplate", new ModArmorItem(ModArmorMaterials.MITHRILL, EquipmentType.CHESTPLATE, new Item.Settings().maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(50)).registryKey(regKeyItem("mithrill_chestplate"))));
+    public static final Item MITHRILL_LEGGINGS = register("mithrill_leggings", Item::new, new Item.Settings().armor(ModArmorMaterials.MITHRILL, EquipmentType.LEGGINGS).maxDamage(EquipmentType.LEGGINGS.getMaxDamage(50)));
+    public static final Item MITHRILL_BOOTS = register("mithrill_boots", Item::new, new Item.Settings().armor(ModArmorMaterials.MITHRILL, EquipmentType.BOOTS).maxDamage(EquipmentType.BOOTS.getMaxDamage(50)));
 
-    public static final SwordItem THALLEOUS_LONGSWORD = register("thalleous_longsword", new SwordItem(ToolMaterial.DIAMOND, 8, -2.4f, new Item.Settings().registryKey(regKeyItem("thalleous_longsword"))));
-    public static final SwordItem MITHRILLED_THALLEOUS_LONGSWORD = register("mithrilled_thalleous_longsword", new SwordItem(ModToolMaterials.MITHRILL, 4, -2.4f, new Item.Settings().registryKey(regKeyItem("mithrilled_thalleous_longsword"))));
+    public static final Item THALLEOUS_LONGSWORD = register("thalleous_longsword", Item::new, new Item.Settings().sword(ToolMaterial.DIAMOND, 8, -2.4f));
+    public static final Item MITHRILLED_THALLEOUS_LONGSWORD = register("mithrilled_thalleous_longsword", Item::new, new Item.Settings().sword(ModToolMaterials.MITHRILL, 4, -2.4f));
 
     public static final FishItem FISH_MEME = register("fish_meme", new FishItem(new Item.Settings().registryKey(regKeyItem("fish_meme")).maxCount(99)));
 
     public static final EnderSwordItem ENDER_SWORD = register("ender_sword", new EnderSwordItem(ModToolMaterials.MITHRILL, 1, -2.6f, new Item.Settings().registryKey(regKeyItem("ender_sword"))));
-    public static final SwordItem BEELO_SWORD = register("beelo_sword", new SwordItem(ModToolMaterials.RUBY, 10, -2.4f, new Item.Settings().registryKey(regKeyItem("beelo_sword"))));
+    public static final Item BEELO_SWORD = register("beelo_sword", Item::new, new Item.Settings().sword(ModToolMaterials.RUBY, 10, -2.4f));
 
     public static final HighKnockbackItem STICC = register("sticc", new HighKnockbackItem(new Item.Settings().registryKey(regKeyItem("sticc")).maxCount(1), 40f));
 

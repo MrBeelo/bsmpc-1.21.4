@@ -30,8 +30,6 @@ public class ProtectorRenderer extends MobEntityRenderer<ProtectorBossEntity, Pr
     public void updateRenderState(ProtectorBossEntity livingEntity, ProtectorBossEntityRenderState livingEntityRenderState, float f) {
         super.updateRenderState(livingEntity, livingEntityRenderState, f);
 
-        livingEntityRenderState.limbFrequency = livingEntity.limbAnimator.getPos();
-        livingEntityRenderState.limbAmplitudeMultiplier = livingEntity.limbAnimator.getSpeed();
         livingEntityRenderState.idleAnimationState.copyFrom(livingEntity.idleAnimationState);
         livingEntityRenderState.genericAttackAnimationState.copyFrom(livingEntity.genericAttackAnimationState);
         livingEntityRenderState.attack1AnimationState.copyFrom(livingEntity.attack1AnimationState);

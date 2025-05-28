@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	bsmpc/Model Definitions
+// 1.21.5	-999999999-01-01T00:00:00	bsmpc/Model Definitions
 23ec5529572c43ae0f345ac9aa052e1a8ed5e3d7 assets/bsmpc/blockstates/companion_cube.json
 3f85109b097ea5cd4a50d4f65f90d5b64000d7f6 assets/bsmpc/blockstates/cs_berry_bush.json
 a0347f4cf15590743dba2f7d85ca5e4956866f74 assets/bsmpc/blockstates/cs_button.json
@@ -46,7 +46,7 @@ c434f562c19ab68147d30bf5f6f8855f9854a2bb assets/bsmpc/blockstates/smooth_quartz_
 b7aacc61d804b9c86656cec12b8c5f7b4daf54c7 assets/bsmpc/blockstates/stripped_cs_log.json
 0eb0600eecd515d35b1f394286b0cf042bf26fcb assets/bsmpc/blockstates/stripped_cs_wood.json
 53e545e1240dec7af45bee802c2f2b7e91521c8a assets/bsmpc/items/beelo_sword.json
-8b386b18789202d9786e9f301a233d90f8572c57 assets/bsmpc/items/blob_spawn_egg.json
+c5b4507efd7120a77abf945570de726198ca230c assets/bsmpc/items/blob_spawn_egg.json
 e703f7b9462c3ea8d4e2dc0001750085ee49fa93 assets/bsmpc/items/bullet.json
 f60af9f918217e9d1654c1afd7f1080f921679c1 assets/bsmpc/items/companion_cube.json
 1a5779b85a8c6edf041382f2b98f016057207b32 assets/bsmpc/items/cs_berries.json
@@ -100,11 +100,10 @@ df07af05264cddc39738aecac236b0043b0b1291 assets/bsmpc/items/mithrill_hoe.json
 2e142b5d6fcb5e53c24a60d31a186341cfc98426 assets/bsmpc/items/nuke_button.json
 b933e2ac1b7595cf4640638b5f49936a8954019a assets/bsmpc/items/overcooked_beef_wellington.json
 ab7bca3e28805887ef3e16d4de649dd54d36dd3a assets/bsmpc/items/packed_iron_block.json
-981819a27d7dfda5bb48ed60b56092134428a38a assets/bsmpc/items/pedestal.json
 d14ae984e6d5c5cd12b9595feac94a802dadc871 assets/bsmpc/items/pistol.json
 7414ac8a9255031c23ee81c6878378ff0905c1f0 assets/bsmpc/items/poke_ball.json
-00473b1a6f6931806ff2742cecd271db822cef86 assets/bsmpc/items/protector_spawn_egg.json
-3bce44d4c61dee420ce977614422e6a7611095e8 assets/bsmpc/items/pyro_spawn_egg.json
+874e3457c5add0ba348d649f01f30beceb377ded assets/bsmpc/items/protector_spawn_egg.json
+a955220092b85d70250d3ed827231af567b4a7c8 assets/bsmpc/items/pyro_spawn_egg.json
 982b4245689d42b627a0f48dad2cd403441dcb31 assets/bsmpc/items/random_artifact.json
 1f5083208c42d3585d4fe67329f37a18e482508f assets/bsmpc/items/raw_beef_wellington.json
 7cd9620df743749d2269c585b503fed25926b2ac assets/bsmpc/items/rgb_block.json
@@ -144,7 +143,7 @@ b033a2d493de988a4f2f7637fdc55dca9ffb62c2 assets/bsmpc/items/snek_chestplate.json
 e9c418371dff23ec130517e4e3dda9af87ad4765 assets/bsmpc/items/snek_helmet.json
 ecbe55d125d54137cd7f585de96900232bfba0d2 assets/bsmpc/items/snek_leggings.json
 9ae42b5a6db8b3c44a07f26c10be30743eb495f5 assets/bsmpc/items/snek_scale.json
-858fe0bd1a7e82159050348f5b99094490e91599 assets/bsmpc/items/snek_spawn_egg.json
+d7ef482f849d8d2830b4586b37e010210f7babcc assets/bsmpc/items/snek_spawn_egg.json
 b24b68160a71a88068912fad3d1bfe819db3425a assets/bsmpc/items/sticc.json
 0644cc6ef617a2385562ba29ae60a628ed80f317 assets/bsmpc/items/stripped_cs_log.json
 dfaa02c8794e54748cf941b60b50d38a4a6b35d6 assets/bsmpc/items/stripped_cs_wood.json
@@ -248,6 +247,7 @@ b3df2d3c347f7a23b896ac66d62bf2dadc35125d assets/bsmpc/models/block/stripped_cs_l
 d56f747d8b474dc620d7c89e72cf1f9739090ff4 assets/bsmpc/models/block/stripped_cs_log_horizontal.json
 e10dfd78b898f8662072c66ab2ed60b9f08c1496 assets/bsmpc/models/block/stripped_cs_wood.json
 9615e081bcc2155efce87f0ebe4b9c49ca371800 assets/bsmpc/models/item/beelo_sword.json
+739b9307156bd135e73ae0104cb7dc6218e901e5 assets/bsmpc/models/item/blob_spawn_egg.json
 6f67b038fd3503e7e409397fa2321ab200e5a776 assets/bsmpc/models/item/bullet.json
 1b6d3d07403c70d8ee8f7934a5175cda6c26cdb7 assets/bsmpc/models/item/cs_berries.json
 b339571ed95d9c7a81f58a4337f4ff928a092c82 assets/bsmpc/models/item/cs_door.json
@@ -335,6 +335,8 @@ c372012f51785da6865a388ffe3f0057dd2ecfa4 assets/bsmpc/models/item/nuke_button.js
 e7c6d27b7741e15b24d0c0e05fc166234f964fee assets/bsmpc/models/item/overcooked_beef_wellington.json
 a6e1e48c32149b4df5e3582db0dae67724e98938 assets/bsmpc/models/item/pistol.json
 b713f3d0471c0bc4dd56dafdb32e3ed7f3cc1962 assets/bsmpc/models/item/poke_ball.json
+74015fd5cdae21dc13a16d714842f8a0706536f3 assets/bsmpc/models/item/protector_spawn_egg.json
+afac59a15598e04ec9267a578c2fa6b0d7173f06 assets/bsmpc/models/item/pyro_spawn_egg.json
 14830e2f7af75d101b21ac7ad0af0ad66f3e8b6d assets/bsmpc/models/item/random_artifact.json
 46462c18ada3fcd06f8e987fc379e52ffd7e2361 assets/bsmpc/models/item/raw_beef_wellington.json
 6ea0a30d6c2d8e161c0ef48b306c457c10cba62e assets/bsmpc/models/item/rubber_ducky.json
@@ -449,6 +451,7 @@ cfb77775367127c4095e47627fdae3c9cf58b094 assets/bsmpc/models/item/snek_leggings_
 1d2fe379d29b8c7ba79ac0507d9230e7a256fa3b assets/bsmpc/models/item/snek_leggings_redstone_trim.json
 42ee43397e191d68463936a246bb52189444d5f3 assets/bsmpc/models/item/snek_leggings_resin_trim.json
 5276bc2ce039d4d79c4dd01dedb584fc74fb1e6e assets/bsmpc/models/item/snek_scale.json
+66e3495962b2f4aba386acf0a3b860fd45ab1606 assets/bsmpc/models/item/snek_spawn_egg.json
 602cbca0ebeb5cdf777a4b190516f1a928eb27e8 assets/bsmpc/models/item/sticc.json
 a8d0a5878d863e2723b830b2a1e876f765d4ec78 assets/bsmpc/models/item/thalleous_longsword.json
 9378a6186b0a7fb1b9ad0e9f7aa50e0d7279f200 assets/bsmpc/models/item/warden_horn.json

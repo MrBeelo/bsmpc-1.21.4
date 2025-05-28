@@ -34,9 +34,9 @@ public class ModBiomes {
 
     public static Biome csBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.BLOB, 20, 2, 4));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, 20, new SpawnSettings.SpawnEntry(ModEntities.BLOB, 2, 4));
 
-        spawnBuilder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.SNEK, 1, 1, 1));
+        spawnBuilder.spawn(SpawnGroup.CREATURE, 1, new SpawnSettings.SpawnEntry(ModEntities.SNEK, 1, 1));
 
         DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
         DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
@@ -55,7 +55,7 @@ public class ModBiomes {
         DefaultBiomeFeatures.addLargeFerns(biomeBuilder);
 
         //DefaultBiomeFeatures.addDefaultMushrooms(biomeBuilder);
-        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder);
+        DefaultBiomeFeatures.addDefaultVegetation(biomeBuilder, true);
 
         return new Biome.Builder()
                 .precipitation(true)

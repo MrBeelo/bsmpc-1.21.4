@@ -14,20 +14,4 @@ public class BeefWellingtonItem extends Item {
         super(settings);
         this.isRaw = raw;
     }
-
-    @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if(!Screen.hasShiftDown()) {
-            tooltip.add(Text.literal("Press §eShift§r to learn more!"));
-        } else {
-            if(isRaw)
-            {
-                tooltip.add(Text.literal("IT'S RAWWWWW!!!"));
-            } else {
-                tooltip.add(Text.literal("IT'S OVERCOOKED, OVERDONE, FUCK OFF!!!!"));
-            }
-        }
-
-        super.appendTooltip(stack, context, tooltip, type);
-    }
 }

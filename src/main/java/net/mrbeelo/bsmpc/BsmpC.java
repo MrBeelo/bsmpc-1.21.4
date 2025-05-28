@@ -25,7 +25,6 @@ import net.mrbeelo.bsmpc.enchantment.ModEnchantments;
 import net.mrbeelo.bsmpc.entity.ModAttributes;
 import net.mrbeelo.bsmpc.entity.ModEntities;
 import net.mrbeelo.bsmpc.event.EntityDeathListener;
-import net.mrbeelo.bsmpc.event.PlayerCopyHandler;
 import net.mrbeelo.bsmpc.fluid.ModFluids;
 import net.mrbeelo.bsmpc.item.*;
 import net.mrbeelo.bsmpc.particle.ModParticles;
@@ -92,7 +91,6 @@ public class BsmpC implements ModInitializer {
 				}
 			}});
 
-		ServerPlayerEvents.COPY_FROM.register(new PlayerCopyHandler());
 		ServerLivingEntityEvents.AFTER_DEATH.register(new EntityDeathListener());
 
 		StrippableBlockRegistry.register(ModBlocks.CS_LOG, ModBlocks.STRIPPED_CS_LOG);

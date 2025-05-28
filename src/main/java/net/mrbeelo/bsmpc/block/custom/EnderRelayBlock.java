@@ -201,14 +201,14 @@ public class EnderRelayBlock extends BlockWithEntity {
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if ((Integer)state.get(RELAY_CHARGES) != 0) {
             if (random.nextInt(100) == 0) {
-                world.playSoundAtBlockCenter(pos, SoundEvents.BLOCK_RESPAWN_ANCHOR_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+                world.playSoundAtBlockCenterClient(pos, SoundEvents.BLOCK_RESPAWN_ANCHOR_AMBIENT, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
 
             double d = pos.getX() + 0.5 + (0.5 - random.nextDouble());
             double e = pos.getY() + 1.0;
             double f = pos.getZ() + 0.5 + (0.5 - random.nextDouble());
             double g = random.nextFloat() * 0.04;
-            world.addParticle(ParticleTypes.REVERSE_PORTAL, d, e, f, 0.0, g, 0.0);
+            world.addParticleClient(ParticleTypes.REVERSE_PORTAL, d, e, f, 0.0, g, 0.0);
         }
     }
 

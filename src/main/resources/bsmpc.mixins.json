@@ -3,7 +3,6 @@
   "package": "net.mrbeelo.bsmpc.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ModEntityDataSaverMixin"
   ],
   "injectors": {
     "defaultRequire": 1

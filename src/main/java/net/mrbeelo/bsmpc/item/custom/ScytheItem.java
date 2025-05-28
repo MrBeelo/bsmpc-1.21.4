@@ -1,17 +1,17 @@
 package net.mrbeelo.bsmpc.item.custom;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class ScytheItem extends SwordItem {
+public class ScytheItem extends Item {
     public ScytheItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+        super(settings.sword(toolMaterial, attackDamage, attackSpeed));
     }
 
     @Override

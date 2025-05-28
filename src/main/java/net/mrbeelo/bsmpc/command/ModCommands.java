@@ -8,8 +8,6 @@ public class ModCommands {
     public static void registerModCommands() {
         BsmpC.LOGGER.info("Registering Mod Commands for " + BsmpC.MOD_ID);
 
-        CommandRegistrationCallback.EVENT.register(SetHomeCommand::register);
-        CommandRegistrationCallback.EVENT.register(ReturnHomeCommand::register);
         CommandRegistrationCallback.EVENT.register(GnomeCommand::register);
         CommandRegistrationCallback.EVENT.register(CorrectCommand::register);
         CommandRegistrationCallback.EVENT.register(IncorrectCommand::register);

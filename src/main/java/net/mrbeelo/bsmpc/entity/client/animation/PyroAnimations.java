@@ -33,7 +33,7 @@ public class PyroAnimations {
                                     Transformation.Interpolations.LINEAR))).build();
     public static final Animation IDLE = Animation.Builder.create(2f).looping()
             .addBoneAnimation("body",
-                    new Transformation(Transformation.Targets.TRANSLATE,
+                    new Transformation(Transformation.Targets.MOVE_ORIGIN,
                             new Keyframe(0f, AnimationHelper.createTranslationalVector(0f, 0f, 0f),
                                     Transformation.Interpolations.LINEAR),
                             new Keyframe(1f, AnimationHelper.createTranslationalVector(0f, 0.5f, 0f),

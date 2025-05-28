@@ -100,7 +100,7 @@ public class SMRDBlock extends Block {
         super.onSteppedOn(world, pos, state, entity);
     }
 
-    @Override
+    /*@Override
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
         if(!Screen.hasShiftDown()) {
             tooltip.add(Text.literal("Press §eShift§r to learn more!"));
@@ -109,5 +109,5 @@ public class SMRDBlock extends Block {
         }
 
         super.appendTooltip(stack, context, tooltip, type);
-    }
+    }*/
 }

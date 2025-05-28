@@ -5,6 +5,9 @@ import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.mrbeelo.bsmpc.BsmpC;
 import net.mrbeelo.bsmpc.entity.client.ModEntityModelLayers;
@@ -30,11 +33,8 @@ public class BlobRenderer extends MobEntityRenderer<BlobEntity, BlobEntityRender
     public void updateRenderState(BlobEntity livingEntity, BlobEntityRenderState livingEntityRenderState, float f) {
         super.updateRenderState(livingEntity, livingEntityRenderState, f);
 
-        livingEntityRenderState.limbFrequency = livingEntity.limbAnimator.getPos();
-        livingEntityRenderState.limbAmplitudeMultiplier = livingEntity.limbAnimator.getSpeed();
-
         livingEntityRenderState.baby = livingEntity.isBaby();
-        livingEntityRenderState.isSaddled = livingEntity.isSaddled();
+        livingEntityRenderState.saddleStack = livingEntity.getEquippedStack(EquipmentSlot.SADDLE).copy();
     }
 
     @Override
@@ -47,7 +47,7 @@ public class BlobRenderer extends MobEntityRenderer<BlobEntity, BlobEntityRender
 
     @Override
     public Identifier getTexture(BlobEntityRenderState state) {
-        if(state.isSaddled) {
+        if(state.saddleStack.isOf(Items.SADDLE)) {
             return TEXTURE_SADDLED;
         } else {
             return TEXTURE;
